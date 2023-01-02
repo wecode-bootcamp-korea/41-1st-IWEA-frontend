@@ -1,0 +1,36 @@
+.HomeMain {
+  margin: 0 64px;
+
+  h1 {
+    margin-bottom: 10px;
+    font-size: 25px;
+    font-weight: bold;
+  }
+
+  .homeMain-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 32px;
+
+    p {
+      font-size: 14px;
+      line-height: 130%;
+    }
+
+    button {
+      width: 200px;
+      height: 40px;
+      border: 1px solid #000000;
+      border-radius: 70px;
+      background-color: #ffffff;
+      font-size: 14px;
+      font-weight: bold;
+    }
+  }
+
+  .homeMain-image {
+    object-fit: cover;
+  }
+}
