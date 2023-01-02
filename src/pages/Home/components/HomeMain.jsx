@@ -1,11 +1,26 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import './HomeMain.scss';
 
 const HomeMain = () => {
   return (
     <div className="HomeMain">
-      <h1>올 겨울, 더 따뜻한 우리집을 위해 최대 70% 할인 + 멤버 5% 추가할인</h1>
+      <div className="homeMain-big-title">
+        <h1>Bonjour! 돌아오신 걸 환영해요!</h1>
+      </div>
+      <div className="homeMain-title">
+        <p>
+          <Link id="iwea-family">IWEA Family에 가입</Link>
+          하여 다양한 홈 퍼니싱 영감과 할인 혜택, 리워드를 받아보세요.
+        </p>
+      </div>
+
+      <div className="homeMain-big-title">
+        <h2>
+          올 겨울, 더 따뜻한 우리집을 위해 최대 70% 할인 + 멤버 5% 추가할인
+        </h2>
+      </div>
       <div className="homeMain-title">
         <div>
           <p>

@@ -1,5 +1,8 @@
 import React from 'react';
+import CardCategory from '../../components/CardCategory';
+import Carousel from '../../components/Carousel';
 import Header from './components/Header';
+import HomeGrid from './components/HomeGrid';
 import HomeMain from './components/HomeMain';
 
 const Home = () => {
@@ -7,11 +10,11 @@ const Home = () => {
     <div className="Home">
       {/* 헤더 - src컴포넌트 */}
       <Header />
-      {/* 홈이미지(세일 + 베드룸) */}
       <HomeMain />
-      {/* 카테고리 */}
-      {/* 프로모션 */}
-      {/* 그리드 */}
+      <Carousel />
+      <HomeGrid />
+
+      {/* <CardCategory /> */}
       {/* 푸터 - src컴포넌트*/}
     </div>
   );

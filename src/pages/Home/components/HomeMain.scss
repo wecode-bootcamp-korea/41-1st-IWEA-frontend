@@ -1,20 +1,41 @@
-.HomeMain {
-  margin: 0 64px;
+@import '../../../styles//color.scss';
 
-  h1 {
-    margin-bottom: 10px;
-    font-size: 25px;
-    font-weight: bold;
+.HomeMain {
+  // margin: 0 64px;
+
+  .homeMain-big-title {
+    width: 90%;
+    margin: auto;
+
+    h1 {
+      margin-bottom: 10px;
+      font-size: 30px;
+      font-weight: 600;
+    }
+
+    h2 {
+      font-size: 26px;
+      font-weight: 600;
+    }
   }
 
   .homeMain-title {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    width: 90%;
+    margin: auto;
 
     margin-bottom: 32px;
 
+    #iwea-family {
+      color: $blueColor;
+      font-weight: 600;
+    }
+
     p {
+      width: 900px;
+      height: 45px;
       font-size: 14px;
       line-height: 130%;
     }
@@ -29,8 +50,15 @@
       font-weight: bold;
     }
   }
+  .homeMain-image-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 64px;
 
-  .homeMain-image {
-    object-fit: cover;
+    .homeMain-image {
+      width: 44%;
+      margin-right: 15px;
+    }
   }
 }
