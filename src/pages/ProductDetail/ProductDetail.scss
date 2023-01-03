@@ -1,0 +1,23 @@
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+}
+
+.product-wrap {
+  flex-direction: row-reverse;
+  width: 100%;
+  height: 2000px;
+  margin: 0;
+  padding-top: 50px;
+  @include flex-center;
+
+  .product-content {
+    width: 1000px;
+
+    .product-main {
+      display: flex;
+      justify-content: space-between;
+      height: 800px;
+    }
+  }
+}

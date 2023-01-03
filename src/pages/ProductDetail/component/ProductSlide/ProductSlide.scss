@@ -1,0 +1,25 @@
+.product-slide-wrap {
+  // width: 1200px;
+  // background-color: darkcyan;
+
+  .product-slide-item-list {
+    // background-color: azure;
+    width: 100%;
+    height: 100px;
+    margin-bottom: 10px;
+    // border-top: 1px solid #ccc;
+
+    h1 {
+      padding-bottom: 20px;
+      font-size: 25px;
+      font-weight: 700;
+    }
+
+    .product-slide-item-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      // background-color: palevioletred;
+    }
+  }
+}

@@ -1,0 +1,19 @@
+.product-content-wrap {
+  height: 800px;
+
+  .product-content-list {
+    position: sticky;
+    top: 0;
+    width: 400px;
+    padding-top: 50px;
+  }
+
+  button {
+    width: 400px;
+    height: 50px;
+    border: none;
+    border-radius: 50px;
+    background-color: pink;
+    color: #000;
+  }
+}

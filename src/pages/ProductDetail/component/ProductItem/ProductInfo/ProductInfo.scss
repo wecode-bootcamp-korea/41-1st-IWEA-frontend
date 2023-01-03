@@ -1,0 +1,16 @@
+.product-info-wrap {
+  margin-bottom: 50px;
+
+  .product-info-item {
+    padding: 40px 100px 40px 0;
+    border-top: 1px solid #ccc;
+    // background-color: salmon;
+    font-size: 20px;
+    font-weight: bold;
+    vertical-align: middle;
+  }
+
+  .product-info-item:last-child {
+    border-bottom: 1px solid #ccc;
+  }
+}

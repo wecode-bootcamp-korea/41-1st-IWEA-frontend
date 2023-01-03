@@ -1,0 +1,12 @@
+.product-item {
+  width: 500px;
+  height: 800px;
+  // background-color: aquamarine;
+  gap: 2px;
+
+  .product-img-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
