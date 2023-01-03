@@ -3,6 +3,7 @@ import './Product.scss';
 
 import Carousel from '../../components/Carousel';
 import ProductList from './components/ProductList';
+import ProductSort from './components/ProductSort';
 
 const Product = () => {
   const [productList, setProductList] = useState([]);
@@ -49,6 +50,7 @@ const Product = () => {
           placeholder="찾으실 가구이름을 입력해주세요"
         />
         <div className="line"></div>
+        <ProductSort />
         <ProductList productList={searchedProduct} />
       </div>
     </div>

@@ -5,6 +5,14 @@
     align-items: center;
     justify-content: center;
 
+    .line {
+      width: 1630px;
+      height: 1px;
+
+      margin-bottom: 30px;
+      border: 0.5px solid rgba(0, 0, 0, 0.5);
+    }
+
     .product-search {
       width: 1630px;
       margin-bottom: 30px;
