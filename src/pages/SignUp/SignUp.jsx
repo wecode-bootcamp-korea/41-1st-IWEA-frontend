@@ -4,12 +4,16 @@ import './SignUp.scss';
 const SignUp = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
-  const [pw, setPw] = useState('');
-  const [phone, setPhone] = useState('');
+  const [password, setPw] = useState('');
+  const [phoneNumber, setPhoneNumber] = useState('');
   const [address, setAddress] = useState('');
 
-  const handleLogin = () => {
-    fetch('http://10.58.52.136:3000/users/login', {
+  console.log(name);
+
+  const handleSignUp = e => {
+    e.preventDefault();
+
+    fetch('http://10.58.52.73:3000/signup', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
@@ -17,41 +21,35 @@ const SignUp = () => {
       body: JSON.stringify({
         name: name,
         email: email,
-        password: pw,
-        phone: phone,
+        password: password,
+        phoneNumber: phoneNumber,
         address: address,
       }),
-    })
-      .then(response => response.json())
-      .then(data => {
-        console.log(data);
-        localStorage.setItem('token', data.accessToken);
-      });
+    }).then(res => console.log(res));
+    // .then(response => response.json())
+    // .then(data => {
+    //   console.log(data);
+    // });
   };
 
   function handleNameInput(event) {
     setName(event.target.value);
-    console.log('name', name);
   }
 
   function handleEmailInput(event) {
     setEmail(event.target.value);
-    console.log('email', email);
   }
 
   function handlePwInput(event) {
     setPw(event.target.value);
-    console.log('pw', pw);
   }
 
-  function handlePhoneInput(event) {
-    setPhone(event.target.value);
-    console.log('phone', phone);
+  function handlePhoneNumberInput(event) {
+    setPhoneNumber(event.target.value);
   }
 
   function handleAddressInput(event) {
     setAddress(event.target.value);
-    console.log('address', address);
   }
 
   return (
@@ -166,7 +164,7 @@ const SignUp = () => {
                   id="phone"
                   type="text"
                   className="input-box"
-                  onChange={handlePhoneInput}
+                  onChange={handlePhoneNumberInput}
                 ></input>
                 <div className="space"></div>
                 <button class="address-button">우편번호 찾기</button>
@@ -207,7 +205,20 @@ const SignUp = () => {
                   </div>
                 </div>
                 <div className="space"></div>
-                <button className="signup-button">회원 가입</button>
+                <button
+                  className="signup-button"
+                  onClick={handleSignUp}
+                  disabled={
+                    email.includes('@') &&
+                    /^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,}$/.test(
+                      password
+                    )
+                      ? false
+                      : true
+                  }
+                >
+                  회원 가입
+                </button>
               </div>
             </form>
           </div>
