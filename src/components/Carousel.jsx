@@ -31,7 +31,7 @@ const Carousel = () => {
         </button>
 
         <div className="carousel-wrapper" ref={carouselRef}>
-          {CAROUSEL_ITEM_LIST.map(item => {
+          {CAROUSEL_ITEM_LISTS.map(item => {
             return (
               <div
                 key={item.id}
@@ -51,7 +51,7 @@ const Carousel = () => {
 
 export default Carousel;
 
-const CAROUSEL_ITEM_LIST = [
+const CAROUSEL_ITEM_LISTS = [
   {
     id: 1,
     src: './images/Home/home-category1.png',
