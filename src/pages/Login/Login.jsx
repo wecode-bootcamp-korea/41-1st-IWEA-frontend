@@ -1,7 +1,39 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Login.scss';
 
 const Login = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleLogin = e => {
+    e.preventDefault();
+    fetch('http://10.58.52.73:3000/signin', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json;charset=utf-8',
+      },
+      body: JSON.stringify({
+        email: email,
+        password: password,
+      }),
+    })
+      .then(response => response.json())
+      .then(data => {
+        console.log(data);
+        localStorage.setItem('token', data.accessToken);
+      });
+  };
+
+  function handleEmailInput(event) {
+    setEmail(event.target.value);
+    console.log('id', email);
+  }
+
+  function handlePasswordInput(event) {
+    setPassword(event.target.value);
+    console.log('pw', password);
+  }
+
   return (
     <div className="Login">
       <div className="login-wrap">
@@ -50,19 +82,43 @@ const Login = () => {
           <div className="login-right-inner">
             <form className="form">
               <div className="form-inner">
-                <span>이메일 또는 확인된 휴대폰 번호</span>
-                <input type="text" id="username"></input>
-                <span className="login-option">
-                  다른 로그인 옵션: 일회용 코드로 로그인
+                <span className="login-right-font">
+                  이메일 또는 확인된 휴대폰 번호
                 </span>
+                <input
+                  type="text"
+                  id="username"
+                  className="login-input-size"
+                  onChange={handleEmailInput}
+                ></input>
+                <div>
+                  <span className="login-option login-right-font">
+                    다른 로그인 옵션:
+                  </span>
+                  <a
+                    href="#"
+                    className="login-option-link link login-right-font"
+                  >
+                    일회용 코드로 로그인
+                  </a>
+                </div>
                 <div className="email-space"></div>
-                <span class="password-name">비밀번호</span>
-                <input type="password" id="password"></input>
-                <span>비밀번호 찾기</span>
+                <span class="password-name login-right-font">비밀번호</span>
+                <input
+                  type="password"
+                  id="password"
+                  className="login-input-size"
+                  onChange={handlePasswordInput}
+                ></input>
+                <span className="login-right-font link">비밀번호 찾기</span>
                 <div className="password-space-down"></div>
                 <div className="login-status">
-                  <input type="checkbox" className="login-checkbox"></input>
-                  <span className="login-checkbox-label">로그인 상태 유지</span>
+                  <div className="login-status-box">
+                    <input type="checkbox" className="login-checkbox"></input>
+                    <div className="login-checkbox-label login-right-font">
+                      로그인 상태 유지
+                    </div>
+                  </div>
                   <img
                     src="images/alert.png"
                     alt="alert"
@@ -70,15 +126,33 @@ const Login = () => {
                   />
                 </div>
                 <div className="login-space-up"></div>
-                <button class="login-button">로그인</button>
+                <button
+                  type="button"
+                  class="login-button login-right-font"
+                  onClick={handleLogin}
+                  disabled={
+                    email.includes('@') &&
+                    /^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,}$/.test(
+                      password
+                    )
+                      ? false
+                      : true
+                  }
+                >
+                  로그인
+                </button>
               </div>
             </form>
             <div className="footer-space-up"></div>
             <div className="login-right-footer">
               <div className="right-footer-inner">
-                <span>IWEA 계정이 없으신가요? 지금 바로 만들어보세요.</span>
+                <span className="login-right-font login-footer-make">
+                  IWEA 계정이 없으신가요? 지금 바로 만들어보세요.
+                </span>
                 <div className="footer-space"></div>
-                <button>개인 회원 가입하기</button>
+                <button className="login-signup login-right-font">
+                  개인 회원 가입하기
+                </button>
               </div>
             </div>
           </div>
