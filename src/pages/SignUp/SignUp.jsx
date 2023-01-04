@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate, Link } from 'react-router-dom';
 import './SignUp.scss';
 
 const SignUp = () => {
@@ -7,8 +8,17 @@ const SignUp = () => {
   const [password, setPw] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
   const [address, setAddress] = useState('');
+  const navigate = useNavigate();
 
-  console.log(name);
+  const emailReg =
+    /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/;
+  const passwordReg =
+    /^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,}$/;
+  const phonenumberReg = /^(010)-?([0-9]{4})-?([0-9]{4})$/;
+  const isEmailValid = emailReg.test(email);
+  const isPasswordValid = passwordReg.test(password);
+  const isPhoneNumberValid = phonenumberReg.test(phoneNumber);
+  const signupValid = isEmailValid && isPasswordValid && isPhoneNumberValid;
 
   const handleSignUp = e => {
     e.preventDefault();
@@ -25,11 +35,13 @@ const SignUp = () => {
         phoneNumber: phoneNumber,
         address: address,
       }),
-    }).then(res => console.log(res));
-    // .then(response => response.json())
-    // .then(data => {
-    //   console.log(data);
-    // });
+    })
+      .then(response => response.json())
+      .then(data => {
+        console.log(data);
+        alert('회원가입에 성공했습니다');
+        navigate('/');
+      });
   };
 
   function handleNameInput(event) {
@@ -58,11 +70,15 @@ const SignUp = () => {
         <div className="signup-left">
           <div className="signup-left-inner">
             <div className="signup-header">
-              <img
-                src="images/arrow.png"
-                alt="arrow"
-                className="signup-arrow"
-              />
+              <div className="arrow-block">
+                <Link to="/login">
+                  <img
+                    src="images/arrow.png"
+                    alt="arrow"
+                    className="signup-arrow"
+                  />
+                </Link>
+              </div>
               <img
                 src="images/loginIWEA.png"
                 alt="IWEA"
@@ -150,6 +166,11 @@ const SignUp = () => {
                   className="input-box"
                   onChange={handleEmailInput}
                 ></input>
+                {email.length === 0 || isEmailValid || (
+                  <div className="input-demand signup-right-font">
+                    이메일 형식이 아닙니다.
+                  </div>
+                )}
                 <div className="space"></div>
                 <span className="name-title">비밀번호</span>
                 <input
@@ -158,6 +179,11 @@ const SignUp = () => {
                   className="input-box"
                   onChange={handlePwInput}
                 ></input>
+                {password.length === 0 || isPasswordValid || (
+                  <div className="input-demand signup-right-font">
+                    비밀번호는 8자 이상, 영문자,숫자,특수문자 포함입니다.
+                  </div>
+                )}
                 <div className="space"></div>
                 <span className="name-title">휴대폰</span>
                 <input
@@ -166,6 +192,15 @@ const SignUp = () => {
                   className="input-box"
                   onChange={handlePhoneNumberInput}
                 ></input>
+                {phoneNumber.length === 0 || isPhoneNumberValid ? (
+                  <div className="input-demand-phone signup-right-font">
+                    010-1234-5678 or 01012345678
+                  </div>
+                ) : (
+                  <div className="input-demand signup-right-font">
+                    휴대폰 번호가 올바르지 않습니다.
+                  </div>
+                )}
                 <div className="space"></div>
                 <button class="address-button">우편번호 찾기</button>
                 <div className="space"></div>
@@ -208,14 +243,7 @@ const SignUp = () => {
                 <button
                   className="signup-button"
                   onClick={handleSignUp}
-                  disabled={
-                    email.includes('@') &&
-                    /^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,}$/.test(
-                      password
-                    )
-                      ? false
-                      : true
-                  }
+                  disabled={signupValid ? false : true}
                 >
                   회원 가입
                 </button>

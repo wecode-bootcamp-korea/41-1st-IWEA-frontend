@@ -26,13 +26,18 @@
           align-items: center;
           justify-content: flex-start;
 
-          .signup-arrow {
+          .arrow-block {
             display: inline-block;
             position: absolute;
             left: 32px;
-            width: 16px;
-            height: 16px;
-            filter: opacity(0.5) drop-shadow(0 0 0 white);
+
+            .signup-arrow {
+              left: 32px;
+              width: 16px;
+              height: 16px;
+              cursor: pointer;
+              filter: opacity(0.5) drop-shadow(0 0 0 white);
+            }
           }
 
           .signup-logo {
@@ -154,6 +159,10 @@
       //justify-content: center;
       width: 60%;
 
+      .signup-right-font {
+        font-size: 14px;
+      }
+
       .signup-welcome {
         font-size: 20px;
         font-weight: 900;
@@ -183,8 +192,13 @@
             justify-content: space-between;
             width: 448px;
 
-            .space {
-              height: 32px;
+            .input-demand {
+              margin-top: 5px;
+              color: red;
+            }
+
+            .input-demand-phone {
+              margin-top: 5px;
             }
 
             .password-name {
