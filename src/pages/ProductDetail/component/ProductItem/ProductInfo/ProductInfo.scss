@@ -1,5 +1,6 @@
 .product-info-wrap {
   margin-bottom: 50px;
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .product-info-item {
@@ -7,16 +8,13 @@
   padding: 40px 100px 40px 0;
   border: none;
   border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
   background-color: white;
   font-size: 20px;
   font-weight: bold;
   vertical-align: middle;
   cursor: pointer;
 }
-
-// .product-info-item:hover .product-info-modal {
-//   color: pink;
-// }
 
 .product-info-modal {
   display: flex;

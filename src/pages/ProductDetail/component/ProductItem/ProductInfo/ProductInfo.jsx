@@ -3,21 +3,22 @@ import ProductInfoModal from './ProductInfoModal/ProductInfoModal';
 import { useState } from 'react';
 
 const ProductInfo = () => {
-  const [modal, setModal] = useState(true);
+  const [modalOpen, setModalOpen] = useState(false);
+
+  const showModal = () => {
+    setModalOpen(true);
+  };
 
   return (
     <div className="product-info-wrap">
-      <button
-        className="product-info-item"
-        onClick={() => {
-          setModal(!modal);
-        }}
-      >
-        <span className="product-info-modal">
+      <div className="product-info-item">
+        <span className="product-info-modal" onClick={showModal}>
           <span>제품 설명</span>
-          {modal ? <ProductInfoModal /> : null}
         </span>
-      </button>
+      </div>
+      {modalOpen && (
+        <ProductInfoModal setModalOpen={setModalOpen} modalOpen={modalOpen} />
+      )}
     </div>
   );
 };
