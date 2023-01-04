@@ -5,6 +5,11 @@ import './ProductItem.scss';
 
 const ProductItem = () => {
   const [productImgList, setProductImgList] = useState([]);
+  const [productModal, setProductModal] = useState('');
+
+  const showModal = () => {
+    setProductModal(true);
+  };
 
   useEffect(() => {
     fetch('../data/list-data.json')

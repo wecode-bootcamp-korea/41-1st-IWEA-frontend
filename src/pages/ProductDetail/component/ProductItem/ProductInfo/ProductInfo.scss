@@ -1,16 +1,25 @@
 .product-info-wrap {
   margin-bottom: 50px;
+}
 
-  .product-info-item {
-    padding: 40px 100px 40px 0;
-    border-top: 1px solid #ccc;
-    // background-color: salmon;
-    font-size: 20px;
-    font-weight: bold;
-    vertical-align: middle;
-  }
+.product-info-item {
+  width: 100%;
+  padding: 40px 100px 40px 0;
+  border: none;
+  border-top: 1px solid #ccc;
+  background-color: white;
+  font-size: 20px;
+  font-weight: bold;
+  vertical-align: middle;
+  cursor: pointer;
+}
 
-  .product-info-item:last-child {
-    border-bottom: 1px solid #ccc;
-  }
+// .product-info-item:hover .product-info-modal {
+//   color: pink;
+// }
+
+.product-info-modal {
+  display: flex;
+  // position: relative;
+  justify-content: start;
 }
