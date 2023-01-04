@@ -1,9 +1,22 @@
 import React, { useState } from 'react';
+import { useNavigate, Link } from 'react-router-dom';
 import './Login.scss';
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate();
+
+  const emailReg =
+    /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/;
+  const passwordReg =
+    /^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,}$/;
+  const isEmailValid = emailReg.test(email);
+  const isPasswordValid = passwordReg.test(password);
+
+  const goToHome = () => {
+    navigate('/');
+  };
 
   const handleLogin = e => {
     e.preventDefault();
@@ -17,21 +30,23 @@ const Login = () => {
         password: password,
       }),
     })
-      .then(response => response.json())
+      .then(response => {
+        return response.json();
+      })
       .then(data => {
         console.log(data);
-        localStorage.setItem('token', data.accessToken);
+        localStorage.setItem('TOKEN', data.accessToken);
+        alert('로그인에 성공했습니다');
+        navigate('/');
       });
   };
 
   function handleEmailInput(event) {
     setEmail(event.target.value);
-    console.log('id', email);
   }
 
   function handlePasswordInput(event) {
     setPassword(event.target.value);
-    console.log('pw', password);
   }
 
   return (
@@ -40,7 +55,15 @@ const Login = () => {
         <div className="login-left">
           <div className="login-left-inner">
             <div className="login-header">
-              <img src="images/arrow.png" alt="arrow" className="login-arrow" />
+              <div className="arrow-block">
+                <Link to="/">
+                  <img
+                    src="images/arrow.png"
+                    alt="arrow"
+                    className="login-arrow"
+                  />
+                </Link>
+              </div>
               <img
                 src="images/loginIWEA.png"
                 alt="IWEA"
@@ -82,15 +105,19 @@ const Login = () => {
           <div className="login-right-inner">
             <form className="form">
               <div className="form-inner">
-                <span className="login-right-font">
-                  이메일 또는 확인된 휴대폰 번호
-                </span>
+                <span className="login-right-font">이메일</span>
                 <input
                   type="text"
                   id="username"
                   className="login-input-size"
+                  value={email}
                   onChange={handleEmailInput}
                 ></input>
+                {email.length === 0 || isEmailValid || (
+                  <div className="email-input-demand login-right-font">
+                    이메일 형식이 아닙니다.
+                  </div>
+                )}
                 <div>
                   <span className="login-option login-right-font">
                     다른 로그인 옵션:
@@ -110,6 +137,11 @@ const Login = () => {
                   className="login-input-size"
                   onChange={handlePasswordInput}
                 ></input>
+                {password.length === 0 || isPasswordValid || (
+                  <div className="email-input-demand login-right-font">
+                    비밀번호는 8자 이상, 영문자,숫자,특수문자 포함입니다.
+                  </div>
+                )}
                 <span className="login-right-font link">비밀번호 찾기</span>
                 <div className="password-space-down"></div>
                 <div className="login-status">
@@ -130,14 +162,7 @@ const Login = () => {
                   type="button"
                   class="login-button login-right-font"
                   onClick={handleLogin}
-                  disabled={
-                    email.includes('@') &&
-                    /^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,}$/.test(
-                      password
-                    )
-                      ? false
-                      : true
-                  }
+                  disabled={isEmailValid && isPasswordValid ? false : true}
                 >
                   로그인
                 </button>
@@ -151,7 +176,7 @@ const Login = () => {
                 </span>
                 <div className="footer-space"></div>
                 <button className="login-signup login-right-font">
-                  개인 회원 가입하기
+                  <Link to="/signup">개인 회원 가입하기</Link>
                 </button>
               </div>
             </div>

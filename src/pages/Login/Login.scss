@@ -32,14 +32,18 @@
           align-items: center;
           justify-content: flex-start;
 
-          .login-arrow {
+          .arrow-block {
             display: inline-block;
             position: absolute;
             left: 32px;
-            width: 16px;
-            height: 16px;
-            filter: opacity(0.5) drop-shadow(0 0 0 white);
-            cursor: pointer;
+
+            .login-arrow {
+              left: 32px;
+              width: 16px;
+              height: 16px;
+              cursor: pointer;
+              filter: opacity(0.5) drop-shadow(0 0 0 white);
+            }
           }
 
           .login-logo {
@@ -110,6 +114,10 @@
               width: 100%;
               height: 48px;
               margin: 5px 0;
+            }
+
+            .email-input-demand {
+              color: red;
             }
 
             .login-option {
@@ -187,6 +195,7 @@
             .login-footer-make {
               font-weight: bold;
             }
+
             .login-signup {
               min-height: 3.5rem;
               padding: 0 32px;
