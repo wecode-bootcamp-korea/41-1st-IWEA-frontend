@@ -1,0 +1,207 @@
+.container {
+  padding: 80px 50px 50px 110px;
+  background-color: rgb(var(--colour-neutral-2, 245, 245, 245));
+
+  .container_first {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+
+    p {
+      margin: 0px 0px 25px;
+    }
+
+    .family_box h3 {
+      font-size: 16px;
+    }
+
+    .family_box {
+      margin-bottom: 40px;
+
+      .business {
+        margin: 20px 0;
+        line-height: 20px;
+      }
+      .free_join {
+        margin: 20px 0;
+        line-height: 23px;
+      }
+
+      .look {
+        margin-bottom: 20px;
+
+        a {
+          color: black;
+        }
+      }
+
+      .join_button {
+        width: 170px;
+        height: 40px;
+        border: 1px solid black;
+        border-radius: 64px;
+        background-color: black;
+        color: white;
+        font-size: 12px;
+        font-weight: 700;
+      }
+
+      .join_button_second {
+        width: 233px;
+      }
+    }
+
+    .iwea_family_join {
+      position: relative;
+    }
+  }
+  .container_icon {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    border-bottom: 1px solid rgb(178, 175, 175);
+  }
+
+  .icon {
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+
+    .sns {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 34px;
+      margin: 10px;
+      border: 1px solid rgb(194, 190, 190);
+      border-radius: 50px;
+      background-color: inherit;
+      .kakao {
+        width: 19px;
+        height: 21px;
+        background-color: inherit;
+      }
+
+      img {
+        width: 55%;
+      }
+    }
+
+    .instagram {
+      position: relative;
+      width: 40px;
+      height: 40px;
+      margin: 10px;
+      padding: 5px;
+      border: 1px solid rgb(192, 189, 189);
+      border-radius: 50px;
+      object-fit: cover;
+    }
+
+    .youtube {
+      position: relative;
+      width: 40px;
+      height: 40px;
+      margin: 10px;
+      padding: 2px;
+      border: 1px solid rgb(192, 189, 189);
+      border-radius: 50px;
+      object-fit: cover;
+    }
+
+    .kakaotalk {
+      position: relative;
+      object-fit: cover;
+      width: 40px;
+      height: 40px;
+      margin: 10px;
+      border: 1px solid rgb(188, 179, 179);
+      border-radius: 50px;
+    }
+  }
+
+  .logo {
+    display: flex;
+    align-items: flex-end;
+    margin: 20px;
+    .country_change {
+      display: flex;
+      align-items: center;
+      padding: 0.625rem 1.25rem;
+      border: 1px solid rgb(var(--colour-neutral-3, 223, 223, 223));
+      border-radius: 20px;
+      background-color: inherit;
+      color: rgb(var(--colour-text-and-icon-2, 72, 72, 72));
+      font-size: 0.75rem;
+      font-weight: 700;
+      line-height: 1.5;
+
+      .world {
+        position: relative;
+        width: 15px;
+        height: 15px;
+        margin-right: 10px;
+      }
+    }
+    .language_button {
+      height: 38px;
+      margin-left: 18px;
+      border: 1px solid rgb(var(--colour-neutral-3, 223, 223, 223));
+      border-radius: 20px;
+      background-color: inherit;
+      font-weight: 700;
+    }
+    .korean {
+      margin: 20px;
+      color: rgb(var(--colour-text-and-icon-2, 72, 72, 72));
+      font-size: 13px;
+      line-height: 2;
+    }
+    .arrow {
+      height: 10px;
+      margin-right: 8px;
+    }
+  }
+
+  .bottom-row {
+    display: flex;
+    justify-content: space-between;
+    .inter {
+      margin-top: 30px;
+      color: rgb(var(--colour-text-and-icon-2, 72, 72, 72));
+    }
+    .hnf-first {
+      position: relative;
+      margin-top: 20px;
+    }
+    .hnf-list {
+      position: relative;
+      font-size: 0.75rem;
+      .hnf-list-item {
+        display: inline-block;
+        margin: 0 1.25rem 0 0;
+        padding: 0.5rem 0;
+      }
+    }
+  }
+  .inter {
+    margin: 0;
+    font-size: 0.75rem;
+  }
+  .bottom_first {
+    position: relative;
+    margin-top: 20px;
+  }
+  .bottom_of_bottom p {
+    width: 615.33px;
+    height: 20px;
+    margin-top: 0px;
+    color: rgb(var(--colour-text-and-icon-2, 72, 72, 72));
+    font-size: 0.75rem;
+    .bottom_second {
+      width: 63px;
+      height: 17px;
+    }
+  }
+}
