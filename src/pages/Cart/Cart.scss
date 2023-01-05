@@ -1,0 +1,20 @@
+.top-left {
+  display: flex;
+  justify-content: space-between;
+  .three-spots {
+    width: 34px;
+    height: 23px;
+  }
+}
+.delivery {
+  display: flex;
+  justify-content: space-between;
+}
+.first-firniture {
+  display: flex;
+  justify-content: space-between;
+}
+.furniture {
+  width: 50px;
+  height: 50px;
+}
