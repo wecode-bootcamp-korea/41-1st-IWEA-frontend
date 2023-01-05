@@ -3,7 +3,6 @@ import './ProductAsideInfo.scss';
 
 const productAsideInfo = ({ productList }) => {
   const { korean_name, english_name, price } = productList;
-  // console.log(productList);
   return (
     <div className="product-aside">
       <div className="product-aside-title">

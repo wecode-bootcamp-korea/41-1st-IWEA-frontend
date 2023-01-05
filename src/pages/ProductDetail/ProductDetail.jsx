@@ -6,11 +6,10 @@ import './ProductDetail.scss';
 
 const ProductDetail = () => {
   const [productList, setproductList] = useState([]);
-  // const [productAsideList, setProductAsideList] = useState([]);
 
   // product image 불러오기
   useEffect(() => {
-    fetch('http://10.58.52.92:3000/products/productId/10', {
+    fetch(`http://10.58.52.62:3000/products/productId/${id}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
@@ -20,7 +19,6 @@ const ProductDetail = () => {
         return res.json();
       })
       .then(data => {
-        // console.log(data.data);
         setproductList(data.data);
       });
   }, []);
@@ -32,7 +30,7 @@ const ProductDetail = () => {
           <ProductItem productList={productList} />
           <ProductAside productList={productList} />
         </div>
-        <ProductSlide />
+        <ProductSlide productList={productList} />
       </div>
     </div>
   );

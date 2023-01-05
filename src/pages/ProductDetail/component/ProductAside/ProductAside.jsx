@@ -4,7 +4,6 @@ import ProductContentBuy from './ProductAsideBuy/ProductAsideBuy';
 import './ProductAside.scss';
 
 const ProductContent = ({ productList }) => {
-  console.log(productList);
   return (
     <div className="product-content-wrap">
       <div className="product-content-list">

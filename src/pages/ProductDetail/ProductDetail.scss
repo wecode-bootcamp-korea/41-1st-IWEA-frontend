@@ -10,7 +10,6 @@
   margin: 0;
   padding-top: 50px;
   @include flex-center;
-  // background-color: palegoldenrod;
 
   .product-content {
     display: flex;
@@ -21,6 +20,7 @@
       display: flex;
       justify-content: space-between;
       height: 1000px;
+      margin: 100px 0;
     }
   }
 }

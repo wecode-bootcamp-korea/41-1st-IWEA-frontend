@@ -2,11 +2,12 @@
   width: 900px;
   height: 900px;
   // background-color: aquamarine;
-  gap: 2px;
+  gap: 10px;
 
   .product-img-wrap {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    margin-bottom: 50px;
   }
 }

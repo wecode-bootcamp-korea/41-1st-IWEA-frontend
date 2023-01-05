@@ -1,10 +1,15 @@
 .product-info-wrap {
   margin-bottom: 50px;
-  background-color: rgba(0, 0, 0, 0.4);
+  // background-color: rgba(0, 0, 0, 0.4);
+
+  .product-info-desc {
+    height: 50px;
+  }
 }
 
 .product-info-item {
   width: 100%;
+  margin-bottom: 20px;
   padding: 40px 100px 40px 0;
   border: none;
   border-top: 1px solid #ccc;
@@ -20,4 +25,8 @@
   display: flex;
   // position: relative;
   justify-content: start;
+}
+
+.product-info-modal span {
+  // color: pink;
 }
