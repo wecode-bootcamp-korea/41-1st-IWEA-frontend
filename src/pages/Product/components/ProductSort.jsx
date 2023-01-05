@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-
 import { SORT_LISTS, PRICE_TAG_LISTS } from './PageSortConstData';
 import './ProductSort.scss';
 
@@ -26,6 +25,7 @@ const ProductSort = () => {
       <button className="productSort-btn">
         가격 {isSortBoxVisible ? '▲' : '▼'}
       </button>
+
       <div className="prdocutSort-btn-dropBox">
         {PRICE_TAG_LISTS.map(price => {
           return (
