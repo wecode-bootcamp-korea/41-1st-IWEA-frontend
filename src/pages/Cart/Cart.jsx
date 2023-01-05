@@ -1,7 +1,11 @@
 import React from 'react';
+import './Cart.scss';
 
-const Cart = () => {
-  return <div>Cart</div>;
-};
-
+function Cart() {
+  return (
+    <div className="cart_container">
+      <div>카트하즈아</div>;
+    </div>
+  );
+}
 export default Cart;
