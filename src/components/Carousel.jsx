@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import './Carousel.scss';
 
 import { GrPrevious } from 'react-icons/gr';

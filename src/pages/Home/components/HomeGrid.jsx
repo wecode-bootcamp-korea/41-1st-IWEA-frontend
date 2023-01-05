@@ -18,11 +18,11 @@ const HomeGrid = () => {
         </div>
       </div>
       <div className="homeGrid-container">
-        <div className="itemOne"></div>
-        <div className="itemTwo"></div>
-        <div className="itemThree"></div>
-        <div className="itemFour"></div>
-        <div className="itemFive"></div>
+        <div className="itemOne" />
+        <div className="itemTwo" />
+        <div className="itemThree" />
+        <div className="itemFour" />
+        <div className="itemFive" />
       </div>
     </div>
   );
