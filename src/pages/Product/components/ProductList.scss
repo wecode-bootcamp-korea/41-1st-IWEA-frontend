@@ -4,4 +4,24 @@
   grid-template-columns: 1fr 1fr 1fr 1fr;
   width: 85vw;
   margin: 0 auto;
+
+  .ProductItem {
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+    transition: transform 0.3s ease-out;
+    border: 1px solid grey;
+    border-radius: 5px;
+    background-color: #fff;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.03);
+    }
+    .productItem-image {
+      width: 200px;
+      height: 200px;
+      margin: 0 auto;
+    }
+  }
 }
