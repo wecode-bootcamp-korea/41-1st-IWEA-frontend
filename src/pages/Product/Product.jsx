@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
 
-// import { useLocation, useParams, useSearchParams } from 'react-router-dom';
-
 import Carousel from '../../components/Carousel';
 import ProductList from './components/ProductList';
 import ProductSort from './components/ProductSort';
@@ -13,14 +11,20 @@ const Product = () => {
   // comnst [sendItem, setSendItem] = useState([])
   // const [searchParams, setSearchPrams] = useSearchParams();
 
-  // 쿼리스트링 구현하기 - 버튼을 눌러서 백엔드서버로 보내고, 다시 GET한다.
-  // const location = useLocation();
+  // 페이지네이션 Code
   // const [searchParams, setSearchParams] = useParams();
-  // const paramsId = useParams();
-  // console.log('쿼리스트링확인',queryString);
+  // const offset = searchParams.get('offset');
+  // const limit = searchParams.get('limit');
 
+  // const handleMoreLoad = moreLoad => {
+  //   console.log('handleMoreLoad 함수 실행중..');
+  //   searchParams.set('offset', 12);
+  //   setSearchParams(searchParams);
+  // };
+
+  // fetch에 ?start=${offset}&limit=${limit} 추가
   useEffect(() => {
-    fetch('http://10.58.52.62:3000/products', {
+    fetch(`http://10.58.52.62:3000/products`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -61,6 +65,7 @@ const Product = () => {
         <div className="line" />
         <ProductSort />
         <ProductList productList={productList} />
+        {/* <button onClick={handleMoreLoad}>더보기</button> */}
       </div>
     </div>
   );

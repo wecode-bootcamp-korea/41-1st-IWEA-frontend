@@ -27,10 +27,6 @@ const ProductDetail = () => {
       ProductDetail
       <h2>{item.english_name}</h2>
       <h2>{item.price}</h2>
-      <img src={item.image_url[0].url} alt="0" />
-      <img src={item.image_url[1].url} alt="1" />
-      <img src={item.image_url[2].url} alt="2" />
-      <img src={item.image_url[3].url} alt="3" />
     </div>
   );
 };
