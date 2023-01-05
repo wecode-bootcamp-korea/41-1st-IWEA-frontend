@@ -1,77 +1,94 @@
-@import '../styles/color';
-@import '../styles//mixin.scss';
-
-.Carousel {
-  margin-bottom: 30px;
-  .carousel-title {
-    width: 90%;
-    margin: auto;
+.CarouselTest {
+  width: 90%;
+  margin: 0 auto 48px auto;
+  .CarouselTest-text {
     margin-bottom: 20px;
     font-size: 23px;
     font-weight: bold;
   }
-  .carousel-container {
+  .CarouselTest-wrapper {
     position: relative;
-    &:hover .carousel-prevbtn,
-    &:hover .carousel-nextbtn {
+    width: 87vw;
+    height: 400px;
+    &:hover .prevBtn,
+    &:hover .nextBtn {
       transition: 500ms;
       opacity: 1;
     }
 
-    .carousel-prevbtn {
+    .prevBtn {
       position: absolute;
       z-index: 1;
       top: 40%;
-      left: 4%;
       width: 50px;
       height: 50px;
       border: none;
-      border-radius: 70px;
-      opacity: 0%;
-      background-color: $blackColor;
+      border-radius: 100px;
+      background-color: #000000;
+      color: #ffffff;
+      font-weight: bold;
       cursor: pointer;
       &:hover {
-        background-color: $pinkColor;
+        background-color: #4a4a4a;
       }
     }
-    .carousel-nextbtn {
+    .nextBtn {
       position: absolute;
       z-index: 1;
       top: 40%;
-      left: 90%;
+      left: 96%;
       width: 50px;
       height: 50px;
       border: none;
-      border-radius: 70px;
-      opacity: 0%;
-      background-color: $blackColor;
+      border-radius: 100px;
+      background-color: #000000;
+      color: #ffffff;
+      font-weight: bold;
       cursor: pointer;
-      &:hover {
-        background-color: $pinkColor;
-      }
     }
+    .CarouselTest-image-wrapper {
+      overflow: scroll;
+      &::-webkit-scrollbar {
+        width: 0px;
+        height: 2px;
+      }
+      &::-webkit-scrollbar-thumb {
+        border-radius: 50px;
+        background-color: #000000;
+      }
+      &::-webkit-scrollbar-track {
+        background-color: #e4e4e4;
+      }
+      .image-container {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: start;
+        width: 87vw;
+        height: 380px;
+        gap: 20px;
 
-    .carousel-wrapper {
-      display: flex;
-      justify-content: center;
+        .image-card {
+          position: relative;
 
-      .carousel-box {
-        position: relative;
-        .carousel-image {
-          margin-right: 50px;
-          box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6);
-        }
-        .carousel-navbtn {
-          position: absolute;
-          top: 75%;
-          left: 23%;
-          width: 100px;
-          height: 40px;
-          border: none;
-          border-radius: 70px;
-          background-color: #ffffff;
-          font-weight: bold;
-          cursor: pointer;
+          img {
+            width: 248px;
+            height: 320px;
+            object-fit: cover;
+          }
+
+          .linkBtn {
+            position: absolute;
+            top: 70%;
+            left: 50%;
+            width: 100px;
+            height: 40px;
+            transform: translate(-50%, -50%);
+            border: none;
+            border-radius: 70px;
+            background-color: #ffffff;
+            font-weight: bold;
+            cursor: pointer;
+          }
         }
       }
     }
