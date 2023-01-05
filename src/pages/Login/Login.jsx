@@ -14,10 +14,6 @@ const Login = () => {
   const isEmailValid = emailReg.test(email);
   const isPasswordValid = passwordReg.test(password);
 
-  const goToHome = () => {
-    navigate('/');
-  };
-
   const handleLogin = e => {
     e.preventDefault();
     fetch('http://10.58.52.73:3000/signin', {
@@ -30,11 +26,8 @@ const Login = () => {
         password: password,
       }),
     })
-      .then(response => {
-        return response.json();
-      })
+      .then(response => response.json())
       .then(data => {
-        console.log(data);
         localStorage.setItem('TOKEN', data.accessToken);
         alert('로그인에 성공했습니다');
         navigate('/');
@@ -85,14 +78,7 @@ const Login = () => {
             <div className="login-footer">
               <div className="login-footer-inner">
                 <div className="login-footer-description">
-                  <span>IWEA.kr - </span>
-                  <a target="_blank" href="#" className="login-cookie">
-                    쿠키 정책
-                  </a>
-                  <span> , </span>
-                  <a target="_blank" href="#" className="login-personal">
-                    개인정보처리방침
-                  </a>
+                  <span>IWEA.kr</span>
                 </div>
                 <div className="login-footer-since">
                   © Inter IWEA Systems B.V. 1999-2023
@@ -174,7 +160,7 @@ const Login = () => {
                 <span className="login-right-font login-footer-make">
                   IWEA 계정이 없으신가요? 지금 바로 만들어보세요.
                 </span>
-                <div className="footer-space"></div>
+                <div className="footer-space" />
                 <button className="login-signup login-right-font">
                   <Link to="/signup">개인 회원 가입하기</Link>
                 </button>
