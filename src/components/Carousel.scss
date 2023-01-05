@@ -14,7 +14,7 @@
     position: relative;
     &:hover .carousel-prevbtn,
     &:hover .carousel-nextbtn {
-      // transition: 500ms;
+      transition: 500ms;
       opacity: 1;
     }
 
@@ -53,8 +53,6 @@
 
     .carousel-wrapper {
       display: flex;
-      flex-direction: row;
-      align-items: center;
       justify-content: center;
 
       .carousel-box {

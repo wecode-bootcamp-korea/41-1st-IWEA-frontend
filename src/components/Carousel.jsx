@@ -10,7 +10,7 @@ const Carousel = () => {
 
   const handlePrevBtn = () => {
     setCount(count => {
-      return count > 0 ? count - 1 : null;
+      return count > 0 ? count - 1 : 0;
     });
   };
   const handleNextBtn = () => {
