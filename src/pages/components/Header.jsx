@@ -1,5 +1,6 @@
 import React from 'react';
 import './Header.scss';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
@@ -13,26 +14,29 @@ const Header = () => {
             </div>
             <div className="inner-main">
               <h1 className="logo">
-                <img
-                  src="images/logo.png"
-                  alt="instagram"
-                  className="logo-img"
-                />
-                <input
-                  type="search"
-                  placeholder="검색어 입력"
-                  className="search-input"
-                ></input>
+                <Link to="/">
+                  <img src="images/logo.png" alt="IWEA" className="logo-img" />
+                </Link>
+                <div className="search">
+                  <input
+                    type="search"
+                    placeholder="검색어 입력"
+                    className="search-input"
+                  ></input>
+                  <span class="material-symbols-outlined">search</span>
+                </div>
                 <img
                   src="images/user.png"
                   alt="instagram"
                   className="user-img"
                 />
-                <img
-                  src="images/cart.png"
-                  alt="instagram"
-                  className="cart-img"
-                />
+                <Link to="/cart">
+                  <img
+                    src="images/cart.png"
+                    alt="instagram"
+                    className="cart-img"
+                  />
+                </Link>
               </h1>
             </div>
           </div>
@@ -68,13 +72,11 @@ const Header = () => {
                 </ul>
                 <ul className="nav-right-item">
                   <li className="nav-right-list">
-                    <img src="images/delivery.png" className="right-icon" />
                     <a href="#" className="nav-right-items">
                       우편 번호 입력
                     </a>
                   </li>
-                  <li className="nav-right-list-margin">
-                    <img src="images/store.png" className="right-icon" />
+                  <li className="nav-right-list">
                     <a href="#" className="nav-right-items">
                       매장 선택
                     </a>
