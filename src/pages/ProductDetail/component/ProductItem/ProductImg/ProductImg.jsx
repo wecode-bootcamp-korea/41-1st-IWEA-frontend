@@ -1,11 +1,13 @@
 import './ProductImg.scss';
 
-const ProductImg = ({ product }) => {
-  const { image_url } = product;
-
+const ProductImg = ({ productList }) => {
+  // const { image_url } = productImage;
+  // console.log(productImage);
   return (
     <div className="product-img">
-      <img key={product.id} src={image_url} alt="이미지" />
+      {productList.map(data => {
+        return <img key={data.url} src={data.url} alt="이미지" />;
+      })}
     </div>
   );
 };

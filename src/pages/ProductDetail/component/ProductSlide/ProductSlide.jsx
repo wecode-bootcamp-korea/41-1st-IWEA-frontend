@@ -12,6 +12,7 @@ const ProductSlide = () => {
         setProductCardList(result);
       });
   }, []);
+
   return (
     <div className="product-slide-wrap">
       <div className="product-slide-item-list">

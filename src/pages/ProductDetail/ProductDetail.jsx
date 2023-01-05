@@ -5,15 +5,10 @@ import ProductSlide from './component/ProductSlide/ProductSlide';
 import './ProductDetail.scss';
 
 const ProductDetail = () => {
-  // const [modalBgColor, setModalBgColor] = useState(true);
-  // const [koreanName, setKoreaName] = useState([]);
-  // const [englishName, setEnglishName] = useState('');
-  // const [shortDesc, setShortDesc] = useState('');
-  // const [longDesc, setLongDesc] = useState('');
-  // const [productPrice, setProductPrice] = useState('');
-  // const [productImg, setProductImg] = useState('');
-  // const [productList, setProductList] = useState([]);
+  const [productList, setproductList] = useState([]);
+  // const [productAsideList, setProductAsideList] = useState([]);
 
+  // product image 불러오기
   useEffect(() => {
     fetch('http://10.58.52.92:3000/products/productId/10', {
       method: 'GET',
@@ -25,19 +20,17 @@ const ProductDetail = () => {
         return res.json();
       })
       .then(data => {
-        console.log(data);
-        // setProductList(data);
-        // console.log(setProductList);
+        // console.log(data.data);
+        setproductList(data.data);
       });
   }, []);
 
-  // console.log(setProductList);
   return (
     <div className="product-wrap modal-bg">
       <div className="product-content">
         <div className="product-main">
-          {/* <ProductItem productList={productList} />
-          <ProductAside productList={productList} /> */}
+          <ProductItem productList={productList} />
+          <ProductAside productList={productList} />
         </div>
         <ProductSlide />
       </div>

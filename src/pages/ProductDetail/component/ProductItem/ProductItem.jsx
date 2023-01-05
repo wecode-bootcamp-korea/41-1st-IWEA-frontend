@@ -1,18 +1,16 @@
-import { useEffect, useState } from 'react';
+// import { useEffect, useState } from 'react';
 import ProductImg from './ProductImg/ProductImg';
-import ProductInfo from './ProductInfo/ProductInfo';
+// import ProductInfo from './ProductInfo/ProductInfo';
 import './ProductItem.scss';
 
 const ProductItem = ({ productList }) => {
-  console.log(productList);
+  // console.log(productList);
   return (
     <div className="product-item">
       <div className="product-img-wrap">
-        {productList.map(product => (
-          <ProductImg key={product.id} product={product} />
-        ))}
+        <ProductImg key={productList.id} productList={productList.image_url} />
       </div>
-      <ProductInfo />
+      {/* <ProductInfo /> */}
     </div>
   );
 };

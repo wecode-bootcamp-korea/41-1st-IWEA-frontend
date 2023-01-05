@@ -13,12 +13,14 @@
   // background-color: palegoldenrod;
 
   .product-content {
-    width: 1000px;
+    display: flex;
+    flex-direction: column;
+    width: 1500px;
 
     .product-main {
       display: flex;
       justify-content: space-between;
-      height: 800px;
+      height: 1000px;
     }
   }
 }

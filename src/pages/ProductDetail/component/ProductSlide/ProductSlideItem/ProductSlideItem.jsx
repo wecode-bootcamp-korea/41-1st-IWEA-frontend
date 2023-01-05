@@ -6,7 +6,7 @@ const ProductSlideItem = ({ productCard }) => {
   return (
     <div className="product-slide-item">
       <img key={productCard.id} src={tumbnail_url} alt="제품사진" />
-      <p class="name">{name}</p>
+      <p className="name">{name}</p>
       <p className="price">
         <span>￦</span>
         {price}
