@@ -13,9 +13,7 @@ function Parent() {
               <br /> 다양한 멤버 전용 혜택을누리세요.
             </p>
             <div className="look">
-              <a href="https://www.ikea.com/kr/ko/ikea-family/">
-                <u>자세히 보기</u>
-              </a>
+              <a href="#;">자세히 보기</a>
             </div>
             <button className="join_button">IWEA Family 가입하기</button>
           </div>
@@ -27,9 +25,7 @@ function Parent() {
               <br /> 다양한 혜택들을 받으세요
             </p>
             <div className="look">
-              <a href="https://www.ikea.com/kr/ko/ikea-family/">
-                <u>자세히 보기</u>
-              </a>
+              <a href="#;">자세히 보기</a>
             </div>
             <button className="join_button join_button_second">
               IWEA Business Network 가입하기
@@ -40,54 +36,41 @@ function Parent() {
           <p>
             <b>고객문의</b>
           </p>
-          <p>고객지원</p>
-          <p>자주 묻는 질문</p>
-          <p>문의하기</p>
-          <p>배송조회</p>
-          <p>교환환불</p>
-          <p>품질보증</p>
-          <p>제품리콜</p>
-          <p>피드백</p>
-          <p>부품 신청</p>
+          <div>
+            {MENU_LIST.map(menuList => {
+              return <p key={menuList.id}>{menuList.menuName}</p>;
+            })}
+          </div>
         </div>
         <div>
           <p>
             <b>쇼핑하기</b>
           </p>
-          <p>쇼핑하기</p>
-          <p>헤이오더</p>
-          <p>IWEA for Business</p>
-          <p>셀프 플래닝</p>
-          <p>IWEA 모바일 앱</p>
-          <p>제품 사용 팁/가이드</p>
-          <p>제품 구매 가이드</p>
-          <p>브로슈어</p>
-          <p>결제 옵션</p>
-          <p>기프트 카드</p>
+          <div>
+            {MENU_LIST_SECOND.map(menuList => {
+              return <p key={menuList.id}>{menuList.menuName}</p>;
+            })}
+          </div>
         </div>
         <div>
           <p>
             <b>서비스</b>
           </p>
-          <p>IWEA 서비스</p>
-          <p>배송 서비스</p>
-          <p>조립 서비스</p>
-          <p>설치 서비스</p>
-          <p>주방 서비스</p>
-          <p>구매상담 서비스</p>
-          <p>인테리어 디자인 서비스</p>
-          <p>바이백 서비스</p>
+          <div>
+            {MENU_LIST_THIRD.map(menuList => {
+              return <p key={menuList.id}>{menuList.menuName}</p>;
+            })}
+          </div>
         </div>
         <div>
           <p>
             <b>IWEA 이야기</b>
           </p>
-          <p>브랜드 소개</p>
-          <p>집에서의 삶</p>
-          <p>지속가능한 생활</p>
-          <p>내가 아끼는 집, 나를 아끼는 집</p>
-          <p>뉴스룸</p>
-          <p>채용정보</p>
+          <div>
+            {MENU_LIST_FOURTH.map(menuList => {
+              return <p key={menuList.id}>{menuList.menuName}</p>;
+            })}
+          </div>
         </div>
       </div>
       <div className="container_icon">
@@ -145,10 +128,54 @@ function Parent() {
           <p>통신판매업 신고:1234-경기광명-5678</p>
           <p>TEL:1234-5678</p>
         </div>
-        <div />
       </div>
     </footer>
   );
 }
 
 export default Parent;
+
+export const MENU_LIST = [
+  { id: 1, menuName: '고객지원' },
+  { id: 2, menuName: '자주 묻는 질문' },
+  { id: 3, menuName: '문의하기' },
+  { id: 4, menuName: '배송조회' },
+  { id: 5, menuName: '교환환불' },
+  { id: 6, menuName: '품질보증' },
+  { id: 7, menuName: '제품리콜' },
+  { id: 8, menuName: '피드백' },
+  { id: 9, menuName: '부품 신청' },
+];
+
+export const MENU_LIST_SECOND = [
+  { id: 1, menuName: '쇼핑하기' },
+  { id: 2, menuName: '헤이오더' },
+  { id: 3, menuName: 'IWEA for Business' },
+  { id: 4, menuName: '셀프 플래닝' },
+  { id: 5, menuName: 'IWEA 모바일 앱' },
+  { id: 6, menuName: '제품 사용 팁/가이드' },
+  { id: 7, menuName: '제품 구매 가이드' },
+  { id: 8, menuName: '브로슈어' },
+  { id: 9, menuName: '결제 옵션' },
+  { id: 10, menuName: '기프트 카드' },
+];
+
+export const MENU_LIST_THIRD = [
+  { id: 1, menuName: 'IWEA 서비스' },
+  { id: 2, menuName: '배송 서비스' },
+  { id: 3, menuName: '조립 서비스' },
+  { id: 4, menuName: '설치 서비스' },
+  { id: 5, menuName: '주방 서비스' },
+  { id: 6, menuName: '구매상담 서비스' },
+  { id: 7, menuName: '인테리어 디자인 서비스' },
+  { id: 8, menuName: '바이백 서비스' },
+];
+
+export const MENU_LIST_FOURTH = [
+  { id: 1, menuName: '브랜드 소개' },
+  { id: 2, menuName: '집에서의 삶' },
+  { id: 3, menuName: '지속가능한 생활' },
+  { id: 4, menuName: '내가 아끼는 집,나를 아끼는 집' },
+  { id: 5, menuName: '뉴스룸' },
+  { id: 6, menuName: '채용정보' },
+];

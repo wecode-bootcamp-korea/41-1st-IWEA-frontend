@@ -1,6 +1,6 @@
 .container {
-  padding: 80px 50px 50px 110px;
-  background-color: rgb(var(--colour-neutral-2, 245, 245, 245));
+  padding: 150px;
+  background-color: rgb(245, 245, 245);
 
   .container_first {
     display: flex;
@@ -29,7 +29,7 @@
 
       .look {
         margin-bottom: 20px;
-
+        text-decoration: underline;
         a {
           color: black;
         }
@@ -129,10 +129,10 @@
       display: flex;
       align-items: center;
       padding: 0.625rem 1.25rem;
-      border: 1px solid rgb(var(--colour-neutral-3, 223, 223, 223));
+      border: 1px solid rgb(223, 223, 223);
       border-radius: 20px;
       background-color: inherit;
-      color: rgb(var(--colour-text-and-icon-2, 72, 72, 72));
+      color: rgb(72, 72, 72);
       font-size: 0.75rem;
       font-weight: 700;
       line-height: 1.5;
@@ -147,14 +147,14 @@
     .language_button {
       height: 38px;
       margin-left: 18px;
-      border: 1px solid rgb(var(--colour-neutral-3, 223, 223, 223));
+      border: 1px solid rgb(223, 223, 223);
       border-radius: 20px;
       background-color: inherit;
       font-weight: 700;
     }
     .korean {
       margin: 20px;
-      color: rgb(var(--colour-text-and-icon-2, 72, 72, 72));
+      color: rgb(72, 72, 72);
       font-size: 13px;
       line-height: 2;
     }
@@ -169,7 +169,7 @@
     justify-content: space-between;
     .inter {
       margin-top: 30px;
-      color: rgb(var(--colour-text-and-icon-2, 72, 72, 72));
+      color: rgb(72, 72, 72);
     }
     .hnf-first {
       position: relative;
@@ -180,13 +180,12 @@
       font-size: 0.75rem;
       .hnf-list-item {
         display: inline-block;
-        margin: 0 1.25rem 0 0;
+        margin-right: 1.25rem;
         padding: 0.5rem 0;
       }
     }
   }
   .inter {
-    margin: 0;
     font-size: 0.75rem;
   }
   .bottom_first {
@@ -196,8 +195,7 @@
   .bottom_of_bottom p {
     width: 615.33px;
     height: 20px;
-    margin-top: 0px;
-    color: rgb(var(--colour-text-and-icon-2, 72, 72, 72));
+    color: rgb(72, 72, 72);
     font-size: 0.75rem;
     .bottom_second {
       width: 63px;
