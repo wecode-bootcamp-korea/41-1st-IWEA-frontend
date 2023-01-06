@@ -10,10 +10,10 @@ const Header = () => {
           <div className="inner">
             <div className="inner-menu-container">
               <img alt="menu" src="images/menu.png" className="menu-icon" />
-              <span className="font-size">메뉴</span>
+              <span className="fage-font">메뉴</span>
             </div>
             <div className="inner-main">
-              <h1 className="logo">
+              <div className="logo">
                 <Link to="/">
                   <img src="images/logo.png" alt="IWEA" className="logo-img" />
                 </Link>
@@ -22,7 +22,7 @@ const Header = () => {
                     type="search"
                     placeholder="검색어 입력"
                     className="search-input"
-                  ></input>
+                  />
                   <span class="material-symbols-outlined">search</span>
                 </div>
                 <img
@@ -37,7 +37,7 @@ const Header = () => {
                     className="cart-img"
                   />
                 </Link>
-              </h1>
+              </div>
             </div>
           </div>
         </div>
