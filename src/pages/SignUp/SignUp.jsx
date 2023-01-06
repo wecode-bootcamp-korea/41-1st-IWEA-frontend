@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
+import { LEFT_IMAGES } from './SignUp_data';
 import './SignUp.scss';
 
 const SignUp = () => {
@@ -85,34 +86,11 @@ const SignUp = () => {
                 </a>
               </div>
               <div className="signup-imgbox">
-                <div className="signup-img1">
-                  <img src="images/signup-grid1.jpg" alt="IWEA-IMG" />
-                </div>
-                <div className="signup-img2">
-                  <img src="images/signup-grid2.jpg" alt="IWEA-IMG" />
-                </div>
-                <div className="signup-img3">
-                  <img src="images/signup-grid3.jpg" alt="IWEA-IMG" />
-                </div>
-                <div className="signup-img4">
-                  <img src="images/signup-grid4.jpg" alt="IWEA-IMG" />
-                </div>
-                <div className="signup-img5">
-                  <img src="images/signup-grid5.jpg" alt="IWEA-IMG" />
-                </div>
-                <div className="signup-img6">
-                  <img src="images/signup-grid6.jpg" alt="IWEA-IMG" />
-                </div>
-                <div className="signup-img7">
-                  <img src="images/signup-grid7.jpg" alt="IWEA-IMG" />
-                </div>
-                <div className="signup-img8">
-                  <img src="images/signup-grid8.jpg" alt="IWEA-IMG" />
-                </div>
-                <div className="signup-img9"></div>
-                <div className="signup-img10">
-                  <img src="images/signup-grid9.jpg" alt="IWEA-IMG" />
-                </div>
+                {LEFT_IMAGES.map(info => (
+                  <div className={info.className}>
+                    <img src={info.src} />
+                  </div>
+                ))}
               </div>
             </div>
             <div className="space" />
@@ -120,11 +98,11 @@ const SignUp = () => {
               <div className="signup-footer-inner">
                 <div className="signup-footer-description">
                   <span>IWEA.kr - </span>
-                  <a target="_blank" href="#" className="signup-cookie">
+                  <a target="_blank" href="#" className="link">
                     쿠키 정책
                   </a>
                   <span> , </span>
-                  <a target="_blank" href="#" className="signup-personal">
+                  <a target="_blank" href="#" className="link">
                     개인정보처리방침
                   </a>
                 </div>
