@@ -63,7 +63,7 @@
             display: grid;
             grid-gap: 6.4px;
             grid-template-columns: 200px 200px;
-            grid-template-rows: 64px 64px 64px 64px 64px 64px 64px 64px 64px 64px 64px 64px 64px 64px 64px 64px 64px;
+            grid-template-rows: repeat(17, minmax(0, 64px));
             width: 100%;
             margin-top: 48px;
 
@@ -143,9 +143,6 @@
                 text-decoration: underline !important;
               }
             }
-
-            .signup-footer-since {
-            }
           }
         }
       }
@@ -153,10 +150,9 @@
 
     .signup-right {
       display: flex;
-      top: 0px;
+      top: 0;
       flex-direction: column;
       align-items: flex-start;
-      //justify-content: center;
       width: 60%;
 
       .signup-right-font {
@@ -199,9 +195,6 @@
 
             .input-demand-phone {
               margin-top: 5px;
-            }
-
-            .password-name {
             }
 
             .space {

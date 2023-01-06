@@ -3,12 +3,17 @@ import { useNavigate, Link } from 'react-router-dom';
 import './SignUp.scss';
 
 const SignUp = () => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPw] = useState('');
-  const [phoneNumber, setPhoneNumber] = useState('');
-  const [address, setAddress] = useState('');
   const navigate = useNavigate();
+
+  const [inputValues, setInputValues] = useState({
+    name: '',
+    email: '',
+    password: '',
+    phoneNumber: '',
+    address: '',
+  });
+
+  const { name, email, password, phoneNumber, address } = inputValues;
 
   const emailReg =
     /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/;
@@ -38,31 +43,15 @@ const SignUp = () => {
     })
       .then(response => response.json())
       .then(data => {
-        console.log(data);
         alert('회원가입에 성공했습니다');
         navigate('/');
       });
   };
 
-  function handleNameInput(event) {
-    setName(event.target.value);
-  }
-
-  function handleEmailInput(event) {
-    setEmail(event.target.value);
-  }
-
-  function handlePwInput(event) {
-    setPw(event.target.value);
-  }
-
-  function handlePhoneNumberInput(event) {
-    setPhoneNumber(event.target.value);
-  }
-
-  function handleAddressInput(event) {
-    setAddress(event.target.value);
-  }
+  const handleInput = event => {
+    const { id, value } = event.target;
+    setInputValues({ ...inputValues, [id]: value });
+  };
 
   return (
     <div className="SignUp">
@@ -126,7 +115,7 @@ const SignUp = () => {
                 </div>
               </div>
             </div>
-            <div className="space"></div>
+            <div className="space" />
             <div className="signup-footer">
               <div className="signup-footer-inner">
                 <div className="signup-footer-description">
@@ -156,42 +145,42 @@ const SignUp = () => {
                   id="name"
                   type="text"
                   className="input-box"
-                  onChange={handleNameInput}
-                ></input>
-                <div className="space"></div>
+                  onChange={handleInput}
+                />
+                <div className="space" />
                 <span className="name-title">이메일</span>
                 <input
                   id="email"
                   type="text"
                   className="input-box"
-                  onChange={handleEmailInput}
-                ></input>
+                  onChange={handleInput}
+                />
                 {email.length === 0 || isEmailValid || (
                   <div className="input-demand signup-right-font">
                     이메일 형식이 아닙니다.
                   </div>
                 )}
-                <div className="space"></div>
+                <div className="space" />
                 <span className="name-title">비밀번호</span>
                 <input
                   id="password"
                   type="password"
                   className="input-box"
-                  onChange={handlePwInput}
-                ></input>
+                  onChange={handleInput}
+                />
                 {password.length === 0 || isPasswordValid || (
                   <div className="input-demand signup-right-font">
                     비밀번호는 8자 이상, 영문자,숫자,특수문자 포함입니다.
                   </div>
                 )}
-                <div className="space"></div>
+                <div className="space" />
                 <span className="name-title">휴대폰</span>
                 <input
-                  id="phone"
+                  id="phoneNumber"
                   type="text"
                   className="input-box"
-                  onChange={handlePhoneNumberInput}
-                ></input>
+                  onChange={handleInput}
+                />
                 {phoneNumber.length === 0 || isPhoneNumberValid ? (
                   <div className="input-demand-phone signup-right-font">
                     010-1234-5678 or 01012345678
@@ -201,16 +190,16 @@ const SignUp = () => {
                     휴대폰 번호가 올바르지 않습니다.
                   </div>
                 )}
-                <div className="space"></div>
+                <div className="space" />
                 <button class="address-button">우편번호 찾기</button>
-                <div className="space"></div>
+                <div className="space" />
                 <span className="name-title">주소</span>
                 <input
                   id="address"
                   type="text"
                   className="input-box"
-                  onChange={handleAddressInput}
-                ></input>
+                  onChange={handleInput}
+                />
                 <div className="space"></div>
                 <div class="checkbox">
                   <input type="checkbox" className="input-checkbox"></input>
@@ -232,18 +221,18 @@ const SignUp = () => {
                 <div class="checkbox">
                   <input type="checkbox" className="input-checkbox"></input>
                   <div>
-                    (필수) 개인정보 수집ㆍ이용에 동의합니다.{' '}
+                    (필수) 개인정보 수집ㆍ이용에 동의합니다.
                     <a target="_blank" href="#" class="link">
                       개인정보 수집ㆍ이용 동의
                     </a>
                     .
                   </div>
                 </div>
-                <div className="space"></div>
+                <div className="space" />
                 <button
                   className="signup-button"
                   onClick={handleSignUp}
-                  disabled={signupValid ? false : true}
+                  disabled={!signupValid}
                 >
                   회원 가입
                 </button>
