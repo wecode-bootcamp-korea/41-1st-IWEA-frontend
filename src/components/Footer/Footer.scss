@@ -2,7 +2,7 @@
   padding: 150px;
   background-color: rgb(245, 245, 245);
 
-  .container_first {
+  &_first {
     display: flex;
     justify-content: space-between;
     font-size: 14px;
@@ -11,12 +11,12 @@
       margin: 0px 0px 25px;
     }
 
-    .family_box h3 {
-      font-size: 16px;
-    }
-
     .family_box {
       margin-bottom: 40px;
+
+      & h3 {
+        font-size: 16px;
+      }
 
       .business {
         margin: 20px 0;
@@ -44,10 +44,10 @@
         color: white;
         font-size: 12px;
         font-weight: 700;
-      }
 
-      .join_button_second {
-        width: 233px;
+        &_second {
+          width: 233px;
+        }
       }
     }
 
