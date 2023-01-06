@@ -13,7 +13,7 @@ const Home = () => {
       <HomeMain />
       <Carousel />
       <HomeGrid />
-      <HomeEvent />
+      {/*<HomeEvent />*/}
       {/* 푸터 - src컴포넌트*/}
     </div>
   );

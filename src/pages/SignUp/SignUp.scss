@@ -1,14 +1,10 @@
-* {
-  font-family: 'Noto Sans KR', sans-serif;
-}
-
 .SignUp {
   .signup-wrap {
     display: flex;
     width: 100vw;
 
     .link {
-      text-decoration: underline !important;
+      text-decoration: underline;
     }
 
     .signup-left {
@@ -137,10 +133,10 @@
           .signup-footer-inner {
             .signup-footer-description {
               .signup-cookie {
-                text-decoration: underline !important;
+                text-decoration: underline;
               }
               .signup-personal {
-                text-decoration: underline !important;
+                text-decoration: underline;
               }
             }
           }
