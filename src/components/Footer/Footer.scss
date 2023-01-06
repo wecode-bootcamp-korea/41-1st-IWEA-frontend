@@ -64,6 +64,7 @@
 
   .icon {
     display: inline-flex;
+    margin-top: 15px;
 
     .sns {
       display: flex;
@@ -84,38 +85,6 @@
       img {
         width: 55%;
       }
-    }
-
-    .instagram {
-      position: relative;
-      width: 40px;
-      height: 40px;
-      margin: 10px;
-      padding: 5px;
-      border: 1px solid rgb(192, 189, 189);
-      border-radius: 50px;
-      object-fit: cover;
-    }
-
-    .youtube {
-      position: relative;
-      width: 40px;
-      height: 40px;
-      margin: 10px;
-      padding: 2px;
-      border: 1px solid rgb(192, 189, 189);
-      border-radius: 50px;
-      object-fit: cover;
-    }
-
-    .kakaotalk {
-      position: relative;
-      object-fit: cover;
-      width: 40px;
-      height: 40px;
-      margin: 10px;
-      border: 1px solid rgb(188, 179, 179);
-      border-radius: 50px;
     }
   }
 
