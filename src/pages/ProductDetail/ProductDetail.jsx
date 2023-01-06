@@ -9,7 +9,7 @@ const ProductDetail = () => {
 
   // product image 불러오기
   useEffect(() => {
-    fetch(`http://10.58.52.62:3000/products/productId/${id}`, {
+    fetch('http://10.58.52.62:3000/products/productId/10', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
