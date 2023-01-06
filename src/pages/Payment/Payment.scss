@@ -1,0 +1,26 @@
+.payment-wrap {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 1300px;
+
+  .payment-content {
+    display: flex;
+    width: 100%;
+
+    .payment-aside-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40%;
+      height: 100%;
+      background-color: black;
+      color: white;
+    }
+
+    .payment-info-wrap {
+      width: 60%;
+      height: 100%;
+    }
+  }
+}
