@@ -48,16 +48,18 @@ const Product = () => {
 
   console.log(categoryId);
   // console.log(productList);
-  // const handleSendToCartBtn = productsId => {
-  //   fetch('http://10.58.52.92:3000/cart', {
-  //     method: 'POST',
-  //     headers: {
-  //       'Content-Type': 'application/json',
-  //       Athorization: window.localStorage.getItem('TOKEN'),
-  //     },
-  //     body: JSON.stringify({ "??","??" }), // JSON 안 객체로 무엇을 지칭하고 뜻하는 걸까?
-  //   });
-  // };
+
+  const handleSendToCartBtn = productsId => {
+    console.log('handleSendToCartBtn작동중...');
+    fetch('http://10.58.52.92:3000/cart', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Athorization: window.localStorage.getItem('TOKEN'),
+      },
+      body: JSON.stringify({}),
+    });
+  };
 
   // useEffect(() => {
   //   fetch('http://10.58.52.92:3000/$???', {
@@ -78,7 +80,10 @@ const Product = () => {
         />
         <div className="line" />
         <ProductSort />
-        <ProductList productList={productList} />
+        <ProductList
+          productList={productList}
+          handleSendToCartBtn={handleSendToCartBtn}
+        />
         {/* <button onClick={handleMoreLoad}>더보기</button> */}
       </div>
     </div>
