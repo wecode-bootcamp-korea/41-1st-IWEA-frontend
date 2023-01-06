@@ -3,16 +3,17 @@ import './Carousel.scss';
 import { CAROUSEL_ITEM_LISTS } from './CarouselConstData';
 import { useRef, useState, useEffect } from 'react';
 
-const Carousel = () => {
+const Carousel = ({ setCategoryId }) => {
   const [slide, setSlide] = useState(0);
   const carouselRef = useRef(null);
-  const CAROUSELWIDTH = 300;
+  const CAROUSELWIDTH = 200;
+
+  const handleNext = () => {
+    setSlide(slide + CAROUSELWIDTH);
+  };
 
   const handlePrev = () => {
     setSlide(slide - CAROUSELWIDTH);
-  };
-  const handleNext = () => {
-    setSlide(slide + CAROUSELWIDTH);
   };
 
   useEffect(() => {
@@ -46,7 +47,11 @@ const Carousel = () => {
           <div className="image-container" ref={carouselRef}>
             {CAROUSEL_ITEM_LISTS.map(data => {
               return (
-                <div key={data.id} className="image-card">
+                <div
+                  key={data.id}
+                  className="image-card"
+                  onClick={() => setCategoryId(`/categoryId/${data.id}`)}
+                >
                   <img src={data.src} alt={data.alt} className="" />
                   <button className="linkBtn">{data.text}</button>
                 </div>

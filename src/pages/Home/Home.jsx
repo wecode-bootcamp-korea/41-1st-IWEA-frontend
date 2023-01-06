@@ -1,5 +1,4 @@
 import React from 'react';
-import Carousel from '../../components/Carousel';
 // import CarouselTest from '../../components/Carousel';
 import Header from './components/Header';
 import HomeGrid from './components/HomeGrid';
@@ -12,7 +11,6 @@ const Home = () => {
       <Header />
       {/* 메인 - 레이아웃 */}
       <HomeMain />
-      <Carousel />
       {/* <CarouselTest /> */}
       <HomeGrid />
 

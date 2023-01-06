@@ -6,33 +6,15 @@ const ProductSort = () => {
   const [isSortBoxVisible, setIsSortBoxVisible] = useState(false);
 
   return (
+    // Params써서, onClick에 함수를 담는다.
     <div className="ProductSort">
-      <button className="productSort-btn">
-        정렬 {isSortBoxVisible ? '▲' : '▼'}
-      </button>
-
-      <div className="prdocutSort-btn-dropBox">
-        {SORT_LISTS.map(sort => {
+      <div className="ProductSort">
+        {SORTBTN_DATA?.map(sort => {
           return (
-            <div key={sort.id} className="drop-box-element">
-              <span>{sort.sortby}</span>
-              <input type="radio" />
-            </div>
-          );
-        })}
-      </div>
-
-      <button className="productSort-btn">
-        가격 {isSortBoxVisible ? '▲' : '▼'}
-      </button>
-
-      <div className="prdocutSort-btn-dropBox">
-        {PRICE_TAG_LISTS.map(price => {
-          return (
-            <div key={price.id} className="drop-box-element">
-              <span>{price.priceRange}</span>
-              <input type="radio" />
-            </div>
+            <button className="productSort-btn">
+              {sort.title}
+              {isSortBoxVisible ? '▲' : '▼'}
+            </button>
           );
         })}
       </div>
@@ -41,3 +23,30 @@ const ProductSort = () => {
 };
 
 export default ProductSort;
+
+const SORTBTN_DATA = [
+  {
+    id: 1,
+    title: '높은 가격 순',
+    sort: 'price',
+    method: 'DESC',
+  },
+  {
+    id: 2,
+    title: '낮은 가격 순',
+    sort: 'price',
+    method: 'ASC',
+  },
+  {
+    id: 3,
+    title: '이름 오름차 순',
+    sort: 'name',
+    method: 'DESC',
+  },
+  {
+    id: 4,
+    title: '이름 내림차 순',
+    sort: 'name',
+    method: 'ASC',
+  },
+];

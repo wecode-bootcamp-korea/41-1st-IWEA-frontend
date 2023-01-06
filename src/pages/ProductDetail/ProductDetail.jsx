@@ -9,7 +9,7 @@ const ProductDetail = () => {
   const itemId = params.id;
 
   useEffect(() => {
-    fetch(`http://10.58.52.62:3000/products/productId/${itemId}`, {
+    fetch(`http://10.58.52.92:3000/products/productId/${itemId}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',

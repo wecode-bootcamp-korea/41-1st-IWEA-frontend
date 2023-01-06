@@ -1,15 +1,24 @@
 import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 
-import Carousel from '../../components/Carousel';
+import Carousel from './components/Carousel/Carousel';
 import ProductList from './components/ProductList';
 import ProductSort from './components/ProductSort';
 
 import './Product.scss';
 
 const Product = () => {
-  const [productList, setProductList] = useState([]);
-  // comnst [sendItem, setSendItem] = useState([])
-  // const [searchParams, setSearchPrams] = useSearchParams();
+  useEffect(() => {
+    return window.localStorage.setItem(
+      'TOKEN',
+      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsImlhdCI6MTY3Mjk4Mjk5OX0.e5U_dS5bGyY-w7Kqay_3wdqCVa8pmgXNAhwdSAKh6W8'
+    );
+  }, []);
+
+  // const params = useParams();
+  // const category_id = (params.const[(productList, setProductList)] = useState(
+  //   []
+  // ));
 
   // 페이지네이션 Code
   // const [searchParams, setSearchParams] = useParams();
@@ -22,9 +31,12 @@ const Product = () => {
   //   setSearchParams(searchParams);
   // };
 
+  const [productList, setProductList] = useState([]);
+  const [categoryId, setCategoryId] = useState('');
   // fetch에 ?start=${offset}&limit=${limit} 추가
+
   useEffect(() => {
-    fetch(`http://10.58.52.62:3000/products`, {
+    fetch(`http://10.58.52.92:3000/products${categoryId}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -32,8 +44,10 @@ const Product = () => {
     })
       .then(response => response.json())
       .then(data => setProductList(data));
-  }, []);
-  // console.log(data);
+  }, [categoryId]);
+
+  console.log(categoryId);
+  // console.log(productList);
   // const handleSendToCartBtn = productsId => {
   //   fetch('http://10.58.52.92:3000/cart', {
   //     method: 'POST',
@@ -55,7 +69,7 @@ const Product = () => {
   return (
     <div className="Product">
       <div className="product-carousel-wrap">
-        <Carousel />
+        <Carousel setCategoryId={setCategoryId} />
       </div>
       <div className="product-lists-container">
         <input
