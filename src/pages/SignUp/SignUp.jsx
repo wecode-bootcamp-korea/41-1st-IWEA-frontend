@@ -62,7 +62,7 @@ const SignUp = () => {
               <div className="arrow-block">
                 <Link to="/login">
                   <img
-                    src="images/arrow.png"
+                    src="images/arrowToLogin.png"
                     alt="arrow"
                     className="signup-arrow"
                   />
