@@ -34,13 +34,13 @@ const Login = () => {
       });
   };
 
-  function handleEmailInput(event) {
+  const handleEmailInput = event => {
     setEmail(event.target.value);
-  }
+  };
 
-  function handlePasswordInput(event) {
+  const handlePasswordInput = event => {
     setPassword(event.target.value);
-  }
+  };
 
   return (
     <div className="Login">
@@ -115,7 +115,7 @@ const Login = () => {
                     일회용 코드로 로그인
                   </a>
                 </div>
-                <div className="email-space"></div>
+                <div className="email-space" />
                 <span class="password-name login-right-font">비밀번호</span>
                 <input
                   type="password"
@@ -129,7 +129,7 @@ const Login = () => {
                   </div>
                 )}
                 <span className="login-right-font link">비밀번호 찾기</span>
-                <div className="password-space-down"></div>
+                <div className="password-space-down" />
                 <div className="login-status">
                   <div className="login-status-box">
                     <input type="checkbox" className="login-checkbox"></input>
@@ -143,7 +143,7 @@ const Login = () => {
                     className="login-alert"
                   />
                 </div>
-                <div className="login-space-up"></div>
+                <div className="login-space-up" />
                 <button
                   type="button"
                   class="login-button login-right-font"
@@ -154,7 +154,7 @@ const Login = () => {
                 </button>
               </div>
             </form>
-            <div className="footer-space-up"></div>
+            <div className="footer-space-up" />
             <div className="login-right-footer">
               <div className="right-footer-inner">
                 <span className="login-right-font login-footer-make">
