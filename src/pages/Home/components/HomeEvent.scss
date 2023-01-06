@@ -1,0 +1,19 @@
+.HomeEvent {
+  .HomeEvent-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr 1fr;
+
+    .section-image {
+      width: 300px;
+      height: 300px;
+      background-color: green;
+    }
+
+    .section-text {
+      width: 300px;
+      height: 300px;
+      border-color: rgb(2, 2, 17);
+    }
+  }
+}
