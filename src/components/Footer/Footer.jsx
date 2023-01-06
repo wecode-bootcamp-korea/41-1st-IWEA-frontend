@@ -107,13 +107,13 @@ function Parent() {
         <div className="inter">
           <p>© Inter IWEA Systems B.V 1999~2023</p>
         </div>
-        <div className="hnf-first">
-          <ui className="hnf-list">
-            <li className="hnf-list-item">개인정보처리방침</li>
-            <li className="hnf-list-item">쿠키 정책</li>
-            <li className="hnf-list-item">쿠키 설정</li>
-            <li className="hnf-list-item">웹사이트 이용약관</li>
-            <li className="hnf-list-item">Responsible disclosure</li>
+        <div className="bottom-right">
+          <ui className="bottom-right-list">
+            <li className="bottom-list-item">개인정보처리방침</li>
+            <li className="bottom-list-item">쿠키 정책</li>
+            <li className="bottom-list-item">쿠키 설정</li>
+            <li className="bottom-list-item">웹사이트 이용약관</li>
+            <li className="bottom-list-item">Responsible disclosure</li>
           </ui>
         </div>
       </div>
