@@ -23,6 +23,8 @@ const HomeGrid = () => {
         <div className="itemThree" />
         <div className="itemFour" />
         <div className="itemFive" />
+        <div className="itemSix" />
+        <div className="itemSeven" />
       </div>
     </div>
   );
