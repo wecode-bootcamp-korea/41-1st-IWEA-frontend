@@ -1,12 +1,12 @@
 .product-info {
   height: 1000px;
-  padding-left: 100px;
+  // padding-left: 100px;
   // background-color: palevioletred;
 
   .product-info-title {
     padding: 30px;
-    border-bottom: 4px solid #212322;
-    // background-color: palegoldenrod;
+    background-color: #212322;
+    color: #fff;
     font-size: 40px;
   }
 }

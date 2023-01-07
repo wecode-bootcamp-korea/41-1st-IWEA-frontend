@@ -5,7 +5,7 @@
   // width: 300px;
   padding: 40px;
   // height: 1000px;
-  // border-bottom: 1px solid black;
+  // border-bottom: 1px solid #666;
 
   .payment-info-data {
     .payment-info-date {
@@ -17,18 +17,18 @@
 
     h1 {
       padding-bottom: 10px;
-      font-size: 25px;
+      font-size: 20px;
     }
 
     p {
-      font-size: 30px;
+      font-size: 25px;
     }
 
     button {
       padding-top: 10px;
       border: none;
       background-color: white;
-      color: #ccc;
+      color: #666;
       cursor: pointer;
     }
   }

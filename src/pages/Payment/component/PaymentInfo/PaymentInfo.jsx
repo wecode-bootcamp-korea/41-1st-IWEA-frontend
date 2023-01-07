@@ -11,6 +11,7 @@ const PaymentInfo = () => {
         <PaymentInfoItem />
         <PaymentInfoItem />
         <PaymentInfoItem />
+        <PaymentInfoItem />
       </div>
     </div>
   );
