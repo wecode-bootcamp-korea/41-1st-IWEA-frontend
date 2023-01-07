@@ -3,7 +3,7 @@ import ProductInfoModal from './ProductInfoModal/ProductInfoModal';
 import { useState } from 'react';
 import ProductDesc from './ProductDesc/ProductDesc';
 
-const ProductInfo = ({ product }) => {
+const ProductInfo = ({ productLongDesc, productShortDesc }) => {
   const [modalOpen, setModalOpen] = useState(false);
 
   const showModal = () => {
@@ -13,7 +13,7 @@ const ProductInfo = ({ product }) => {
   return (
     <div className="product-info-wrap">
       <div className="product-info-desc">
-        <ProductDesc product={product} />
+        <ProductDesc productShortDesc={productShortDesc} />
       </div>
       <div className="product-info-item">
         <span className="product-info-modal" onClick={showModal}>
@@ -22,7 +22,7 @@ const ProductInfo = ({ product }) => {
       </div>
       {modalOpen && (
         <ProductInfoModal
-          product={product}
+          productLongDesc={productLongDesc}
           setModalOpen={setModalOpen}
           modalOpen={modalOpen}
         />

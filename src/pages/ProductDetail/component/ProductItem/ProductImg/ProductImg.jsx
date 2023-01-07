@@ -1,10 +1,10 @@
 import './ProductImg.scss';
 
-const ProductImg = ({ product }) => {
+const ProductImg = ({ productImg }) => {
   return (
     <div className="product-img">
-      {product?.map(data => {
-        return <img key={data.url} src={data.url} alt="이미지" />;
+      {productImg?.map((data, idx) => {
+        return <img key={idx} src={data.url} alt="이미지" />;
       })}
     </div>
   );

@@ -5,11 +5,10 @@ import ProductSlide from './component/ProductSlide/ProductSlide';
 import './ProductDetail.scss';
 
 const ProductDetail = () => {
-  const [product, setProduct] = useState([]);
+  const [product, setProduct] = useState();
 
-  // product image 불러오기
   useEffect(() => {
-    fetch('http://10.58.52.92:3000/products/productId/10', {
+    fetch('http://10.58.52.62:3000/products/productId/10', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
@@ -19,8 +18,7 @@ const ProductDetail = () => {
         return res.json();
       })
       .then(data => {
-        console.log(data.data);
-        // setProduct(data.data);
+        setProduct(data.data);
       });
   }, []);
 

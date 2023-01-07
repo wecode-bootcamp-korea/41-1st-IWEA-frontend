@@ -2,8 +2,7 @@ import React from 'react';
 import './ProductInfoModal.scss';
 // import { useState } from 'react';
 
-const ProductInfoModal = ({ setModalOpen, product }) => {
-  const { long_description } = product;
+const ProductInfoModal = ({ setModalOpen, productLongDesc }) => {
   const closeModal = () => {
     setModalOpen(false);
   };
@@ -15,7 +14,7 @@ const ProductInfoModal = ({ setModalOpen, product }) => {
           x
         </button>
         <h1 className="modal-name">제품 설명</h1>
-        <p className="modal-desc">{long_description}</p>
+        <p className="modal-desc">{productLongDesc}</p>
       </div>
     </div>
   );
