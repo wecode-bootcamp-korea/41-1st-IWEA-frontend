@@ -2,8 +2,8 @@ import React from 'react';
 import './ProductInfoModal.scss';
 // import { useState } from 'react';
 
-const ProductInfoModal = ({ setModalOpen, productList }) => {
-  const { long_description } = productList;
+const ProductInfoModal = ({ setModalOpen, product }) => {
+  const { long_description } = product;
   const closeModal = () => {
     setModalOpen(false);
   };

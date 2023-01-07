@@ -2,13 +2,17 @@ import ProductImg from './ProductImg/ProductImg';
 import ProductInfo from './ProductInfo/ProductInfo';
 import './ProductItem.scss';
 
-const ProductItem = ({ productList }) => {
+const ProductItem = ({ productImg, productLongDesc, productShortDesc }) => {
+  console.log(productImg);
   return (
     <div className="product-item">
       <div className="product-img-wrap">
-        <ProductImg key={productList.id} productList={productList.image_url} />
+        <ProductImg productImg={productImg} />
       </div>
-      <ProductInfo key={productList.id} productList={productList} />
+      <ProductInfo
+        productLongDesc={productLongDesc}
+        productShortDesc={productShortDesc}
+      />
     </div>
   );
 };

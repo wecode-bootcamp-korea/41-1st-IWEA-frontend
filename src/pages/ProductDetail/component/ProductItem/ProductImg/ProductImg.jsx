@@ -1,9 +1,9 @@
 import './ProductImg.scss';
 
-const ProductImg = ({ productList }) => {
+const ProductImg = ({ product }) => {
   return (
     <div className="product-img">
-      {productList.map(data => {
+      {product?.map(data => {
         return <img key={data.url} src={data.url} alt="이미지" />;
       })}
     </div>

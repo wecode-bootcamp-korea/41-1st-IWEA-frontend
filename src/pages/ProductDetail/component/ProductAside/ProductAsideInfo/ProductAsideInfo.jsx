@@ -1,8 +1,8 @@
 import React from 'react';
 import './ProductAsideInfo.scss';
 
-const productAsideInfo = ({ productList }) => {
-  const { korean_name, english_name, price } = productList;
+const productAsideInfo = ({ product }) => {
+  const { korean_name, english_name, price } = product;
   return (
     <div className="product-aside">
       <div className="product-aside-title">
