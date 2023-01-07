@@ -18,12 +18,13 @@ const ProductDetail = () => {
         return res.json();
       })
       .then(data => {
-        setProduct(data.data);
+        console.log(data.data);
+        // setProduct(data.data);
       });
   }, []);
 
   return (
-    <div className="product-wrap modal-bg">
+    <div className="product-wrap">
       <div className="product-content">
         <div className="product-main">
           <ProductItem

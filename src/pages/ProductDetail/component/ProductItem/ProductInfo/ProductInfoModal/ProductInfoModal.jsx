@@ -8,7 +8,13 @@ const ProductInfoModal = ({ setModalOpen, productLongDesc }) => {
   };
 
   return (
-    <div className="product-modal-wrap">
+    <div
+      className="product-modal-wrap"
+      onClick={e => {
+        if (e.target !== e.currentTarget) return;
+        closeModal();
+      }}
+    >
       <div className="product-modal">
         <button className="modal-close-btn" onClick={closeModal}>
           x
