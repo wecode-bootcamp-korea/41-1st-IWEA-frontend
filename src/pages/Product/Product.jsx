@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useParams } from 'react-router-dom';
+import AlertModal from './components/AlertModal/AlertModal';
 
 import Carousel from './components/Carousel/Carousel';
 import ProductList from './components/ProductList';
@@ -8,6 +9,9 @@ import ProductSort from './components/ProductSort';
 import './Product.scss';
 
 const Product = () => {
+  const [isAlertOn, setIsAlertOn] = useState(false);
+  const alertRef = useRef();
+
   useEffect(() => {
     return window.localStorage.setItem(
       'TOKEN',
@@ -32,11 +36,10 @@ const Product = () => {
   // };
 
   const [productList, setProductList] = useState([]);
-  const [categoryId, setCategoryId] = useState('');
-  // fetch에 ?start=${offset}&limit=${limit} 추가
 
+  // fetch에 ?start=${offset}&limit=${limit} 추가
   useEffect(() => {
-    fetch(`http://10.58.52.92:3000/products${categoryId}`, {
+    fetch(`http://10.58.52.92:3000/products`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -44,20 +47,23 @@ const Product = () => {
     })
       .then(response => response.json())
       .then(data => setProductList(data));
-  }, [categoryId]);
+  }, []);
 
-  console.log(categoryId);
   // console.log(productList);
 
   const handleSendToCartBtn = productsId => {
     console.log('handleSendToCartBtn작동중...');
+    setIsAlertOn(true);
     fetch('http://10.58.52.92:3000/cart', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         Athorization: window.localStorage.getItem('TOKEN'),
       },
-      body: JSON.stringify({}),
+
+      body: JSON.stringify({
+        productsId: productList.id,
+      }),
     });
   };
 
@@ -68,10 +74,11 @@ const Product = () => {
   //     .then(response => response.json())
   //     .then(result => setSendItem(result));
   // }, [paramsId, searchParams]);
+
   return (
     <div className="Product">
       <div className="product-carousel-wrap">
-        <Carousel setCategoryId={setCategoryId} />
+        <Carousel />
       </div>
       <div className="product-lists-container">
         <input
@@ -85,6 +92,19 @@ const Product = () => {
           handleSendToCartBtn={handleSendToCartBtn}
         />
         {/* <button onClick={handleMoreLoad}>더보기</button> */}
+        <button onClick={handleSendToCartBtn}>
+          장바구니 눌러서 alert나오게하기
+        </button>
+        <div ref={alertRef}>
+          {isAlertOn === true ? (
+            <AlertModal className="AlertModal" setIsAlertOn={setIsAlertOn} />
+          ) : (
+            <AlertModal
+              className="AlertModal AlertModalHidden"
+              setIsAlertOn={setIsAlertOn}
+            />
+          )}
+        </div>
       </div>
     </div>
   );
