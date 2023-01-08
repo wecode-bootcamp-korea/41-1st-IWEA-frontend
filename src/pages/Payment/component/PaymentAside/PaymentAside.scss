@@ -1,19 +1,16 @@
 .payment-aside {
-  // width: 100%;
-  // background-color: palegreen;
-  position: absolute;
-  top: 40%;
-  left: 30%;
-  // margin: 0 auto;
+  position: fixed;
+  top: 45%;
+  right: 0;
+  left: 10%;
 
   .payment-aside-title {
     padding-bottom: 20px;
-    font-size: 35px;
+    font-size: 25px;
   }
 
   p {
     font-size: 20px;
     line-height: 30px;
-    // letter-spacing: 5px;
   }
 }

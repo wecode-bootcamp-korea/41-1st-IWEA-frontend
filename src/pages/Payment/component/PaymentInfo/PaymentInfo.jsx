@@ -6,12 +6,12 @@ const PaymentInfo = () => {
   return (
     <div>
       <div className="product-info">
-        <h1 className="product-info-title">Payment History</h1>
+        <h1 className="product-info-title">구매 내역</h1>
         <PaymentInfoItem />
         <PaymentInfoItem />
+        {/* <PaymentInfoItem />
         <PaymentInfoItem />
-        <PaymentInfoItem />
-        <PaymentInfoItem />
+        <PaymentInfoItem /> */}
       </div>
     </div>
   );
