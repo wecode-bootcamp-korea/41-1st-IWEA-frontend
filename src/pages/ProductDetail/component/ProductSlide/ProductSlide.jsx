@@ -1,31 +1,26 @@
-import { useState, useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import './ProductSlide.scss';
 import ProductSlideItem from './ProductSlideItem/ProductSlideItem';
 
-const ProductSlide = () => {
-  const [productCardList, setProductCardList] = useState([]);
+const ProductSlide = ({ slideItemList }) => {
+  // const [cardList, setCardList] = useState([]);
+  // const { english_name, korean_name, price, iamge_url } = product;
   const carouselRef = useRef(null);
 
-  useEffect(() => {
-    fetch('../data/list-data.json')
-      .then(res => res.json())
-      .then(result => {
-        setProductCardList(result);
-      });
-  }, []);
+  console.log(slideItemList);
 
   return (
     <div className="product-slide-wrap">
-      {/* <div className="product-slide-item-list">
-        <h1>이 제품은 어때요?</h1>
-      </div> */}
       <div className="product-slide-item-wrap">
         <div className="image-container" ref={carouselRef}>
-          {productCardList.map(productCard => {
+          {slideItemList.map(slideItem => {
             return (
               <ProductSlideItem
-                key={productCard.id}
-                productCard={productCard}
+                key={slideItem.id}
+                productImg={slideItem.thumbnail}
+                productKrName={slideItem.korean_name}
+                productEngName={slideItem.english_name}
+                productPrice={slideItem.price}
               />
             );
           })}

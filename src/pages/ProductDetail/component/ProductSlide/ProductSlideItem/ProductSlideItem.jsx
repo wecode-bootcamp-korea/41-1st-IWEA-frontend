@@ -1,15 +1,21 @@
 import React from 'react';
 import './ProductSlideItem.scss';
 
-const ProductSlideItem = ({ productCard, slide }) => {
-  const { tumbnail_url, name, price } = productCard;
+const ProductSlideItem = ({
+  productImg,
+  productKrName,
+  productEngName,
+  productPrice,
+}) => {
+  // console.log(product);
   return (
     <div className="product-slide-item">
-      <img key={productCard.id} src={tumbnail_url} alt="제품사진" />
-      <p className="name">{name}</p>
+      <img src={productImg} alt="제품사진" />
+      <span className="name">{productEngName}</span>
+      <span className="name">{productKrName}</span>
       <p className="price">
         <span>￦</span>
-        {price}
+        {productPrice}
       </p>
       <div className="product-slide-icon">
         <img
