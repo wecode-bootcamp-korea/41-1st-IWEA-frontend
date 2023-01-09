@@ -1,5 +1,6 @@
 import React from 'react';
 import './HomeEvent.scss';
+import { EVENT_ITEM_LISTS } from './HomeEvet';
 
 const HomeEvent = () => {
   return (
