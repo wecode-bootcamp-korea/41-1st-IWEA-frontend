@@ -3,8 +3,13 @@ import { useNavigate, Link } from 'react-router-dom';
 import './Login.scss';
 
 const Login = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [inputValues, setInputValues] = useState({
+    email: '',
+    password: '',
+  });
+
+  const { email, password } = inputValues;
+
   const navigate = useNavigate();
 
   const emailReg =
@@ -16,7 +21,7 @@ const Login = () => {
 
   const handleLogin = e => {
     e.preventDefault();
-    fetch('http://10.58.52.73:3000/signin', {
+    fetch(`${BASE_URL}/signin`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
@@ -34,12 +39,9 @@ const Login = () => {
       });
   };
 
-  const handleEmailInput = event => {
-    setEmail(event.target.value);
-  };
-
-  const handlePasswordInput = event => {
-    setPassword(event.target.value);
+  const handleInput = event => {
+    const { id, value } = event.target;
+    setInputValues({ ...inputValues, [id]: value });
   };
 
   return (
@@ -94,35 +96,23 @@ const Login = () => {
                 <span className="login-right-font">이메일</span>
                 <input
                   type="text"
-                  id="username"
+                  id="email"
                   className="login-input-size"
-                  value={email}
-                  onChange={handleEmailInput}
-                ></input>
+                  onChange={handleInput}
+                />
                 {email.length === 0 || isEmailValid || (
                   <div className="email-input-demand login-right-font">
                     이메일 형식이 아닙니다.
                   </div>
                 )}
-                <div>
-                  <span className="login-option login-right-font">
-                    다른 로그인 옵션:
-                  </span>
-                  <a
-                    href="#"
-                    className="login-option-link link login-right-font"
-                  >
-                    일회용 코드로 로그인
-                  </a>
-                </div>
                 <div className="email-space" />
                 <span class="password-name login-right-font">비밀번호</span>
                 <input
                   type="password"
                   id="password"
                   className="login-input-size"
-                  onChange={handlePasswordInput}
-                ></input>
+                  onChange={handleInput}
+                />
                 {password.length === 0 || isPasswordValid || (
                   <div className="email-input-demand login-right-font">
                     비밀번호는 8자 이상, 영문자,숫자,특수문자 포함입니다.
@@ -132,7 +122,7 @@ const Login = () => {
                 <div className="password-space-down" />
                 <div className="login-status">
                   <div className="login-status-box">
-                    <input type="checkbox" className="login-checkbox"></input>
+                    <input type="checkbox" className="login-checkbox" />
                     <div className="login-checkbox-label login-right-font">
                       로그인 상태 유지
                     </div>
@@ -148,7 +138,7 @@ const Login = () => {
                   type="button"
                   class="login-button login-right-font"
                   onClick={handleLogin}
-                  disabled={isEmailValid && isPasswordValid ? false : true}
+                  disabled={!(isEmailValid && isPasswordValid)}
                 >
                   로그인
                 </button>
