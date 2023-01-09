@@ -3,7 +3,7 @@ import './Carousel.scss';
 import { CAROUSEL_ITEM_LISTS } from './CarouselConstData';
 import { useRef, useState, useEffect } from 'react';
 
-const Carousel = () => {
+const Carousel = ({ handleCategoryTab }) => {
   const [slide, setSlide] = useState(0);
   const carouselRef = useRef(null);
   const CAROUSELWIDTH = 200;
@@ -42,13 +42,16 @@ const Carousel = () => {
         >
           다음으로
         </button>
-        {/* 사진 */}
         <div className="CarouselTest-image-wrapper">
           <div className="image-container" ref={carouselRef}>
             {CAROUSEL_ITEM_LISTS.map(data => {
               return (
-                <div key={data.id} className="image-card">
-                  <img src={data.src} alt={data.alt} className="" />
+                <div
+                  key={data.id}
+                  className="image-card"
+                  onClick={() => handleCategoryTab(data.id)}
+                >
+                  <img key={data.id} src={data.src} alt={data.alt} />
                   <button className="linkBtn">{data.text}</button>
                 </div>
               );
