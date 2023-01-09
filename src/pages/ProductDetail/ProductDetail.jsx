@@ -35,7 +35,14 @@ const ProductDetail = () => {
           />
           <ProductAside product={product} />
         </div>
-        <ProductSlide product={product} />
+        <div className="product-first-slide">
+          <h1>이 제품은 어때요?</h1>
+          <ProductSlide product={product} />
+        </div>
+        <div className="product-second-slide">
+          <h1>함께 사용해보세요</h1>
+          <ProductSlide product={product} />
+        </div>
       </div>
     </div>
   );
