@@ -1,7 +1,7 @@
 import React from 'react';
 import './ProductSlideItem.scss';
 
-const ProductSlideItem = ({ productCard }) => {
+const ProductSlideItem = ({ productCard, slide }) => {
   const { tumbnail_url, name, price } = productCard;
   return (
     <div className="product-slide-item">
