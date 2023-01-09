@@ -1,3 +1,202 @@
 * {
   font-family: 'Noto Sans KR', sans-serif;
 }
+
+.Login {
+  .login-wrap {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+
+    .link {
+      font-weight: bold;
+      text-decoration: underline !important;
+      cursor: pointer;
+    }
+
+    .login-left {
+      display: flex;
+      width: 40%;
+      background-color: #212321;
+      color: white;
+
+      .login-left-inner {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 32px 80px;
+
+        .login-header {
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+
+          .arrow-block {
+            display: inline-block;
+            position: absolute;
+            left: 32px;
+
+            .login-arrow {
+              left: 32px;
+              width: 16px;
+              height: 16px;
+              cursor: pointer;
+              filter: opacity(0.5) drop-shadow(0 0 0 white);
+            }
+          }
+
+          .login-logo {
+            width: 88px;
+            height: 44px;
+          }
+        }
+
+        .login-main {
+          .login-title {
+            color: rgb(251, 217, 20);
+            font-size: 32px;
+          }
+
+          .login-description {
+            padding-top: 14px;
+            color: white;
+            font-size: 14px;
+            line-height: 20px;
+          }
+        }
+
+        .login-footer {
+          color: white;
+          font-size: 11px;
+          line-height: 1.71429;
+          text-align: left;
+
+          .login-footer-inner {
+            .login-footer-description {
+              .login-cookie {
+                text-decoration: underline !important;
+              }
+              .login-personal {
+                text-decoration: underline !important;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .login-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      width: 60%;
+      height: 100vh;
+
+      .login-right-font {
+        font-size: 14px;
+      }
+
+      .login-right-inner {
+        padding: 32px 80px;
+        .form {
+          .form-inner {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 448px;
+
+            .login-input-size {
+              width: 100%;
+              height: 48px;
+              margin: 5px 0;
+            }
+
+            .email-input-demand {
+              color: red;
+            }
+
+            .login-option {
+              margin-right: 2px;
+            }
+
+            .email-space {
+              height: 24px;
+            }
+
+            .password-space-down {
+              height: 32px;
+            }
+
+            .login-status {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+
+              .login-status-box {
+                display: flex;
+                align-items: center;
+              }
+
+              .login-checkbox {
+                display: inline-block;
+                width: 24px;
+                height: 24px;
+                margin: 0px;
+                accent-color: yellow;
+              }
+
+              .login-checkbox-label {
+                display: block;
+                position: relative;
+                padding-left: 20px;
+              }
+
+              .login-alert {
+                width: 20px;
+                height: 20px;
+                cursor: pointer;
+              }
+            }
+            .login-space-up {
+              height: 26px;
+            }
+
+            .login-button {
+              min-height: 3.5rem;
+              padding: 0 32px;
+              border-radius: 64px;
+              background-color: black;
+              color: white;
+              cursor: pointer;
+            }
+          }
+        }
+        .footer-space-up {
+          height: 48px;
+        }
+        .login-right-footer {
+          .right-footer-inner {
+            display: flex;
+            flex-direction: column;
+            .footer-space {
+              height: 32px;
+            }
+            .login-footer-make {
+              font-weight: bold;
+            }
+
+            .login-signup {
+              min-height: 3.5rem;
+              padding: 0 32px;
+              border-radius: 64px;
+              background-color: black;
+              color: white;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+  }
+}
