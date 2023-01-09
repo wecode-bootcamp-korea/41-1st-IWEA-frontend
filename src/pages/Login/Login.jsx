@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
+import { BASE_URL } from '../../config';
 import './Login.scss';
 
 const Login = () => {
