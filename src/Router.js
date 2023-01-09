@@ -24,7 +24,7 @@ const Router = () => {
         <Route path="/cart" element={<Cart />} />
         <Route path="/payment" element={<Payment />} />
       </Routes>
-      {/* <Footer />s */}
+      <Footer />
     </BrowserRouter>
   );
 };
