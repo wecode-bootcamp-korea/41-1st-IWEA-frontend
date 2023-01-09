@@ -1,7 +1,6 @@
 .product-slide-wrap {
-  // width: 1200px;
-  height: 300px;
-
+  max-width: 100vw;
+  overflow: hidden;
   .product-slide-item-list {
     width: 100%;
     margin-top: 100px;
@@ -15,7 +14,6 @@
 
     .product-slide-item-wrap {
       display: flex;
-      align-items: center;
       justify-content: space-between;
     }
   }
