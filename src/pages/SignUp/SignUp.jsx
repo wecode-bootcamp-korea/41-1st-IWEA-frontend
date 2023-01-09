@@ -88,7 +88,7 @@ const SignUp = () => {
               <div className="signup-imgbox">
                 {LEFT_IMAGES.map(info => (
                   <div className={info.className}>
-                    <img src={info.src} />
+                    <img src={info.src} alt="info" />
                   </div>
                 ))}
               </div>
@@ -178,16 +178,16 @@ const SignUp = () => {
                   className="input-box"
                   onChange={handleInput}
                 />
-                <div className="space"></div>
+                <div className="space" />
                 <div class="checkbox">
-                  <input type="checkbox" className="input-checkbox"></input>
+                  <input type="checkbox" className="input-checkbox" />
                   <div className="input-description">
                     마케팅 수신 동의를 통해 IKEA의 홈퍼니싱 아이디어와 신상품
                     소식, 그리고 할인 혜택 정보를 받고 싶어요!
                   </div>
                 </div>
                 <div class="checkbox">
-                  <input type="checkbox" className="input-checkbox"></input>
+                  <input type="checkbox" className="input-checkbox" />
                   <div>
                     (필수) 약관을 모두 읽고 동의합니다.
                     <a target="_blank" href="#" class="link">
@@ -197,7 +197,7 @@ const SignUp = () => {
                   </div>
                 </div>
                 <div class="checkbox">
-                  <input type="checkbox" className="input-checkbox"></input>
+                  <input type="checkbox" className="input-checkbox" />
                   <div>
                     (필수) 개인정보 수집ㆍ이용에 동의합니다.
                     <a target="_blank" href="#" class="link">
