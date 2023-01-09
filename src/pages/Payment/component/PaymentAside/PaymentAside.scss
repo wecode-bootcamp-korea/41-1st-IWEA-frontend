@@ -1,8 +1,8 @@
 .payment-aside {
-  position: fixed;
-  top: 45%;
-  right: 0;
-  left: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
   .payment-aside-title {
     padding-bottom: 20px;

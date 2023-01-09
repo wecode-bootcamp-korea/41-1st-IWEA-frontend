@@ -9,9 +9,8 @@ const PaymentInfo = () => {
         <h1 className="product-info-title">구매 내역</h1>
         <PaymentInfoItem />
         <PaymentInfoItem />
-        {/* <PaymentInfoItem />
         <PaymentInfoItem />
-        <PaymentInfoItem /> */}
+        <PaymentInfoItem />
       </div>
     </div>
   );
