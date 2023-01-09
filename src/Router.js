@@ -8,8 +8,7 @@ import ProductDetail from './pages/ProductDetail/ProductDetail';
 import Category from './pages/Category/Category';
 import Cart from './pages/Cart/Cart';
 import Payment from './pages/Payment/Payment';
-import Header from './pages/components/Header';
-import Footer from './components/Footer';
+import Header from './components/Header';
 
 const Router = () => {
   return (
