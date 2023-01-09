@@ -13,7 +13,7 @@ const ProductSlideItem = ({ productCard, slide }) => {
       </p>
       <div className="product-slide-icon">
         <img
-          src="/images/ProductDetail/basket.png"
+          src="/images/ProductDetail/free-icon-add-cart-7326992.png"
           alt="장바구니"
           className="product-slice-cart"
         />
