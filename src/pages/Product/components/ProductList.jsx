@@ -4,7 +4,6 @@ import './ProductList.scss';
 
 const ProductList = ({ productList, handleSendToCartBtn }) => {
   // console.log('handleSendToCartBtn잇음?', handleSendToCartBtn);
-
   return (
     <div className="ProductList">
       {productList.data?.length > 0 &&
@@ -22,7 +21,13 @@ const ProductList = ({ productList, handleSendToCartBtn }) => {
               <h2>{product.korean_name}</h2>
               <h2>{product.short_description}</h2>
               <h2>{product.price}</h2>
-              <button onClick={handleSendToCartBtn}>장바구니로~</button>
+              <button
+                onClick={() => {
+                  handleSendToCartBtn(product.id);
+                }}
+              >
+                장바구니로~
+              </button>
             </div>
           );
         })}

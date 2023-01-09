@@ -8,16 +8,16 @@ import ProductSort from './components/ProductSort';
 
 import './Product.scss';
 
-const getQueryString = queries => {
-  const qs = Object.entries(queries)
-    .filter(([key, value]) => value)
-    .map(([key, value]) => `${key}=${value}`)
-    .join('&');
+// const getQueryString = queries => {
+//   const qs = Object.entries(queries)
+//     .filter(([key, value]) => value)
+//     .map(([key, value]) => `${key}=${value}`)
+//     .join('&');
 
-  if (!qs) return '';
+//   if (!qs) return '';
 
-  return '?' + qs;
-};
+//   return '?' + qs;
+// };
 
 const Product = () => {
   const [productList, setProductList] = useState([]);
@@ -90,20 +90,17 @@ const Product = () => {
       .then(data => setProductList(data));
   }, [category, sort]);
 
-  console.log(productList);
-
+  // console.log(productList);
   const handleSendToCartBtn = productId => {
     console.log('handleSendToCartBtn작동중...');
     setIsAlertOn(true);
-    fetch('http://10.58.52.92:3000/cart', {
+    fetch('http://10.58.52.69:3000/carts', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        Athorization: window.localStorage.getItem('TOKEN'),
+        Authorization: window.localStorage.getItem('TOKEN'),
       },
-
       body: JSON.stringify({
-        userId: 'TOKEN',
         productId: productId,
       }),
     });
