@@ -1,10 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import SideModalList from './component/SideModalInfo/SideModalInfo';
 import SideModalInfo from './component/SideModalList/SideModalList';
 import './SideModal.scss';
 
 const SideModal = ({ setToggleMenu }) => {
   const [unmount, setUnmount] = useState(false);
+  const [modal, setModal] = useState([]);
+
+  useEffect(() => {
+    fetch('http://10.58.52.155:3000/products', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json;charset=utf-8',
+      },
+    })
+      .then(res => {
+        return res.json();
+      })
+      .then(data => {
+        console.log(data.data);
+        setModal(data.data[0].korean_name);
+      });
+  }, []);
 
   const closeModal = () => {
     setUnmount(true);
@@ -35,7 +52,7 @@ const SideModal = ({ setToggleMenu }) => {
               />
             </div>
             <div className="sidemodal-info-wrap">
-              <SideModalInfo />
+              <SideModalInfo modal={modal} />
             </div>
             <div className="sidemodal-list-wrap">
               <SideModalList />
