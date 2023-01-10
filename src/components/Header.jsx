@@ -1,14 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Header.scss';
+import SideBar from './SideBar';
 import { Link } from 'react-router-dom';
 
 const Header = () => {
+  const [toggleMenu, setToggleMenu] = useState(false);
+
+  const openMenu = () => {
+    setToggleMenu(true);
+  };
+
   return (
     <header className="header">
       <div className="header-wrap">
         <div className="inner">
           <div className="inner-menu-container">
-            <img alt="menu" src="images/menu.png" className="menu-icon" />
+            <img
+              alt="menu"
+              src="images/menu.png"
+              className="menu-icon"
+              onClick={openMenu}
+            />
             <span>메뉴</span>
           </div>
           <div className="inner-main">
@@ -76,6 +88,7 @@ const Header = () => {
           </nav>
         </div>
       </div>
+      {toggleMenu && <SideBar setToggleMenu={setToggleMenu} />}
     </header>
   );
 };
