@@ -1,0 +1,12 @@
+.product-item {
+  width: 900px;
+  height: 900px;
+  gap: 10px;
+
+  .product-img-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 50px;
+  }
+}
