@@ -4,9 +4,10 @@ import SideModalInfo from './component/SideModalList/SideModalList';
 import './SideModal.scss';
 
 const SideModal = ({ setToggleModal }) => {
-  const [unmount, setUnmount] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+
   const closeMenu = () => {
-    setUnmount(true);
+    setIsOpen(true);
     setTimeout(() => {
       setToggleModal(false);
     }, 300);
@@ -14,12 +15,12 @@ const SideModal = ({ setToggleModal }) => {
   return (
     <div className="sidemodal">
       <div
-        className={`sidemodal-body${unmount ? ' sidemodal-body-unmount' : ''}`}
+        className={`sidemodal-body${isOpen ? ' sidemodal-body-unmount' : ''}`}
         onClick={closeMenu}
       >
         <div
           className={`sidemodal-body-wrap ${
-            unmount ? 'sidemodal-body-wrap-unmount' : ''
+            isOpen ? 'sidemodal-body-wrap-unmount' : ''
           }`}
           onClick={e => e.stopPropagation()}
         >
