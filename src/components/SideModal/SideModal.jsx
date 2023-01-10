@@ -24,19 +24,13 @@ const SideModal = ({ setToggleModal }) => {
           onClick={e => e.stopPropagation()}
         >
           <div className="sidemodal-list-wrap">
-            <div className="header-wrap">
-              <div className="header-container">
-                <div className="inner">
-                  <div className="inner-menu-container">
-                    <img
-                      alt="close"
-                      src="images/close.png"
-                      className="close-icon"
-                      onClick={closeMenu}
-                    />
-                  </div>
-                </div>
-              </div>
+            <div className="inner-menu-container">
+              <img
+                alt="close"
+                src="images/close.png"
+                className="close-icon"
+                onClick={closeMenu}
+              />
             </div>
             <div className="sidemodal-info-wrap">
               <SideModalInfo />
