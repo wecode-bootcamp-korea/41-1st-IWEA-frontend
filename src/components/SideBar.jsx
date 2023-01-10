@@ -22,25 +22,17 @@ const SideBar = ({ setToggleMenu }) => {
           onClick={e => e.stopPropagation()}
         >
           <div className="sidebar-header">
-            <div className="header-wrap">
-              <div className="header-container">
-                <div className="inner-main">
-                  <div className="inner-menu-container">
-                    <img
-                      alt="close"
-                      src="images/close.png"
-                      className="close-icon"
-                      onClick={closeModal}
-                    />
-                  </div>
-                  <h1 className="logo">
-                    <img
-                      src="images/logo.png"
-                      alt="close"
-                      className="logo-img"
-                    />
-                  </h1>
-                </div>
+            <div className="inner-main">
+              <div className="inner-menu-container">
+                <img
+                  alt="close"
+                  src="images/close.png"
+                  className="close-icon"
+                  onClick={closeModal}
+                />
+              </div>
+              <div className="logo">
+                <img src="images/logo.png" alt="close" className="logo-img" />
               </div>
             </div>
           </div>
@@ -97,16 +89,6 @@ const SideBar = ({ setToggleMenu }) => {
                 <li>내 프로필</li>
               </a>
             </ul>
-            <div className="sidebar-nav">
-              <button className="sidebar-button">
-                <span>한국어</span>
-                <span class="material-symbols-outlined">expand_more</span>
-              </button>
-              <button className="sidebar-button">
-                <span class="material-symbols-outlined">language</span>
-                <span>국가 변경</span>
-              </button>
-            </div>
           </div>
         </div>
       </div>
