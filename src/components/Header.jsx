@@ -79,7 +79,7 @@ const Header = () => {
           </ul>
         </nav>
       </div>
-      {toggleMenu && <SideModal setToggleModal={setToggleMenu} />}
+      {toggleMenu && <SideModal setToggleMenu={setToggleMenu} />}
     </header>
   );
 };

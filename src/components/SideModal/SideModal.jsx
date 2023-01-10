@@ -9,7 +9,7 @@ const SideModal = ({ setToggleMenu }) => {
   const closeModal = () => {
     setUnmount(true);
     setTimeout(() => {
-      setToggleMenu(true);
+      setToggleMenu(false);
     }, 300);
   };
 
