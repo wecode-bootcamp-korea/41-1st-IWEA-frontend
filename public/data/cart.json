@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "VANGSTA 방스타",
+    "detail": "확장형테이블, 블랙/다크브라운",
+    "length": "80/120x70 cm",
+    "price": 129000,
+    "picture": "/images/furniture.avif"
+  },
+  {
+    "id": 2,
+    "name": "TEODORES 테오도레스",
+    "detail": "의자, 블랙",
+    "length": "",
+    "price": 34900,
+    "picture": "/images/TEODORES.png"
+  },
+  {
+    "id": 3,
+    "name": "NISSE 니세",
+    "detail": "접이식의자, 블랙",
+    "length": "",
+    "price": 19900,
+    "picture": "/images/NISSE.jpg"
+  }
+]

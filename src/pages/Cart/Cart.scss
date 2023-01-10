@@ -1,20 +1,250 @@
-.top-left {
+.cart-container {
   display: flex;
-  justify-content: space-between;
-  .three-spots {
-    width: 34px;
-    height: 23px;
+  justify-content: space-evenly;
+  padding: 0 2.5rem 0 1.25rem;
+  .basket {
+    .top-left {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 24px;
+      .basket-first {
+        font-size: 2.25rem;
+        letter-spacing: -0.0063em;
+        line-height: 1.333;
+      }
+      .three-spots {
+        width: 34px;
+        height: 23px;
+      }
+    }
+    .basket-second {
+      margin-top: 31px;
+      color: #111;
+      font-size: 1rem;
+      font-weight: 700;
+      line-height: 1.5;
+    }
+    .delivery {
+      display: flex;
+      gap: 1.25rem;
+      flex-direction: row;
+      margin-top: 22px;
+      .delivery-first {
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        width: 100%;
+        min-height: 5.5rem;
+        margin-right: 10px;
+        border: 1px solid #dfdfdf;
+        border-radius: 4px;
+        background: none;
+        color: #484848;
+        .delivery-second {
+          display: flex;
+          margin-top: 25px;
+          margin-left: 22px;
+        }
+        .truck {
+          width: 30px;
+          height: 30px;
+        }
+        .delivery-third {
+          margin-top: 5px;
+          margin-left: 14px;
+        }
+        .pickup-second {
+          display: flex;
+          margin-top: 25px;
+          margin-left: 22px;
+        }
+        .pickup {
+          width: 30px;
+          height: 30px;
+        }
+        .pickup-third {
+          margin-top: 5px;
+          margin-left: 14px;
+        }
+      }
+    }
+    .first-firniture {
+      display: flex;
+
+      margin-top: 80px;
+    }
+    .furniture {
+      width: 150px;
+      height: 150px;
+    }
+    .vangstaFirst {
+      margin-right: 169px;
+      margin-left: 50px;
+      .vangsta {
+        margin-bottom: 10px;
+      }
+      .extendTable {
+        margin-bottom: 10px;
+      }
+      .button {
+        margin-top: 30px;
+        .select {
+          width: 69px;
+          height: 31px;
+          border: 1px solid #dfdfdf;
+          border-radius: 15px;
+        }
+        .buttonFirst {
+          width: 82px;
+          height: 32px;
+          border: 1px solid #dfdfdf;
+          border-radius: 15px;
+          background-color: white;
+        }
+        .delete {
+          margin-left: 20px;
+        }
+      }
+    }
+    .money {
+      margin-left: auto;
+    }
   }
-}
-.delivery {
-  display: flex;
-  justify-content: space-between;
-}
-.first-firniture {
-  display: flex;
-  justify-content: space-between;
-}
-.furniture {
-  width: 50px;
-  height: 50px;
+  .service {
+    margin: 2.5rem 0;
+    margin-top: 60px;
+    border: 1px solid #dfdfdf;
+    border-radius: 8px;
+    .addService {
+      padding: 1rem 1.25rem;
+      border-bottom: 1px solid #dfdfdf;
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+    .addService-second {
+      width: 900px;
+      height: 215px;
+      .composeService {
+        margin-top: 20px;
+        margin-left: 10px;
+        font-weight: 900;
+
+        .tool {
+          width: 20px;
+          height: 20px;
+          margin-right: 15px;
+          margin-left: 17px;
+        }
+      }
+      .saveTime {
+        margin-top: 20px;
+        margin-left: 60px;
+      }
+      .postCode {
+        margin-top: 20px;
+        margin-left: 60px;
+      }
+      .addInformation {
+        margin-top: 20px;
+        margin-left: 60px;
+        text-decoration: underline;
+      }
+    }
+    .choose {
+      width: 173px;
+      height: 37px;
+      margin-top: 20px;
+      margin-left: 53px;
+      border: 1px solid #dfdfdf;
+      border-radius: 100px;
+      background-color: black;
+      color: white;
+    }
+  }
+  .order {
+    margin-right: 27px;
+
+    .rightTop {
+      margin-top: 30px;
+      .firstTop {
+        margin-bottom: 1.25rem;
+      }
+      .secondTop {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1.25rem;
+      }
+      .hr {
+        margin-bottom: 1.25rem;
+        border: none;
+        border-bottom: 2px solid #111;
+      }
+      .thirdTop {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 40px;
+      }
+    }
+    .couponFirst {
+      border-top: 1px solid #dfdfdf;
+      .couponEnter {
+        display: flex;
+        align-items: center;
+        margin-top: 25px;
+        margin-bottom: 25px;
+        border-color: transparent;
+        background-color: white;
+        .coupon {
+          width: 20px;
+          height: 20px;
+        }
+        .couponGo {
+          margin-left: 15px;
+        }
+        .arrowDown {
+          width: 20px;
+          height: 20px;
+          margin-left: 235px;
+        }
+      }
+    }
+    .happyButton {
+      width: 377px;
+      height: 106px;
+      background: #0058a3;
+      color: white;
+      .payFirst {
+        display: flex;
+        align-items: center;
+        .pay {
+          margin-right: 265px;
+          margin-left: 7px;
+        }
+        .arrowCute {
+          width: 30px;
+          height: 30px;
+          border-radius: 15px;
+          background-color: white;
+        }
+      }
+    }
+    .rightDown {
+      margin-top: 33px;
+      margin-bottom: 20px;
+      text-decoration: underline;
+      .love {
+        width: 15px;
+        height: 15px;
+        margin-right: 20px;
+      }
+    }
+    .rightDown-second {
+      text-decoration: underline;
+      .lock {
+        width: 15px;
+        height: 15px;
+        margin-right: 20px;
+      }
+    }
+  }
 }
