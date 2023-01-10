@@ -15,7 +15,7 @@ const HomeEventCard = () => {
                 <div className="card-content-wrap">
                   <div className="card-title">{item.title}</div>
                   <div className="card-content">{item.content}</div>
-                  <Link to="/product">
+                  <Link to="/product?offset=1&limit=12">
                     <img className="card-arrow" src={item.arrow} alt="arrow" />
                   </Link>
                 </div>
