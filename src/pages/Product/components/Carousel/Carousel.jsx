@@ -2,6 +2,8 @@ import React from 'react';
 import './Carousel.scss';
 import { CAROUSEL_ITEM_LISTS } from './CarouselConstData';
 import { useRef, useState, useEffect } from 'react';
+import wlarrow from '../../../../images/btn-leftArrow.png';
+import wrarrow from '../../../../images/btn-rightArrow.png';
 
 const Carousel = ({ handleCategoryTab }) => {
   const [slide, setSlide] = useState(0);
@@ -35,14 +37,14 @@ const Carousel = ({ handleCategoryTab }) => {
           onClick={handleNext}
           style={{ display: slide === 0 ? 'none' : '' }}
         >
-          이전으로
+          <img src={wlarrow} alt="left-arrow" />
         </button>
         <button
           className="nextBtn"
           onClick={handlePrev}
-          style={{ display: slide === CAROUSELWIDTH * 0.5 ? 'none' : '' }}
+          style={{ display: slide === -CAROUSELWIDTH * 4 ? 'none' : '' }}
         >
-          다음으로
+          <img src={wrarrow} alt="left-arrow" />
         </button>
         <div className="CarouselTest-image-wrapper">
           <div className="image-container" ref={carouselRef}>
