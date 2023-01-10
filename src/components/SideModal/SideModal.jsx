@@ -3,25 +3,25 @@ import SideModalList from './component/SideModalInfo/SideModalInfo';
 import SideModalInfo from './component/SideModalList/SideModalList';
 import './SideModal.scss';
 
-const SideModal = ({ setToggleModal }) => {
-  const [isOpen, setIsOpen] = useState(false);
+const SideModal = ({ setToggleMenu }) => {
+  const [unmount, setUnmount] = useState(false);
 
-  const closeMenu = () => {
-    setIsOpen(true);
+  const closeModal = () => {
+    setUnmount(true);
     setTimeout(() => {
-      setToggleModal(true);
+      setToggleMenu(true);
     }, 300);
   };
 
   return (
     <div className="sidemodal">
       <div
-        className={`sidemodal-body${isOpen ? ' sidemodal-body-unmount' : ''}`}
-        onClick={closeMenu}
+        className={`sidemodal-body${unmount ? ' sidemodal-body-unmount' : ''}`}
+        onClick={closeModal}
       >
         <div
           className={`sidemodal-body-wrap ${
-            isOpen ? 'sidemodal-body-wrap-unmount' : ''
+            unmount ? 'sidemodal-body-wrap-unmount' : ''
           }`}
           onClick={e => e.stopPropagation()}
         >
@@ -31,7 +31,7 @@ const SideModal = ({ setToggleModal }) => {
                 alt="close"
                 src="/images/close.png"
                 className="close-icon"
-                onClick={closeMenu}
+                onClick={closeModal}
               />
             </div>
             <div className="sidemodal-info-wrap">
