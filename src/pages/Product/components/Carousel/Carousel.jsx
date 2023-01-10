@@ -49,7 +49,7 @@ const Carousel = ({ handleCategoryTab }) => {
                 <div
                   key={data.id}
                   className="image-card"
-                  onClick={() => handleCategoryTab(data.id)}
+                  onClick={() => handleCategoryTab(data.productDetail.id)}
                 >
                   <img key={data.id} src={data.src} alt={data.alt} />
                   <button className="linkBtn">{data.text}</button>

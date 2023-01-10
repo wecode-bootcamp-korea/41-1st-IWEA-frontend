@@ -23,7 +23,7 @@ const ProductList = ({ productList, handleSendToCartBtn }) => {
               <h2>{product.price}</h2>
               <button
                 onClick={() => {
-                  handleSendToCartBtn(product.id);
+                  handleSendToCartBtn(product.productDetail.id);
                 }}
               >
                 장바구니로~

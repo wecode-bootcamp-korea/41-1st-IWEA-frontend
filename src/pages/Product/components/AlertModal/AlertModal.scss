@@ -13,7 +13,7 @@
 
   width: 400px;
 
-  height: 200px;
+  height: 150px;
   padding: 30px;
   transform: translateX(0px);
   transition: transform 200ms 1s;
@@ -24,12 +24,7 @@
 
   color: white;
 
-  .AlertModal-btn {
-    display: flex;
-    justify-content: start;
-  }
-
-  .AlertModal-text-container {
+  &-text-container {
     display: flex;
     flex-direction: column;
     gap: 10px;

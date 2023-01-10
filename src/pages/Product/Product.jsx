@@ -1,45 +1,21 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import AlertModal from './components/AlertModal/AlertModal';
-
 import Carousel from './components/Carousel/Carousel';
 import ProductList from './components/ProductList';
 import ProductSort from './components/ProductSort';
-
 import './Product.scss';
-
-// const getQueryString = queries => {
-//   const qs = Object.entries(queries)
-//     .filter(([key, value]) => value)
-//     .map(([key, value]) => `${key}=${value}`)
-//     .join('&');
-
-//   if (!qs) return '';
-
-//   return '?' + qs;
-// };
 
 const Product = () => {
   const [productList, setProductList] = useState([]);
-
   const [searchParams, setSearchParams] = useSearchParams();
-
-  const [tabSwitch, setTabSwitch] = useState(1);
+  const [tabSwitch, setTabSwitch] = useState(0);
   const [sortSwitch, setSortSwitch] = useState('');
-
+  const [count, setCount] = useState(1);
   const category = searchParams.get('category');
   const sort = searchParams.get('sort');
-
-  // const queryMap = {
-  //   category: searchParams.get('category'),
-  //   sort: searchParams.get('sort'),
-  // };
-
-  // console.log(getQueryString(queryMap));
-
-  // 페이지네이션 Code
-  // const offset = searchParams.get('offset');
-  // const limit = searchParams.get('limit');
+  const offset = searchParams.get('offset');
+  const limit = searchParams.get('limit');
 
   const [isAlertOn, setIsAlertOn] = useState(false);
   const alertRef = useRef();
@@ -50,6 +26,8 @@ const Product = () => {
       'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsImlhdCI6MTY3Mjk4Mjk5OX0.e5U_dS5bGyY-w7Kqay_3wdqCVa8pmgXNAhwdSAKh6W8'
     );
   }, []);
+
+  const navigate = useNavigate();
 
   const handleCategoryTab = pageId => {
     console.log(`${pageId} handleCategoryTab 작동중...`);
@@ -64,37 +42,39 @@ const Product = () => {
     setSearchParams(searchParams);
     setSortSwitch(sortMethod);
   };
-  // const handleMoreLoad = moreLoad => {
-  //   console.log('handleMoreLoad 함수 실행중..');
-  //   searchParams.set('offset', 12);
-  //   setSearchParams(searchParams);
-  // };
 
-  // SwitchTab code
+  const handleMoreLoad = count => {
+    console.log('handleMoreLoad 작동중..');
+    searchParams.set('offset', count * 12);
+    setSearchParams(searchParams);
+  };
+
   // fetch에 ?start=${offset}&limit=${limit}&category=${category}&sort=${sort} 추가
   // ?start=${offset}&limit=${limit}&cate`gory=${category}&sort=${sort}
   useEffect(() => {
     fetch(
-      // `http://10.58.52.69:3000/products?category=${category}&sort=${sort}`,
-      `http://10.58.52.69:3000/products?${searchParams.toString()}`,
+      // `http://10.58.52.69:3000/products?category=${category}&sort=${sort}&offset=${offset}&limit=${limit}`,
+      `http://10.58.52.139:3000/products?${searchParams.toString()}`,
       // `http://10.58.52.69:3000/products${getQueryString(queryMap)}`,
       {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
-          // Authorization: window.localStorage.getItem('TOKEN'),
         },
       }
     )
       .then(response => response.json())
-      .then(data => setProductList(data));
-  }, [category, sort]);
+      .then(data => {
+        setProductList(data);
+        navigate('/product?offset=1&limit=12');
+      });
+  }, [category, sort, offset, limit]);
+  //offset, limit 추가
 
-  // console.log(productList);
   const handleSendToCartBtn = productId => {
     console.log('handleSendToCartBtn작동중...');
     setIsAlertOn(true);
-    fetch('http://10.58.52.69:3000/carts', {
+    fetch('http://10.58.52.139:3000/carts', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -105,14 +85,6 @@ const Product = () => {
       }),
     });
   };
-
-  // useEffect(() => {
-  //   fetch('http://10.58.52.92:3000/$???', {
-  //     method: 'GET',
-  //   })
-  //     .then(response => response.json())
-  //     .then(result => setSendItem(result));
-  // }, [paramsId, searchParams]);
 
   return (
     <div className="Product">
@@ -131,7 +103,16 @@ const Product = () => {
           productList={productList}
           handleSendToCartBtn={handleSendToCartBtn}
         />
-        {/* <button onClick={handleMoreLoad}>더보기</button> */}
+        <button ref={alertRef} onClick={handleSendToCartBtn}>
+          장바구니 확인
+        </button>
+        <button
+          onClick={() => {
+            handleMoreLoad(count);
+          }}
+        >
+          더보기
+        </button>
         <div ref={alertRef}>
           {isAlertOn === true ? (
             <AlertModal className="AlertModal" setIsAlertOn={setIsAlertOn} />
