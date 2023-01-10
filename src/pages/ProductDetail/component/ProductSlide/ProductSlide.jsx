@@ -5,8 +5,6 @@ import ProductSlideItem from './ProductSlideItem/ProductSlideItem';
 const ProductSlide = ({ slideItemList }) => {
   const carouselRef = useRef(null);
 
-  console.log(slideItemList);
-
   return (
     <div className="product-slide-wrap">
       <div className="product-slide-item-wrap">
