@@ -8,6 +8,8 @@ const Carousel = ({ handleCategoryTab }) => {
   const carouselRef = useRef(null);
   const CAROUSELWIDTH = 200;
 
+  console.log();
+
   const handleNext = () => {
     setSlide(slide + CAROUSELWIDTH);
   };
@@ -44,12 +46,12 @@ const Carousel = ({ handleCategoryTab }) => {
         </button>
         <div className="CarouselTest-image-wrapper">
           <div className="image-container" ref={carouselRef}>
-            {CAROUSEL_ITEM_LISTS.map(data => {
+            {CAROUSEL_ITEM_LISTS?.map(data => {
               return (
                 <div
                   key={data.id}
                   className="image-card"
-                  onClick={() => handleCategoryTab(data.productDetail.id)}
+                  onClick={() => handleCategoryTab(data.id)}
                 >
                   <img key={data.id} src={data.src} alt={data.alt} />
                   <button className="linkBtn">{data.text}</button>

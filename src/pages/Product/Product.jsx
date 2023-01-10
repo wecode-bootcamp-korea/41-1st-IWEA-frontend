@@ -11,7 +11,7 @@ const Product = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [tabSwitch, setTabSwitch] = useState(0);
   const [sortSwitch, setSortSwitch] = useState('');
-  const [count, setCount] = useState(1);
+  const [countLimit, setCountLimit] = useState(1);
   const category = searchParams.get('category');
   const sort = searchParams.get('sort');
   const offset = searchParams.get('offset');
@@ -26,8 +26,6 @@ const Product = () => {
       'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsImlhdCI6MTY3Mjk4Mjk5OX0.e5U_dS5bGyY-w7Kqay_3wdqCVa8pmgXNAhwdSAKh6W8'
     );
   }, []);
-
-  const navigate = useNavigate();
 
   const handleCategoryTab = pageId => {
     console.log(`${pageId} handleCategoryTab 작동중...`);
@@ -45,7 +43,10 @@ const Product = () => {
 
   const handleMoreLoad = count => {
     console.log('handleMoreLoad 작동중..');
-    searchParams.set('offset', count * 12);
+    searchParams.set('limit', countLimit * 12);
+    // searchParams.set('offset', countOffset);
+    setCountLimit(countLimit + 1);
+    // setCountOffset(countOffset + 12);
     setSearchParams(searchParams);
   };
 
@@ -66,7 +67,6 @@ const Product = () => {
       .then(response => response.json())
       .then(data => {
         setProductList(data);
-        navigate('/product?offset=1&limit=12');
       });
   }, [category, sort, offset, limit]);
   //offset, limit 추가
@@ -103,12 +103,11 @@ const Product = () => {
           productList={productList}
           handleSendToCartBtn={handleSendToCartBtn}
         />
-        <button ref={alertRef} onClick={handleSendToCartBtn}>
-          장바구니 확인
-        </button>
+
         <button
+          className="more-btn"
           onClick={() => {
-            handleMoreLoad(count);
+            handleMoreLoad(countLimit);
           }}
         >
           더보기

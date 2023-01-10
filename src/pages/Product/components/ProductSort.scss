@@ -9,5 +9,8 @@
     border-radius: 24px;
     background-color: #212322;
     color: white;
+    &:hover {
+      color: orange;
+    }
   }
 }

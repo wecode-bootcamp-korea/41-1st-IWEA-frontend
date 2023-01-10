@@ -51,4 +51,16 @@ const SORTBTN_DATA = [
     sort: 'nameDESC',
     method: 'ASC',
   },
+  {
+    id: 5,
+    title: '신 상품 순',
+    sort: 'new',
+    method: 'ASC',
+  },
+  {
+    id: 6,
+    title: '오래된 상품 순',
+    sort: 'old',
+    method: 'ASC',
+  },
 ];
