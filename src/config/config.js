@@ -9,4 +9,4 @@ const API = {
   cart: `${BASE_URL}/cart/`,
 };
 
-export { API };
+export default API;

@@ -3,8 +3,6 @@ import './ProductSlide.scss';
 import ProductSlideItem from './ProductSlideItem/ProductSlideItem';
 
 const ProductSlide = ({ slideItemList }) => {
-  // const [cardList, setCardList] = useState([]);
-  // const { english_name, korean_name, price, iamge_url } = product;
   const carouselRef = useRef(null);
 
   console.log(slideItemList);
