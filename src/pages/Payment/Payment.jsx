@@ -1,5 +1,4 @@
 import React from 'react';
-import SideModal from '../../components/SideModal/SideModal';
 import PaymentAside from './component/PaymentAside/PaymentAside';
 import PaymentInfo from './component/PaymentInfo/PaymentInfo';
 import './Payment.scss';
@@ -15,7 +14,6 @@ const Payment = () => {
           <PaymentInfo />
         </div>
       </div>
-      <SideModal />
     </div>
   );
 };
