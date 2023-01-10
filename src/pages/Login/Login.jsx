@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import { BASE_URL } from '../../config';
+import API from '../../config/config';
 import './Login.scss';
 
 const Login = () => {
@@ -22,7 +22,7 @@ const Login = () => {
 
   const handleLogin = e => {
     e.preventDefault();
-    fetch(`${BASE_URL}/signin`, {
+    fetch(`${API}/signin`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
