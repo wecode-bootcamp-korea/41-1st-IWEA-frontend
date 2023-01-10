@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import './HomeBanner.scss';
 
+import arrowB1 from '../../../images/arrow-b.png';
+import arrowB2 from '../../../images/arrow-b2.png';
+
 const HomeBanner = () => {
   const [move, setMove] = useState(0);
   const active = {
@@ -41,16 +44,21 @@ const HomeBanner = () => {
       <div className="HomeBanner-btn-container">
         {move === 0 ? (
           <button disabled onClick={handleMoveLeft}>
-            이전으로
+            <img src={arrowB1} alt="arrow-b" />
           </button>
         ) : (
-          <button onClick={handleMoveLeft}>이전으로</button>
+          <button onClick={handleMoveLeft}>
+            <img src={arrowB1} alt="arrow-b" />
+          </button>
         )}
         {move === 0 ? (
-          <button onClick={handleMoveRight}>다음으로</button>
+          <button onClick={handleMoveRight}>
+            {' '}
+            <img src={arrowB2} alt="arrow-b2" />
+          </button>
         ) : (
           <button disabled onClick={handleMoveRight}>
-            다음으로
+            <img src={arrowB2} alt="arrow-b2" />
           </button>
         )}
       </div>
