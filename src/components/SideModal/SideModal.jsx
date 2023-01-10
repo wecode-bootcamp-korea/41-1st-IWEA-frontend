@@ -9,9 +9,10 @@ const SideModal = ({ setToggleModal }) => {
   const closeMenu = () => {
     setIsOpen(true);
     setTimeout(() => {
-      setToggleModal(false);
+      setToggleModal(true);
     }, 300);
   };
+
   return (
     <div className="sidemodal">
       <div
@@ -28,7 +29,7 @@ const SideModal = ({ setToggleModal }) => {
             <div className="inner-menu-container">
               <img
                 alt="close"
-                src="images/close.png"
+                src="/images/close.png"
                 className="close-icon"
                 onClick={closeMenu}
               />
