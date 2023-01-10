@@ -11,38 +11,37 @@ const ProductDetail = () => {
   const params = useParams();
   const productId = params.id;
 
-  // useEffect(() => {
-  //   fetch(`http://10.58.52.155:3000/products/${productId}`, {
-  //     method: 'GET',
-  //     headers: {
-  //       'Content-Type': 'application/json;charset=utf-8',
-  //       Authorization: localStorage.getItem('TOKEN'),
-  //     },
-  //   })
-  //     .then(res => {
-  //       return res.json();
-  //     })
-  //     .then(data => {
-  //       setProduct(data.data);
-  //       // console.log(data);
-  //     });
-  // }, [productId]);
+  useEffect(() => {
+    fetch(`http://10.58.52.155:3000/products/${productId}`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json;charset=utf-8',
+        Authorization: localStorage.getItem('TOKEN'),
+      },
+    })
+      .then(res => {
+        return res.json();
+      })
+      .then(data => {
+        setProduct(data.data);
+      });
+  }, [productId]);
 
-  // useEffect(() => {
-  //   fetch('http://10.58.52.155:3000/products', {
-  //     method: 'GET',
-  //     headers: {
-  //       'Content-Type': 'application/json;charset=utf-8',
-  //       Authorization: localStorage.getItem('TOKEN'),
-  //     },
-  //   })
-  //     .then(res => {
-  //       return res.json();
-  //     })
-  //     .then(data => {
-  //       setSlideItemList(data.data);
-  //     });
-  // }, []);
+  useEffect(() => {
+    fetch('http://10.58.52.155:3000/products', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json;charset=utf-8',
+        Authorization: localStorage.getItem('TOKEN'),
+      },
+    })
+      .then(res => {
+        return res.json();
+      })
+      .then(data => {
+        setSlideItemList(data.data);
+      });
+  }, []);
 
   return (
     <div className="product-wrap">

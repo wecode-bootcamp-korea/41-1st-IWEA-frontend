@@ -7,7 +7,6 @@ const ProductSlideItem = ({
   productEngName,
   productPrice,
 }) => {
-  // console.log(product);
   return (
     <div className="product-slide-item">
       <img src={productImg} alt="제품사진" />
