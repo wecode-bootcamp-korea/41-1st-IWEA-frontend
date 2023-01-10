@@ -10,7 +10,6 @@ const ProductDetail = () => {
   // const [product, setProduct] = useState(MOCK_DATA.data);
 
   useEffect(() => {
-    // fetch(`${process.env.REACT_APP_API_URL}/products/productId/10`, {
     fetch('http://10.58.52.155:3000/products/productId/10', {
       method: 'GET',
       headers: {
