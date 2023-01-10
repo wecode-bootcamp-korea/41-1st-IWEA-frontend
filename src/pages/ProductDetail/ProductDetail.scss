@@ -26,9 +26,13 @@
     .product-first-slide,
     .product-second-slide {
       h1 {
-        padding: 130px 0 0 0;
+        // padding: 130px 0 0 0;
         font-size: 22px;
       }
+    }
+
+    .product-first-slide {
+      padding: 130px 0 0 0;
     }
   }
 }
