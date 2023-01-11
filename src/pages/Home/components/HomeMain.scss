@@ -1,0 +1,62 @@
+@import '../../../styles//color.scss';
+
+.HomeMain {
+  .homeMain-big-title {
+    width: 90%;
+    margin: auto;
+
+    h1 {
+      margin-bottom: 10px;
+      font-size: 30px;
+      font-weight: 600;
+    }
+
+    h2 {
+      font-size: 26px;
+      font-weight: 600;
+    }
+  }
+
+  .homeMain-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    margin: auto;
+    margin-bottom: 32px;
+
+    #iwea-family {
+      color: $blueColor;
+      font-weight: 600;
+    }
+
+    p {
+      width: 900px;
+      height: 45px;
+      padding-top: 20px;
+      font-size: 14px;
+    }
+
+    button {
+      width: 200px;
+      height: 40px;
+      margin-right: 15px;
+      border: 1px solid #000000;
+      border-radius: 70px;
+      background-color: #ffffff;
+      font-size: 14px;
+      font-weight: bold;
+    }
+  }
+  .homeMain-image-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 64px;
+
+    .homeMain-image {
+      width: 44%;
+      margin-right: 15px;
+    }
+  }
+}
