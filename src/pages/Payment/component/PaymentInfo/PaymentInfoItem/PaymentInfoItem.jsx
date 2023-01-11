@@ -1,14 +1,17 @@
 import React from 'react';
 import './PaymentInfoItem.scss';
 
-const PaymentInfoItem = () => {
+const PaymentInfoItem = ({ product }) => {
   return (
     <div className="payment-info-item">
       <div className="payment-info-data">
         <p className="payment-info-date">2023-01-06</p>
-        <h1>구매 내역 이름</h1>
+        <h1>
+          <span>{product.cartList[0].englishName}</span>
+          <span>{product.cartList[0].koreanhName}</span>
+        </h1>
         <p className="payment-info-buy">
-          <span>₩100,000원</span>
+          <span>{product.cartList[0].eachPrice}</span>
           <span>IWEA 온라인</span>
         </p>
         <p className="payment-info-desc">
