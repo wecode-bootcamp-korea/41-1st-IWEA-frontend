@@ -1,5 +1,4 @@
 import React from 'react';
-import Header from './components/Header';
 import HomeEvent from './components/HomeEvent';
 import HomeGrid from './components/HomeGrid';
 import HomeMain from './components/HomeMain';
