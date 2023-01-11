@@ -23,7 +23,7 @@ const ProductDetail = () => {
         return res.json();
       })
       .then(data => {
-        console.log(data.data);
+        // console.log(data.data);
         setProduct(data.data);
       });
   }, [productId]);

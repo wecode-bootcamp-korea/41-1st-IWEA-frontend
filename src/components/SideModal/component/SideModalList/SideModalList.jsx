@@ -5,11 +5,11 @@ const SideModalList = ({ modal }) => {
     <div className="sidemodal-list">
       <p>
         <span>Hej </span>
-        <span>{modal}</span>
+        <span>{modal.cartsList[0].koreanName}</span>
       </p>
       <p className="my-points">
         <span>내 포인트</span>
-        <span>1,000,000</span>
+        <span>{modal.userPoints}</span>
       </p>
     </div>
   );
