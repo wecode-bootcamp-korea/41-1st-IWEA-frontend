@@ -53,7 +53,6 @@ const HomeBanner = () => {
         )}
         {move === 0 ? (
           <button onClick={handleMoveRight}>
-            {' '}
             <img src={arrowB2} alt="arrow-b2" />
           </button>
         ) : (
