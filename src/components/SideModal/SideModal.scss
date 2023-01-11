@@ -6,7 +6,6 @@
     right: 0;
     width: 100vw;
     height: 100vh;
-
     animation: modal-bg-animation 0.5s;
     background-color: rgba(0, 0, 0, 0.25);
   }
@@ -21,14 +20,14 @@
   height: 100vh;
   overflow-y: scroll;
   transition: all 0.3s;
-  animation: menu-bar-mount 0.5s;
+  animation: modal-bar-mount 0.5s;
   background-color: white;
 
   .sidemodal-list-wrap {
     background: #0158a3;
   }
 
-  .inner-menu-container {
+  .inner-modal-container {
     display: flex;
     align-items: center;
     align-self: center;
@@ -50,14 +49,14 @@
 }
 
 .sidemodal-body-unmount {
-  opacity: 0;
+  animation: modal-bar-unmount 0.3s;
 }
 
 .sidemodal-body-wrap-unmount {
-  transform: translateX(200%);
+  animation: modal-bar-unmount 0.3s;
 }
 
-@keyframes menu-bar-mount {
+@keyframes modal-bar-mount {
   from {
     transform: translateX(+100%);
   }
@@ -72,5 +71,23 @@
   }
   to {
     opacity: 1;
+  }
+}
+
+@keyframes modal-bar-unmount {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(+100%);
+  }
+}
+
+@keyframes modal-bg-unanimation {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
   }
 }

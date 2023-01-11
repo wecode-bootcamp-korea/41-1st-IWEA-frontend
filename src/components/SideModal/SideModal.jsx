@@ -1,20 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import SideModalList from './component/SideModalInfo/SideModalInfo';
-import SideModalInfo from './component/SideModalList/SideModalList';
+import SideModalList from './component/SideModalList/SideModalList';
+import SideModalInfo from './component/SideModalInfo/SideModalInfo';
 import './SideModal.scss';
 
 const SideModal = ({ setToggleMenu }) => {
   const [unmount, setUnmount] = useState(false);
-  const [modal, setModal] = useState([]);
+  const [modal, setModal] = useState({});
 
   useEffect(() => {
-    return window.localStorage.setItem(
-      'TOKEN',
-      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjcsImlhdCI6MTY3MzM5NDk5MH0.nejufPzJzN2PzV5ToZGIXHC9fP21skEhEk7Lp4ZwgFU'
-    );
-  }, []);
-  useEffect(() => {
-    fetch('http://10.58.52.241:3000/carts', {
+    fetch('http://10.58.52.56:3000/userInfo', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
@@ -25,11 +19,11 @@ const SideModal = ({ setToggleMenu }) => {
         return res.json();
       })
       .then(data => {
-        // console.log(data.data[0].korean_name);
         setModal(data.data);
-        // console.log(data);
       });
   }, []);
+  console.log(modal.name);
+  console.log(modal.points);
 
   const closeModal = () => {
     setUnmount(true);
@@ -51,7 +45,7 @@ const SideModal = ({ setToggleMenu }) => {
           onClick={e => e.stopPropagation()}
         >
           <div className="sidemodal-list-wrap">
-            <div className="inner-menu-container">
+            <div className="inner-modal-container">
               <img
                 alt="close"
                 src="/images/close.png"
@@ -60,7 +54,10 @@ const SideModal = ({ setToggleMenu }) => {
               />
             </div>
             <div className="sidemodal-info-wrap">
-              <SideModalInfo modal={modal} />
+              <SideModalInfo
+                modalName={modal.name}
+                modalPoints={modal.points}
+              />
             </div>
             <div className="sidemodal-list-wrap">
               <SideModalList />
