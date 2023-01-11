@@ -7,13 +7,6 @@ const CartProducts = ({ data, changeCount, deleteCartData }) => {
   const { cartId, eachPrice, koreanName, englishName, quantity, thumbnail } =
     data;
 
-  useEffect(() => {
-    return window.localStorage.setItem(
-      'TOKEN',
-      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsImlhdCI6MTY3Mjk4Mjk5OX0.e5U_dS5bGyY-w7Kqay_3wdqCVa8pmgXNAhwdSAKh6W8'
-    );
-  }, []);
-
   const handleCount = e => {
     fetch(`http://10.58.52.69:3000/carts?cart_id=${cartId}`, {
       method: 'PATCH',
@@ -33,24 +26,6 @@ const CartProducts = ({ data, changeCount, deleteCartData }) => {
       });
     changeCount(e, data);
   };
-
-  /* const handleDelete = () => {
-    fetch('http://127.0.0.1:3000/carts', {
-      method: 'DELETE',
-      headers: {
-        Authorization: localStorage.getItem('access_token'),
-      },
-      body: JSON.stringify({
-        cart_id: cart_id,
-      }),
-    }).then(response => {
-      if (response.status === 204) {
-        deleteCartData(data);
-      }
-    });
-    deleteCartData(data);
-  };
-  */
 
   const handleDelete = () => {
     fetch(`http://10.58.52.69:3000/carts?cart_id=${cartId}`, {

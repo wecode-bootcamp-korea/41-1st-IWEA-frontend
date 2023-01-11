@@ -8,13 +8,6 @@ const Cart = () => {
   const [userPoints, setUserPoints] = useState([]);
 
   useEffect(() => {
-    return window.localStorage.setItem(
-      'TOKEN',
-      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsImlhdCI6MTY3Mjk4Mjk5OX0.e5U_dS5bGyY-w7Kqay_3wdqCVa8pmgXNAhwdSAKh6W8'
-    );
-  }, []);
-
-  useEffect(() => {
     fetch('/data/cartList.json', {
       method: 'GET',
       headers: {
@@ -31,24 +24,6 @@ const Cart = () => {
         setUserPoints(result.data.userPoints);
       });
   }, []);
-
-  /* useEffect(() => {
-    fetch('http://127.0.0.1:3000/carts', {
-      method: 'GET',
-      headers: {
-        Authorization: localStorage.getItem('access_token'),
-      },
-    })
-      .then(response => response.json())
-      .then(result => {
-        if (result.message === 'USER_NOT_EXISTS') {
-          setCartData([]);
-          return;
-        }
-        setCartData(result.result);
-      });
-  }, []);
-*/
 
   const DeleteCartId = cartData.map(ele => {
     return ele.cartId;
