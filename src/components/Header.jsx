@@ -84,11 +84,7 @@ const Header = () => {
           </ul>
         </nav>
       </div>
-<<<<<<< HEAD
       {toggleMenu && <SideBar setToggleMenu={setToggleMenu} />}
-=======
-      {sideBarMenu && <SideModal setSideBarMenu={setSideBarMenu} />}
->>>>>>> main
     </header>
   );
 };
