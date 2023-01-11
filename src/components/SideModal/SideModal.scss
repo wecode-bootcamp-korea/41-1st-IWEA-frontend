@@ -24,7 +24,15 @@
   background-color: white;
 
   .sidemodal-list-wrap {
-    background: #0158a3;
+    background: #212322;
+
+    img {
+      position: absolute;
+      right: 10px;
+      bottom: 10px;
+      width: 100px;
+      background-color: #fff;
+    }
   }
 
   .inner-modal-container {
