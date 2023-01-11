@@ -1,12 +1,12 @@
-.CarouselTest {
+.Carousel {
   width: 90%;
   margin: 0 auto 48px auto;
-  .CarouselTest-text {
+  .Carousel-text {
     margin-bottom: 20px;
     font-size: 23px;
     font-weight: bold;
   }
-  .CarouselTest-wrapper {
+  .Carousel-wrapper {
     position: relative;
     width: 87vw;
     height: 400px;
@@ -46,7 +46,7 @@
       font-weight: bold;
       cursor: pointer;
     }
-    .CarouselTest-image-wrapper {
+    .Carousel-image-wrapper {
       overflow: scroll;
       &::-webkit-scrollbar {
         width: 0px;

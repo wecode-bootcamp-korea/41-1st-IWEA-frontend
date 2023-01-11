@@ -1,9 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './ProductSort.scss';
 
 const ProductSort = ({ handleSortTab }) => {
-  const [isSortBoxVisible, setIsSortBoxVisible] = useState(false);
-
   return (
     <div className="ProductSort">
       <div className="ProductSort">
@@ -13,7 +11,7 @@ const ProductSort = ({ handleSortTab }) => {
               className="productSort-btn"
               onClick={() => handleSortTab(sort.sort)}
             >
-              {sort.title} {isSortBoxVisible ? '▲' : '▼'}
+              {sort.title}
             </button>
           );
         })}

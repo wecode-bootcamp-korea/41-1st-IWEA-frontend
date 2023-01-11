@@ -4,7 +4,6 @@ import './ProductList.scss';
 import basket from '../../../images/basket.png';
 
 const ProductList = ({ productList, handleSendToCartBtn }) => {
-  // console.log('handleSendToCartBtn잇음?', handleSendToCartBtn);
   return (
     <div className="ProductList">
       {productList.data?.length > 0 &&

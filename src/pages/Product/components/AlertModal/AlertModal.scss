@@ -1,18 +1,13 @@
 .AlertModal {
   display: flex;
-
   position: fixed;
-
   z-index: 999;
   top: 30px;
   right: 100px;
-
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-
   width: 400px;
-
   height: 150px;
   padding: 30px;
   transform: translateX(0px);

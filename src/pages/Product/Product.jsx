@@ -16,7 +16,6 @@ const Product = () => {
   const limit = searchParams.get('limit');
 
   const [isAlertOn, setIsAlertOn] = useState(false);
-  const alertRef = useRef();
 
   const handleCategoryTab = pageId => {
     searchParams.set('category', pageId);
@@ -87,7 +86,7 @@ const Product = () => {
         >
           더보기
         </button>
-        <div ref={alertRef}>
+        <div>
           {isAlertOn === true ? (
             <AlertModal className="AlertModal" setIsAlertOn={setIsAlertOn} />
           ) : (

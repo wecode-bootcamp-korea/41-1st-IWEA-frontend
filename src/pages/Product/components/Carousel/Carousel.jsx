@@ -24,12 +24,9 @@ const Carousel = ({ handleCategoryTab }) => {
   }, [slide]);
 
   return (
-    <div className="CarouselTest">
-      {/* Text */}
-      <div className="CarouselTest-text">공간별 제품 쇼핑하기</div>
-      {/* Carousel */}
-      <div className="CarouselTest-wrapper">
-        {/* Button  */}
+    <div className="Carousel">
+      <div className="Carousel-text">공간별 제품 쇼핑하기</div>
+      <div className="Carousel-wrapper">
         <button
           className="prevBtn"
           onClick={handleNext}
@@ -44,7 +41,7 @@ const Carousel = ({ handleCategoryTab }) => {
         >
           <img src={wrarrow} alt="left-arrow" />
         </button>
-        <div className="CarouselTest-image-wrapper">
+        <div className="Carousel-image-wrapper">
           <div className="image-container" ref={carouselRef}>
             {CAROUSEL_ITEM_LISTS?.map(data => {
               return (
