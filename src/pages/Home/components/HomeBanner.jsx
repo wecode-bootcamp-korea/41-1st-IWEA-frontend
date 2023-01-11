@@ -10,16 +10,13 @@ const HomeBanner = () => {
     transform: `translate(${move}px)`,
     transition: 'all 2s',
   };
+
   const handleMoveRight = () => {
     setMove(prev => prev - 1399);
   };
   const handleMoveLeft = () => {
     setMove(prev => prev + 1399);
   };
-
-  if (move === -3455) {
-    return setMove(0);
-  }
 
   return (
     <div className="HomeBanner">
@@ -42,24 +39,13 @@ const HomeBanner = () => {
         </div>
       </div>
       <div className="HomeBanner-btn-container">
-        {move === 0 ? (
-          <button disabled onClick={handleMoveLeft}>
-            <img src={arrowB1} alt="arrow-b" />
-          </button>
-        ) : (
-          <button onClick={handleMoveLeft}>
-            <img src={arrowB1} alt="arrow-b" />
-          </button>
-        )}
-        {move === 0 ? (
-          <button onClick={handleMoveRight}>
-            <img src={arrowB2} alt="arrow-b2" />
-          </button>
-        ) : (
-          <button disabled onClick={handleMoveRight}>
-            <img src={arrowB2} alt="arrow-b2" />
-          </button>
-        )}
+        <button disabled={move === 0} onClick={handleMoveLeft}>
+          <img src={arrowB1} alt="arrow-b" />
+        </button>
+
+        <button disabled={move === -1399} onClick={handleMoveRight}>
+          <img src={arrowB2} alt="arrow-b2" />
+        </button>
       </div>
     </div>
   );
