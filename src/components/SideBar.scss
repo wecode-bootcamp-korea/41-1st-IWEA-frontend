@@ -1,12 +1,21 @@
 .sidebar {
+  .sidebar-body-unmount {
+    animation: menuUnBgAnimation 0.5s;
+  }
+
   &-body {
     position: fixed;
     z-index: 999;
     top: 0px;
     width: 100vw;
     height: 100vh;
-    animation: modalBgAnimation 0.5s;
+    animation: menuBgAnimation 0.5s;
     background-color: rgba(0, 0, 0, 0.25);
+
+    .sidebar-body-wrap-unmount {
+      animation: menuBarUmount 0.5s;
+    }
+
     &-wrap {
       position: fixed;
       z-index: 99;
@@ -77,15 +86,6 @@
   }
 }
 
-.sidebar-body-unmount {
-  transition: all 0.5s;
-  opacity: 0;
-}
-.sidebar-body-wrap-unmount {
-  transform: translateX(-100%);
-  transition: all 0.5s;
-}
-
 @keyframes menuBarMount {
   from {
     transform: translateX(-100%);
@@ -95,11 +95,29 @@
   }
 }
 
-@keyframes modalBgAnimation {
+@keyframes menuBarUmount {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes menuBgAnimation {
   from {
     opacity: 0;
   }
   to {
     opacity: 1;
+  }
+}
+
+@keyframes menuUnBgAnimation {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
   }
 }
