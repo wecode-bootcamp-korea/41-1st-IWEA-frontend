@@ -9,7 +9,6 @@ const Home = () => {
   return (
     <div className="Home">
       {/* 헤더 - src컴포넌트 */}
-      <Header />
       <HomeMain />
       <Carousel />
       <HomeGrid />

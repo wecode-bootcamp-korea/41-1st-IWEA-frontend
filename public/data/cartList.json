@@ -1,0 +1,52 @@
+{
+  "data": {
+    "userPoints": "940000.000",
+    "cartList": [
+      {
+        "productId": 1,
+        "cartId": 6,
+        "eachPrice": "20000",
+        "koreanName": "의자",
+        "englishName": "CHAIR",
+        "quantity": 1,
+        "thumbnail": "https://source.unsplash.com/random"
+      },
+      {
+        "productId": 2,
+        "cartId": 7,
+        "eachPrice": "30000",
+        "koreanName": "침대",
+        "englishName": "BED",
+        "quantity": 2,
+        "thumbnail": "https://source.unsplash.com/random"
+      },
+      {
+        "productId": 3,
+        "cartId": 8,
+        "eachPrice": "40000",
+        "koreanName": "책상",
+        "englishName": "DESK",
+        "quantity": 3,
+        "thumbnail": "https://source.unsplash.com/random"
+      },
+      {
+        "productId": 4,
+        "cartId": 9,
+        "eachPrice": "50000",
+        "koreanName": "노트북",
+        "englishName": "LABTOP",
+        "quantity": 4,
+        "thumbnail": "https://source.unsplash.com/random"
+      },
+      {
+        "productId": 5,
+        "cartId": 10,
+        "eachPrice": "50000",
+        "koreanName": "연필",
+        "englishName": "PENCIL",
+        "quantity": 5,
+        "thumbnail": "https://source.unsplash.com/random"
+      }
+    ]
+  }
+}

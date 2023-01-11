@@ -1,0 +1,36 @@
+.Cart {
+  .cart-wrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    max-width: 1540px;
+    margin: 0 40px 0 120px;
+    padding: 50px 0 130px 0;
+    border-bottom: 1px solid #dfdfdf;
+
+    .cart-inner {
+      flex-grow: 1;
+
+      .cart-header {
+        display: flex;
+        justify-content: space-between;
+        margin: 20px 0;
+
+        .cart-title {
+          font-size: 30px;
+          font-weight: 700;
+        }
+
+        .cart-trash {
+          width: 24px;
+          height: 24px;
+          cursor: pointer;
+
+          &:hover {
+            background-color: yellow;
+          }
+        }
+      }
+    }
+  }
+}
