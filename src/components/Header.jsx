@@ -27,14 +27,19 @@ const Header = () => {
             <img src="images/logo.png" alt="IWEA" className="logo-img" />
           </Link>
           <div className="search">
-            <span class="material-symbols-outlined">search</span>
+            <span className="material-symbols-outlined">search</span>
             <input
               type="search"
               placeholder="검색어 입력"
               className="search-input"
             />
           </div>
-          <img src="images/user.png" alt="user" className="user-img" />
+          <img
+            src="images/user.png"
+            alt="user"
+            className="user-img"
+            onClick={openMenu}
+          />
           <Link to="/login">
             <img src="images/enter.png" alt="login" className="login-img" />
           </Link>
@@ -43,7 +48,6 @@ const Header = () => {
           </Link>
         </div>
       </div>
-
       <div className="nav-wrap">
         <nav className="nav-main">
           <ul className="nav-left-item">
@@ -80,7 +84,11 @@ const Header = () => {
           </ul>
         </nav>
       </div>
+<<<<<<< HEAD
       {toggleMenu && <SideBar setToggleMenu={setToggleMenu} />}
+=======
+      {sideBarMenu && <SideModal setSideBarMenu={setSideBarMenu} />}
+>>>>>>> main
     </header>
   );
 };

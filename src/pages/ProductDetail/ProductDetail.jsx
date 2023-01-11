@@ -12,7 +12,7 @@ const ProductDetail = () => {
   const productId = params.id;
 
   useEffect(() => {
-    fetch(`http://10.58.52.155:3000/products/${productId}`, {
+    fetch(`http://10.58.52.56:3000/products/productId/${productId}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
@@ -23,12 +23,13 @@ const ProductDetail = () => {
         return res.json();
       })
       .then(data => {
+        console.log(data);
         setProduct(data.data);
       });
   }, [productId]);
 
   useEffect(() => {
-    fetch('http://10.58.52.155:3000/products', {
+    fetch('http://10.58.52.56:3000/products', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
@@ -39,6 +40,7 @@ const ProductDetail = () => {
         return res.json();
       })
       .then(data => {
+        console.log(data);
         setSlideItemList(data.data);
       });
   }, []);
