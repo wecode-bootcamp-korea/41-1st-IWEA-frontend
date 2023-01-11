@@ -18,7 +18,7 @@
     left: 50%;
     width: 500px;
     height: 500px;
-    padding: 15px;
+    padding: 45px;
     transform: translate(-50%, -50%);
     border-radius: 10px;
     background-color: rgb(255, 255, 255);
@@ -49,7 +49,8 @@
 
     .modal-desc {
       padding-top: 20px;
-      font-size: 16px;
+      font-size: 17px;
+      line-height: 30px;
       text-align: center;
     }
   }
