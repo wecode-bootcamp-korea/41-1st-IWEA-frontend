@@ -50,21 +50,24 @@ const SideModal = ({ setToggleMenu }) => {
           }`}
           onClick={e => e.stopPropagation()}
         >
+          <div className="inner-menu-container">
+            <img
+              alt="close"
+              src="/images/close.png"
+              className="close-icon"
+              onClick={closeModal}
+            />
+          </div>
+          <div className="sidemodal-info-wrap">
+            <SideModalInfo modal={modal} />
+          </div>
           <div className="sidemodal-list-wrap">
-            <div className="inner-menu-container">
-              <img
-                alt="close"
-                src="/images/close.png"
-                className="close-icon"
-                onClick={closeModal}
-              />
-            </div>
-            <div className="sidemodal-info-wrap">
-              <SideModalInfo modal={modal} />
-            </div>
-            <div className="sidemodal-list-wrap">
-              <SideModalList />
-            </div>
+            <SideModalList />
+            <img
+              className="iwea-logo"
+              src="/images/SideModal/iwea-logo.png"
+              alt=""
+            />
           </div>
         </div>
       </div>
