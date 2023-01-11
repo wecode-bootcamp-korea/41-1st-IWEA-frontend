@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import './Header.scss';
-import SideModal from './SideModal/SideModal';
+import SideBar from './SideBar';
 import { Link } from 'react-router-dom';
 
 const Header = () => {
-  const [sideBarMenu, setSideBarMenu] = useState(false);
+  const [toggleMenu, setToggleMenu] = useState(false);
 
   const openMenu = () => {
-    setSideBarMenu(true);
+    setToggleMenu(true);
   };
 
   return (
@@ -15,7 +15,12 @@ const Header = () => {
       <div className="header-wrap">
         <div className="logo">
           <div className="inner-menu-container">
-            <img alt="menu" src="images/menu.png" className="menu-icon" />
+            <img
+              alt="menu"
+              src="images/menu.png"
+              className="menu-icon"
+              onClick={openMenu}
+            />
             <span>메뉴</span>
           </div>
           <Link to="/">
@@ -79,7 +84,7 @@ const Header = () => {
           </ul>
         </nav>
       </div>
-      {sideBarMenu && <SideModal setSideBarMenu={setSideBarMenu} />}
+      {toggleMenu && <SideBar setToggleMenu={setToggleMenu} />}
     </header>
   );
 };
