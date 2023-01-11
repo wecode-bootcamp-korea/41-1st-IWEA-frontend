@@ -22,13 +22,17 @@
       text-align: center;
     }
 
-    h1 {
-      padding-top: 25px;
+    .payment-info-name {
+      padding: 40px 10px 0 0;
       font-size: 22px;
+
+      span:first-child {
+        padding-right: 5px;
+      }
     }
 
     .payment-info-buy {
-      padding: 10px 0 20px 0;
+      padding: 10px 0 0px 0;
 
       span:first-child {
         padding-right: 10px;

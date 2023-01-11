@@ -8,7 +8,7 @@ const Payment = () => {
   const [product, setProduct] = useState({});
 
   useEffect(() => {
-    fetch('http://10.58.52.155:3000/carts', {
+    fetch('http://10.58.52.56:3000/carts', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
@@ -19,9 +19,15 @@ const Payment = () => {
         return res.json();
       })
       .then(data => {
-        setProduct(data.data);
+        // console.log(data.data);
+        // console.log(data.data.cartList);
+        // console.log(data.data.cartList[0]);
+        // console.log(data.data.cartList[0].koreanName);
+        // setProduct(data.data.cartList[0]);
+        setProduct(data.data.cartList);
       });
   }, []);
+  // console.log(product);
 
   return (
     <div className="payment-wrap">

@@ -6,12 +6,12 @@ const PaymentInfoItem = ({ product }) => {
     <div className="payment-info-item">
       <div className="payment-info-data">
         <p className="payment-info-date">2023-01-06</p>
-        <h1>
-          <span>{product.cartList[0].englishName}</span>
-          <span>{product.cartList[0].koreanhName}</span>
-        </h1>
+        <p className="payment-info-name">
+          <span>{product.englishName}</span>
+          <span>{product.koreanName}</span>
+        </p>
         <p className="payment-info-buy">
-          <span>{product.cartList[0].eachPrice}</span>
+          <span>{product.eachPrice}</span>
           <span>IWEA 온라인</span>
         </p>
         <p className="payment-info-desc">
