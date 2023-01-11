@@ -1,0 +1,45 @@
+.product-aside-buy {
+  .procudt-aside-buy-desc {
+    margin-bottom: 15px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .product-aside-buy-wrap {
+    width: 100%;
+    margin-bottom: 30px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+
+    .product-aside-buy-item {
+      display: flex;
+      justify-content: start;
+      width: 90%;
+      margin: auto;
+      padding: 20px 15px;
+
+      img {
+        width: 45px;
+        height: 45px;
+        margin-right: 15px;
+      }
+
+      h2 {
+        margin-bottom: 10px;
+      }
+    }
+
+    li:nth-child(2) {
+      border-top: 1px solid #dddddd;
+
+      img {
+        width: 40px;
+        height: 40px;
+      }
+    }
+  }
+
+  p:last-child {
+    text-decoration: underline;
+  }
+}

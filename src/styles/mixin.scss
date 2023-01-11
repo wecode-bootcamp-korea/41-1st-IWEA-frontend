@@ -20,3 +20,8 @@
   left: $left;
   transform: translate($translateX, $translateY);
 }
+
+body {
+  min-width: 650px;
+  max-width: 1920px;
+}
