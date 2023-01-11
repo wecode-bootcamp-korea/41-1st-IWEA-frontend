@@ -22,8 +22,6 @@ const SideModal = ({ setToggleMenu }) => {
         setModal(data.data);
       });
   }, []);
-  console.log(modal.name);
-  console.log(modal.points);
 
   const closeModal = () => {
     setUnmount(true);
