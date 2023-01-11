@@ -4,10 +4,10 @@ import SideModal from './SideModal/SideModal';
 import { Link } from 'react-router-dom';
 
 const Header = () => {
-  const [toggleMenu, setToggleMenu] = useState(false);
+  const [sideBarMenu, setSideBarMenu] = useState(false);
 
   const openMenu = () => {
-    setToggleMenu(true);
+    setSideBarMenu(true);
   };
 
   return (
@@ -79,7 +79,7 @@ const Header = () => {
           </ul>
         </nav>
       </div>
-      {toggleMenu && <SideModal setToggleMenu={setToggleMenu} />}
+      {sideBarMenu && <SideModal setSideBarMenu={setSideBarMenu} />}
     </header>
   );
 };

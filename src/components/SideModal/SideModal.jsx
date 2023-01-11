@@ -3,30 +3,30 @@ import SideModalList from './component/SideModalList/SideModalList';
 import SideModalInfo from './component/SideModalInfo/SideModalInfo';
 import './SideModal.scss';
 
-const SideModal = ({ setToggleMenu }) => {
+const SideModal = ({ setSideBarMenu }) => {
   const [unmount, setUnmount] = useState(false);
   const [modal, setModal] = useState({});
 
-  useEffect(() => {
-    fetch('http://10.58.52.56:3000/userInfo', {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json;charset=utf-8',
-        Authorization: localStorage.getItem('TOKEN'),
-      },
-    })
-      .then(res => {
-        return res.json();
-      })
-      .then(data => {
-        setModal(data.data);
-      });
-  }, []);
+  // useEffect(() => {
+  //   fetch('http://10.58.52.56:3000/userInfo', {
+  //     method: 'GET',
+  //     headers: {
+  //       'Content-Type': 'application/json;charset=utf-8',
+  //       Authorization: localStorage.getItem('TOKEN'),
+  //     },
+  //   })
+  //     .then(res => {
+  //       return res.json();
+  //     })
+  //     .then(data => {
+  //       setModal(data.data);
+  //     });
+  // }, []);
 
   const closeModal = () => {
     setUnmount(true);
     setTimeout(() => {
-      setToggleMenu(false);
+      setSideBarMenu(false);
     }, 300);
   };
 
@@ -51,12 +51,16 @@ const SideModal = ({ setToggleMenu }) => {
                 onClick={closeModal}
               />
             </div>
-            <div className="sidemodal-info-wrap">
-              <SideModalInfo
-                modalName={modal.name}
-                modalPoints={modal.points}
-              />
-            </div>
+            {modal.name && modal.points ? (
+              <div className="sidemodal-info-wrap">
+                <SideModalInfo
+                  modalName={modal.name}
+                  modalPoints={modal.points}
+                />
+              </div>
+            ) : (
+              <>''</>
+            )}
             <div className="sidemodal-list-wrap">
               <SideModalList />
             </div>
