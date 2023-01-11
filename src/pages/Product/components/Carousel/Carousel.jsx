@@ -10,8 +10,6 @@ const Carousel = ({ handleCategoryTab }) => {
   const carouselRef = useRef(null);
   const CAROUSELWIDTH = 200;
 
-  console.log();
-
   const handleNext = () => {
     setSlide(slide + CAROUSELWIDTH);
   };

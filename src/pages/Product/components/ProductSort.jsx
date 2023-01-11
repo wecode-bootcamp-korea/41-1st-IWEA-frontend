@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
-import { SORT_LISTS, PRICE_TAG_LISTS } from './PageSortConstData';
 import './ProductSort.scss';
 
 const ProductSort = ({ handleSortTab }) => {
   const [isSortBoxVisible, setIsSortBoxVisible] = useState(false);
 
   return (
-    // Params써서, onClick에 함수를 담는다.
     <div className="ProductSort">
       <div className="ProductSort">
         {SORTBTN_DATA?.map(sort => {
