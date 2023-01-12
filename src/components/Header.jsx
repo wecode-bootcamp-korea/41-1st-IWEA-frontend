@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Header.scss';
 import SideBar from './SideBar';
 import { Link } from 'react-router-dom';
@@ -9,6 +9,18 @@ const Header = () => {
   const openMenu = () => {
     setToggleMenu(true);
   };
+
+  const [cartList, setCartList] = useState([]);
+  useEffect(() => {
+    fetch(`http://10.58.52.170:3000/carts`, {
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: localStorage.getItem('TOKEN'),
+      },
+    })
+      .then(response => response.json())
+      .then(data => setCartList(data.data.cartList));
+  }, []);
 
   return (
     <header className="header">
@@ -46,6 +58,7 @@ const Header = () => {
           <Link to="/cart">
             <img src="images/cart.png" alt="cart" className="cart-img" />
           </Link>
+          <button className="cart-count">{cartList.length}</button>
         </div>
       </div>
       <div className="nav-wrap">

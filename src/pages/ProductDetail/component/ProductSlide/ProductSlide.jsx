@@ -14,8 +14,8 @@ const ProductSlide = ({ slideItemList }) => {
               <ProductSlideItem
                 key={slideItem.id}
                 productImg={slideItem.thumbnail}
-                productKrName={slideItem.korean_name}
-                productEngName={slideItem.english_name}
+                productKrName={slideItem.koreanName}
+                productEngName={slideItem.englishName}
                 productPrice={slideItem.price}
               />
             );

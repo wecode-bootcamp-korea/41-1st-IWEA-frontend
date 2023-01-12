@@ -10,11 +10,11 @@ const ProductSlideItem = ({
   return (
     <div className="product-slide-item">
       <img src={productImg} alt="제품사진" />
-      <span className="name">{productEngName}</span>
+      <span className="name">{productEngName} </span>
       <span className="name">{productKrName}</span>
       <p className="price">
         <span>￦</span>
-        {productPrice}
+        {parseInt(productPrice).toLocaleString()}
       </p>
       <div className="product-slide-icon">
         <img

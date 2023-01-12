@@ -12,7 +12,7 @@ const ProductDetail = () => {
   const productId = params.id;
 
   useEffect(() => {
-    fetch(`http://10.58.52.56:3000/products/productId/${productId}`, {
+    fetch(`http://10.58.52.184:3000/products/productId/${productId}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
@@ -28,7 +28,7 @@ const ProductDetail = () => {
   }, [productId]);
 
   useEffect(() => {
-    fetch('http://10.58.52.56:3000/products', {
+    fetch('http://10.58.52.184:3000/products', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',

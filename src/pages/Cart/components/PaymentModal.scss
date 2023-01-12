@@ -1,0 +1,75 @@
+.cart-modal-bg {
+  display: flex;
+  position: fixed;
+  z-index: 999;
+  top: 0px;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  animation: modalBgAnimation 0.3s;
+  background-color: rgba(0, 0, 0, 0.25);
+  .cart-modal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 500px;
+    height: 250px;
+    animation: modalOpenAnimation 0.3s;
+    border-radius: 10px;
+    background-color: white;
+    .move-payment {
+      margin-bottom: 40px;
+      font-size: 14px;
+    }
+    .cart-modal-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 70px;
+      font-size: 25px;
+    }
+    .cart-modal-button-wrapper {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-around;
+      width: 200px;
+      .confirm-button,
+      .cancel-button {
+        width: 60px;
+        height: 30px;
+        border: none;
+        border-radius: 5px;
+      }
+      .confirm-button,
+      .cancel-button {
+        background-color: black;
+        color: white;
+        cursor: pointer;
+        &:hover {
+          background-color: grey;
+        }
+      }
+    }
+  }
+}
+
+@keyframes modalBgAnimation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modalOpenAnimation {
+  from {
+    scale: 0;
+  }
+  to {
+    scale: 1;
+  }
+}

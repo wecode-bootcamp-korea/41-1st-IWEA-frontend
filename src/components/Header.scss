@@ -53,9 +53,9 @@
           border: 2px solid transparent;
           border-radius: 50em;
           outline: 0;
-          background-color: lightyellow;
+          background-color: #eee;
           &:hover {
-            border: 1px solid #eee;
+            border: 1px solid grey;
             color: black;
           }
         }
@@ -67,6 +67,15 @@
         width: 24px;
         height: 24px;
         cursor: pointer;
+      }
+      .cart-count {
+        margin-top: -20px;
+        margin-left: -53px;
+        border: none;
+        border-radius: 100%;
+        background-color: black;
+        color: white;
+        font-size: 14px;
       }
     }
   }
