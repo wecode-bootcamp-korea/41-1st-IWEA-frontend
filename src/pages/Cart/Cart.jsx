@@ -16,7 +16,7 @@ const Cart = () => {
   };
 
   useEffect(() => {
-    fetch('/data/cartList.json', {
+    fetch('http://10.58.52.184:3000/carts', {
       method: 'GET',
       headers: {
         Authorization: localStorage.getItem('TOKEN'),

@@ -8,13 +8,6 @@ const ProductContent = ({ product }) => {
   const navigate = useNavigate();
   const { id } = product;
 
-  useEffect(() => {
-    return window.localStorage.setItem(
-      'TOKEN',
-      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjcsImlhdCI6MTY3MzM5NDk5MH0.nejufPzJzN2PzV5ToZGIXHC9fP21skEhEk7Lp4ZwgFU'
-    );
-  }, []);
-
   const handleGoToCart = () => {
     fetch('http://10.58.52.170:3000/carts', {
       method: 'POST',

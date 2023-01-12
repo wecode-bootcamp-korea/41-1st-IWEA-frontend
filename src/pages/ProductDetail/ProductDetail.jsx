@@ -12,13 +12,6 @@ const ProductDetail = () => {
   const productId = params.id;
 
   useEffect(() => {
-    return window.localStorage.setItem(
-      'TOKEN',
-      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjE3LCJpYXQiOjE2NzM0ODUxNTJ9.1yegbGB5TR5osJQPtZAPKSJNZ0oFE5sBXaFkRgMizs4'
-    );
-  }, []);
-
-  useEffect(() => {
     fetch(`http://10.58.52.184:3000/products/productId/${productId}`, {
       method: 'GET',
       headers: {
