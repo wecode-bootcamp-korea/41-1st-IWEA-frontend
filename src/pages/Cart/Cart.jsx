@@ -3,6 +3,7 @@ import CartProducts from './components/CartProducts';
 import './Cart.scss';
 import CartSideBar from './components/CartSideBar';
 import PaymentModal from './components/PaymentModal';
+import { useNavigate } from 'react-router-dom';
 
 const Cart = () => {
   const [cartData, setCartData] = useState([]);
@@ -15,8 +16,9 @@ const Cart = () => {
     setIsOpenPaymentModal(false);
   };
 
+  const navigate = useNavigate();
   useEffect(() => {
-    fetch('http://10.58.52.184:3000/carts', {
+    fetch('http://10.58.52.170:3000/carts', {
       method: 'GET',
       headers: {
         Authorization: localStorage.getItem('TOKEN'),
@@ -84,18 +86,44 @@ const Cart = () => {
     0
   );
 
+  const paymentSubmit = () => {
+    const cartId = cartData.map(info => {
+      return info.cartId;
+    });
+    const products = cartData.map(info => {
+      return { productId: info.productId, quantity: info.quantity };
+    });
+    fetch('http://10.58.52.170:3000/orders', {
+      method: 'post',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: localStorage.getItem('TOKEN'),
+      },
+      body: JSON.stringify({
+        cartId: cartId,
+        products: products,
+        totalPrice: cartData.totalPrice,
+      }),
+    }).then(result => {
+      if (result.status === 201) {
+        navigate('/payment');
+      }
+    });
+  };
+
+  console.log(
+    cartData.map(info => {
+      return info.cartId;
+    })
+  );
   return (
     <div className="Cart">
-      {isOpenPaymentModal &&
-        cartData.map(data => {
-          return (
-            <PaymentModal
-              closePaymentModal={closePaymentModal}
-              data={data}
-              totalPrice={totalPrice}
-            />
-          );
-        })}
+      {isOpenPaymentModal && (
+        <PaymentModal
+          closePaymentModal={closePaymentModal}
+          paymentSubmit={paymentSubmit}
+        />
+      )}
       <div className="cart-wrapper payment">
         <div className="cart-inner">
           <div className="cart-header">
