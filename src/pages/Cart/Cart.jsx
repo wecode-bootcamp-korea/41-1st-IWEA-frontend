@@ -18,7 +18,7 @@ const Cart = () => {
 
   const navigate = useNavigate();
   useEffect(() => {
-    fetch('/data/cartList.json', {
+    fetch('http://10.58.52.170:3000/carts', {
       method: 'GET',
       headers: {
         Authorization: localStorage.getItem('TOKEN'),
