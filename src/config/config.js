@@ -1,4 +1,4 @@
-const BASE_URL = '';
+const BASE_URL = 'http://10.58.52.56:3000';
 
 const API = {
   login: `${BASE_URL}/login`,
@@ -9,4 +9,4 @@ const API = {
   cart: `${BASE_URL}/cart/`,
 };
 
-export { API };
+export default API;

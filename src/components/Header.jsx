@@ -1,8 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import './Header.scss';
+import SideBar from './SideBar';
 import { Link } from 'react-router-dom';
 
 const Header = () => {
+  const [toggleMenu, setToggleMenu] = useState(false);
+
+  const openMenu = () => {
+    setToggleMenu(true);
+  };
+
   const [cartList, setCartList] = useState([]);
   useEffect(() => {
     fetch(`http://10.58.52.170:3000/carts`, {
@@ -14,28 +21,37 @@ const Header = () => {
       .then(response => response.json())
       .then(data => setCartList(data.data.cartList));
   }, []);
-  console.log(cartList);
 
   return (
     <header className="header">
       <div className="header-wrap">
         <div className="logo">
           <div className="inner-menu-container">
-            <img alt="menu" src="images/menu.png" className="menu-icon" />
+            <img
+              alt="menu"
+              src="images/menu.png"
+              className="menu-icon"
+              onClick={openMenu}
+            />
             <span>메뉴</span>
           </div>
           <Link to="/">
             <img src="images/logo.png" alt="IWEA" className="logo-img" />
           </Link>
           <div className="search">
-            <span class="material-symbols-outlined">search</span>
+            <span className="material-symbols-outlined">search</span>
             <input
               type="search"
               placeholder="검색어 입력"
               className="search-input"
             />
           </div>
-          <img src="images/user.png" alt="user" className="user-img" />
+          <img
+            src="images/user.png"
+            alt="user"
+            className="user-img"
+            onClick={openMenu}
+          />
           <Link to="/login">
             <img src="images/enter.png" alt="login" className="login-img" />
           </Link>
@@ -45,7 +61,6 @@ const Header = () => {
           <button className="cart-count">{cartList.length}</button>
         </div>
       </div>
-
       <div className="nav-wrap">
         <nav className="nav-main">
           <ul className="nav-left-item">
@@ -82,6 +97,7 @@ const Header = () => {
           </ul>
         </nav>
       </div>
+      {toggleMenu && <SideBar setToggleMenu={setToggleMenu} />}
     </header>
   );
 };
