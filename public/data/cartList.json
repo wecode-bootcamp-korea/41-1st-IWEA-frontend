@@ -5,7 +5,7 @@
       {
         "productId": 1,
         "cartId": 6,
-        "eachPrice": "20000",
+        "eachPrice": "20000.000",
         "koreanName": "의자",
         "englishName": "CHAIR",
         "quantity": 1,
@@ -14,7 +14,7 @@
       {
         "productId": 2,
         "cartId": 7,
-        "eachPrice": "30000",
+        "eachPrice": "30000.000",
         "koreanName": "침대",
         "englishName": "BED",
         "quantity": 2,
@@ -23,7 +23,7 @@
       {
         "productId": 3,
         "cartId": 8,
-        "eachPrice": "40000",
+        "eachPrice": "40000.000",
         "koreanName": "책상",
         "englishName": "DESK",
         "quantity": 3,
@@ -32,7 +32,7 @@
       {
         "productId": 4,
         "cartId": 9,
-        "eachPrice": "50000",
+        "eachPrice": "50000.000",
         "koreanName": "노트북",
         "englishName": "LAPTOP",
         "quantity": 4,
@@ -41,7 +41,7 @@
       {
         "productId": 5,
         "cartId": 10,
-        "eachPrice": "50000",
+        "eachPrice": "50000.000",
         "koreanName": "연필",
         "englishName": "PENCIL",
         "quantity": 5,
