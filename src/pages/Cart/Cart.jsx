@@ -2,13 +2,21 @@ import React, { useState, useEffect } from 'react';
 import CartProducts from './components/CartProducts';
 import './Cart.scss';
 import CartSideBar from './components/CartSideBar';
+import PaymentModal from './components/PaymentModal';
 
 const Cart = () => {
   const [cartData, setCartData] = useState([]);
-  const [userPoints, setUserPoints] = useState([]);
+  const [isOpenPaymentModal, setIsOpenPaymentModal] = useState(false);
+
+  const openPaymentModal = () => {
+    setIsOpenPaymentModal(true);
+  };
+  const closePaymentModal = () => {
+    setIsOpenPaymentModal(false);
+  };
 
   useEffect(() => {
-    fetch('/data/cartList.json', {
+    fetch('http://10.58.52.184:3000/carts', {
       method: 'GET',
       headers: {
         Authorization: localStorage.getItem('TOKEN'),
@@ -21,32 +29,27 @@ const Cart = () => {
           return;
         }
         setCartData(result.data.cartList);
-        setUserPoints(result.data.userPoints);
       });
   }, []);
 
-  const DeleteCartId = cartData.map(ele => {
+  const deleteCartId = cartData.map(ele => {
     return ele.cartId;
   });
 
-  const handleDelete = () => {
+  const handleDeleteAll = () => {
     fetch(
-      `http://10.58.52.69:3000/carts?cart_id=${DeleteCartId.join('&cartId=')}`,
+      `http://10.58.52.184:3000/carts?cartId=${deleteCartId.join('&cartId=')}`,
       {
         method: 'DELETE',
         headers: {
           Authorization: localStorage.getItem('TOKEN'),
         },
-        body: JSON.stringify({
-          cartId: DeleteCartId,
-        }),
       }
     ).then(response => {
-      if (response.status === 204) {
+      if (response.status === 200) {
         setCartData([]);
       }
     });
-    setCartData([]);
   };
 
   const changeCount = (e, data) => {
@@ -76,14 +79,23 @@ const Cart = () => {
     setCartData(changeCartData);
   };
 
-  let totalPrice = 0;
-  if (cartData.length > 0) {
-    for (let i = 0; i < cartData.length; i++) {
-      totalPrice += parseInt(cartData[i].eachPrice * cartData[i].quantity);
-    }
-  }
+  const totalPrice = cartData.reduce(
+    (prev, current) => prev + current.eachPrice * current.quantity,
+    0
+  );
+
   return (
     <div className="Cart">
+      {isOpenPaymentModal &&
+        cartData.map(data => {
+          return (
+            <PaymentModal
+              closePaymentModal={closePaymentModal}
+              data={data}
+              totalPrice={totalPrice}
+            />
+          );
+        })}
       <div className="cart-wrapper payment">
         <div className="cart-inner">
           <div className="cart-header">
@@ -94,7 +106,7 @@ const Cart = () => {
               src="images/trash.png"
               className="cart-trash"
               type="button"
-              onClick={handleDelete}
+              onClick={handleDeleteAll}
             />
           </div>
           {cartData.length > 0 && (
@@ -115,8 +127,7 @@ const Cart = () => {
         {cartData.length > 0 && (
           <CartSideBar
             totalPrice={totalPrice.toLocaleString()}
-            cartData={cartData}
-            userPoints={userPoints}
+            openPaymentModal={openPaymentModal}
           />
         )}
       </div>

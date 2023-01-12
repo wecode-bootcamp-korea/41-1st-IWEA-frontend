@@ -8,27 +8,22 @@ const CartProducts = ({ data, changeCount, deleteCartData }) => {
     data;
 
   const handleCount = e => {
-    fetch(`http://10.58.52.69:3000/carts?cart_id=${cartId}`, {
+    fetch(`http://10.58.52.184:3000/carts`, {
       method: 'PATCH',
       headers: {
         Authorization: localStorage.getItem('TOKEN'),
+        'Content-Type': 'application/json;charset=utf-8',
       },
       body: JSON.stringify({
         cartId: cartId,
         quantity: parseInt(e.target.value),
       }),
-    })
-      .then(response => response.json())
-      .then(result => {
-        if (result.message === 'LACK_OF_QUANTITY') {
-          alert('재고가 부족합니다.');
-        }
-      });
+    }).then(response => response.json());
     changeCount(e, data);
   };
 
   const handleDelete = () => {
-    fetch(`http://10.58.52.69:3000/carts?cart_id=${cartId}`, {
+    fetch(`http://10.58.52.184:3000/carts?cartId=${cartId}`, {
       method: 'DELETE',
       headers: {
         Authorization: localStorage.getItem('TOKEN'),
@@ -37,20 +32,20 @@ const CartProducts = ({ data, changeCount, deleteCartData }) => {
         cartId: cartId,
       }),
     }).then(response => {
-      if (response.status === 204) {
+      if (response.status === 200) {
         deleteCartData(data);
       }
     });
-    deleteCartData(data);
   };
 
   const Price = eachPrice => {
     return parseInt(eachPrice).toLocaleString();
   };
 
-  const productQuantity = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((v, i) => i);
+  const productQuantity = Array(10)
+    .fill()
+    .map((v, i) => i);
 
-  console.log(data);
   return (
     <div className="CartProducts">
       <div className="product-inner">
@@ -71,7 +66,7 @@ const CartProducts = ({ data, changeCount, deleteCartData }) => {
               <select defaultValue={quantity} onChange={handleCount}>
                 {productQuantity.map((num, index) => {
                   return (
-                    <option key={index} vlaue={`${num}`}>
+                    <option key={index} value={`${num}`}>
                       {num}
                     </option>
                   );

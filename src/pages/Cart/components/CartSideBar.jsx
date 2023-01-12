@@ -1,46 +1,8 @@
-import { useNavigate } from 'react-router-dom';
-
+import React, { useEffect } from 'react';
 import './CartSideBar.scss';
 
-const CartSideBar = ({ totalPrice, cartData, userPoints }) => {
-  let productId = [];
-  let cartId = [];
-  let quantity = [];
-  {
-    cartData.map(data => {
-      return (
-        (productId += data.productId),
-        (cartId += data.cartId),
-        (quantity += data.quantity)
-      );
-    });
-  }
-  const navigate = useNavigate();
-
-  const handleClickBuy = () => {
-    fetch('http://10.58.52.69:3000/carts', {
-      method: 'post',
-      headers: {
-        Authorization: localStorage.getItem('TOKEN'),
-      },
-      body: JSON.stringify({
-        cartId: cartId,
-        productId: productId,
-        quantity: quantity,
-      }),
-    }).then(result => {
-      if (result.status === 201) {
-        navigate('/payment', { state: { cartData: cartData } });
-      }
-    });
-    navigate('/payment', {
-      state: { cartData: cartData, userPoints: userPoints },
-    });
-  };
-
+const CartSideBar = ({ totalPrice, openPaymentModal }) => {
   const ShippingPrice = parseInt(2500).toLocaleString();
-
-  console.log(cartData);
 
   return (
     <div className="CartSideBar">
@@ -55,7 +17,7 @@ const CartSideBar = ({ totalPrice, cartData, userPoints }) => {
           <span className="total-price-won">₩ {totalPrice}</span>
         </div>
       </div>
-      <button className="payment-btn" onClick={handleClickBuy}>
+      <button className="payment-btn" onClick={openPaymentModal}>
         <span>결제하기</span>
         <div className="arrow-btn" type="button">
           <i className="fas fa-solid fa-arrow-right" />
