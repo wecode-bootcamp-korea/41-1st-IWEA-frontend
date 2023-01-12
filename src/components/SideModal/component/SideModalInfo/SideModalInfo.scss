@@ -1,8 +1,27 @@
 .sidemodal-info {
-  padding: 40px 50px;
-  background-color: #fff;
+  color: #fff;
+
   p {
-    padding: 20px 0;
-    font-size: 18px;
+    padding: 40px 50px;
+    border-bottom: 1px solid #ccc;
+    font-size: 20px;
+
+    span {
+      text-align: center;
+    }
+  }
+
+  &:first-child {
+    font-size: 30px;
+    font-weight: 700;
+  }
+
+  .my-points {
+    display: flex;
+    justify-content: space-between;
+
+    span:last-child {
+      font-size: 25px;
+    }
   }
 }

@@ -1,20 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import SideModalList from './component/SideModalInfo/SideModalInfo';
-import SideModalInfo from './component/SideModalList/SideModalList';
+import SideModalList from './component/SideModalList/SideModalList';
+import SideModalInfo from './component/SideModalInfo/SideModalInfo';
 import './SideModal.scss';
 
-const SideModal = ({ setToggleMenu }) => {
+const SideModal = ({ setSideBarMenu }) => {
   const [unmount, setUnmount] = useState(false);
-  const [modal, setModal] = useState([]);
+  const [modal, setModal] = useState({});
 
   useEffect(() => {
-    return window.localStorage.setItem(
-      'TOKEN',
-      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjcsImlhdCI6MTY3MzM5NDk5MH0.nejufPzJzN2PzV5ToZGIXHC9fP21skEhEk7Lp4ZwgFU'
-    );
-  }, []);
-  useEffect(() => {
-    fetch('http://10.58.52.241:3000/carts', {
+    fetch('http://10.58.52.56:3000/userInfo', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
@@ -25,16 +19,14 @@ const SideModal = ({ setToggleMenu }) => {
         return res.json();
       })
       .then(data => {
-        // console.log(data.data[0].korean_name);
         setModal(data.data);
-        // console.log(data);
       });
   }, []);
 
   const closeModal = () => {
     setUnmount(true);
     setTimeout(() => {
-      setToggleMenu(false);
+      setSideBarMenu(false);
     }, 300);
   };
 
@@ -50,24 +42,29 @@ const SideModal = ({ setToggleMenu }) => {
           }`}
           onClick={e => e.stopPropagation()}
         >
-          <div className="inner-menu-container">
-            <img
-              alt="close"
-              src="/images/close.png"
-              className="close-icon"
-              onClick={closeModal}
-            />
-          </div>
-          <div className="sidemodal-info-wrap">
-            <SideModalInfo modal={modal} />
-          </div>
           <div className="sidemodal-list-wrap">
-            <SideModalList />
-            <img
-              className="iwea-logo"
-              src="/images/SideModal/iwea-logo.png"
-              alt=""
-            />
+            <div className="inner-modal-container">
+              <img
+                alt="close"
+                src="/images/close.png"
+                className="close-icon"
+                onClick={closeModal}
+              />
+            </div>
+            {modal.name && modal.points ? (
+              <div className="sidemodal-info-wrap">
+                <SideModalInfo
+                  modalName={modal.name}
+                  modalPoints={modal.points}
+                />
+              </div>
+            ) : (
+              <>''</>
+            )}
+            <div className="sidemodal-list-wrap">
+              <SideModalList />
+              <img src="/images/logo.png" alt="iwea 로고" />
+            </div>
           </div>
         </div>
       </div>

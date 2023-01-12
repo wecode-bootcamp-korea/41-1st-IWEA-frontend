@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Header.scss';
-import SideModal from './SideModal/SideModal';
+import SideBar from './SideBar';
 import { Link } from 'react-router-dom';
 
 const Header = () => {
@@ -15,7 +15,12 @@ const Header = () => {
       <div className="header-wrap">
         <div className="logo">
           <div className="inner-menu-container">
-            <img alt="menu" src="images/menu.png" className="menu-icon" />
+            <img
+              alt="menu"
+              src="images/menu.png"
+              className="menu-icon"
+              onClick={openMenu}
+            />
             <span>메뉴</span>
           </div>
           <Link to="/">
@@ -79,7 +84,7 @@ const Header = () => {
           </ul>
         </nav>
       </div>
-      {toggleMenu && <SideModal setToggleMenu={setToggleMenu} />}
+      {toggleMenu && <SideBar setToggleMenu={setToggleMenu} />}
     </header>
   );
 };

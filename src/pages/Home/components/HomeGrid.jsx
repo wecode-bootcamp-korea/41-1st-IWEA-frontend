@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './HomeGrid.scss';
 
 const HomeGrid = () => {
@@ -14,7 +15,9 @@ const HomeGrid = () => {
             방식대로 색감을 입히고 프린팅 한 제품들이지만 전통 제품들만큼이나
             소중한 예술 작품이랍니다.
           </div>
-          <button>모든 신제품 보러가기</button>
+          <Link to="/product">
+            <button>모든 신제품 보러가기</button>
+          </Link>
         </div>
       </div>
       <div className="homeGrid-container">

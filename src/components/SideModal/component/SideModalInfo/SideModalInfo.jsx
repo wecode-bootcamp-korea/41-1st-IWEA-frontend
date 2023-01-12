@@ -1,12 +1,18 @@
 import React from 'react';
 import './SideModalInfo.scss';
-const SideModalInfo = () => {
+const SideModalInfo = ({ modalName, modalPoints }) => {
   return (
     <div className="sidemodal-info">
-      <p>구매 내역</p>
-      <p>플래너</p>
-      <p>배송 조회</p>
+      <p>
+        <span>Hej </span>
+        <span>{modalName}</span>
+      </p>
+      <p className="my-points">
+        <span>내 포인트</span>
+        <span>{modalPoints}</span>
+      </p>
     </div>
   );
 };
+
 export default SideModalInfo;

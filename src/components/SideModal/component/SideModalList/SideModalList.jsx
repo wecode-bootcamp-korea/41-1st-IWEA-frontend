@@ -1,6 +1,6 @@
 import React from 'react';
 import './SideModalList.scss';
-const SideModalList = ({ modal }) => {
+const SideModalList = () => {
   return (
     <div className="sidemodal-list">
       <p>
@@ -14,5 +14,4 @@ const SideModalList = ({ modal }) => {
     </div>
   );
 };
-
 export default SideModalList;
