@@ -8,7 +8,7 @@ const SideModal = ({ setSideBarMenu }) => {
   const [modal, setModal] = useState({});
 
   useEffect(() => {
-    fetch('http://10.58.52.184:3000/userInfo', {
+    fetch('http://10.58.52.170:3000/userInfo', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
@@ -22,7 +22,6 @@ const SideModal = ({ setSideBarMenu }) => {
         setModal(data.data);
       });
   }, []);
-  console.log(modal);
 
   const closeModal = () => {
     setUnmount(true);
