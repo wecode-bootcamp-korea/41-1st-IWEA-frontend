@@ -3,17 +3,16 @@ import PaymentInfoData from './PaymentInfoData/PaymentInfoData';
 import './PaymentInfoItem.scss';
 
 const PaymentInfoItem = ({
+  id,
   productDate,
   productStatus,
   products,
   productTotalPrice,
+  onCancle,
 }) => {
-  // console.log(productDate);
-  // const Year = productDate.toLocaleDateString();
-  // console.log(Year);
-  // const Month = productDate.getMonth();
-  // const Day = productDate.getDay();
-  // console.log(`${Year}+${Month}+${Day}`);
+  const handleClick = id => {
+    onCancle(id, productTotalPrice);
+  };
 
   return (
     <div className="payment-info-item">
@@ -42,7 +41,7 @@ const PaymentInfoItem = ({
         </div>
         <div className="payment-info-status">
           <p>{productStatus}</p>
-          <button>결제 취소</button>
+          <button onClick={() => handleClick(id)}>결제 취소</button>
         </div>
       </div>
     </div>

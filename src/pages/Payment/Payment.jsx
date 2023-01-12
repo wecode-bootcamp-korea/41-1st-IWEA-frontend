@@ -5,15 +5,7 @@ import PaymentInfo from './component/PaymentInfo/PaymentInfo';
 import './Payment.scss';
 
 const Payment = () => {
-  const [product, setProduct] = useState({});
-  const [cancel, setCancel] = useState();
-
-  // useEffect(() => {
-  //   return window.localStorage.setItem(
-  //     'TOKEN',
-  //     'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjcsImlhdCI6MTY3MzM5NDk5MH0.nejufPzJzN2PzV5ToZGIXHC9fP21skEhEk7Lp4ZwgFU'
-  //   );
-  // }, []);
+  const [product, setProduct] = useState([]);
 
   useEffect(() => {
     fetch('http://10.58.52.170:3000/orders', {
@@ -29,27 +21,33 @@ const Payment = () => {
         setProduct(data.data);
       });
   }, []);
-  console.log(product);
 
-  useEffect(() => {
+  const handleCancle = (id, productTotalPrice) => {
+    console.log(id);
     fetch('http://10.58.52.170:3000/orders', {
-      method: 'POST',
+      method: 'PATCH',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
         Authorization: localStorage.getItem('TOKEN'),
       },
       body: JSON.stringify({
-        orderId: orderId,
-        totalprice: totalprice,
+        orderId: id,
+        totalprice: productTotalPrice,
       }),
-    })
-      .then(res => {
-        return res.json();
-      })
-      .then(data => {
-        setCancel(data.data);
-      });
-  }, []);
+    });
+    console.log(product);
+
+    const changed = product.map(order => {
+      console.log(order.orderId, id, order.orderId === id);
+      if (order.orderId === id) {
+        order.status = '주문 취소';
+      }
+      return order;
+    });
+    console.log(changed);
+
+    setProduct(changed);
+  };
 
   return (
     <div className="payment-wrap">
@@ -58,7 +56,7 @@ const Payment = () => {
           <PaymentAside />
         </div>
         <div className="payment-info-wrap">
-          <PaymentInfo product={product} />
+          <PaymentInfo product={product} onCancle={handleCancle} />
         </div>
       </div>
     </div>

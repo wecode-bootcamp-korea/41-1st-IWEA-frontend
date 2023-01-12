@@ -2,7 +2,7 @@ import React from 'react';
 import PaymentInfoItem from './PaymentInfoItem/PaymentInfoItem';
 import './PaymentInfo.scss';
 
-const PaymentInfo = ({ product }) => {
+const PaymentInfo = ({ product, onCancle }) => {
   return (
     <div className="product-info-wrap">
       <div className="product-info">
@@ -11,10 +11,12 @@ const PaymentInfo = ({ product }) => {
           return (
             <PaymentInfoItem
               key={data.orderId}
+              id={data.orderId}
               productDate={data.date}
               productStatus={data.status}
               productTotalPrice={data.totalPrice}
               products={data.products}
+              onCancle={onCancle}
             />
           );
         })}
