@@ -46,7 +46,6 @@ const Product = () => {
   }, [category, sort, offset, limit]);
 
   const handleSendToCartBtn = productId => {
-    console.log('handleSendToCartBtn작동중...');
     setIsAlertOn(true);
     fetch('http://10.58.52.241:3000/carts', {
       method: 'POST',

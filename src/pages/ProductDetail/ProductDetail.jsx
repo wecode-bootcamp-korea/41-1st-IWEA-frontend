@@ -23,7 +23,6 @@ const ProductDetail = () => {
         return res.json();
       })
       .then(data => {
-        console.log(data);
         setProduct(data.data);
       });
   }, [productId]);
@@ -40,7 +39,6 @@ const ProductDetail = () => {
         return res.json();
       })
       .then(data => {
-        console.log(data);
         setSlideItemList(data.data);
       });
   }, []);

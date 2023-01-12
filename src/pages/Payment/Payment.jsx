@@ -23,7 +23,6 @@ const Payment = () => {
   }, []);
 
   const handleCancle = (id, productTotalPrice) => {
-    console.log(id);
     fetch('http://10.58.52.170:3000/orders', {
       method: 'PATCH',
       headers: {
@@ -35,16 +34,13 @@ const Payment = () => {
         totalprice: productTotalPrice,
       }),
     });
-    console.log(product);
 
     const changed = product.map(order => {
-      console.log(order.orderId, id, order.orderId === id);
       if (order.orderId === id) {
         order.status = '주문 취소';
       }
       return order;
     });
-    console.log(changed);
 
     setProduct(changed);
   };
