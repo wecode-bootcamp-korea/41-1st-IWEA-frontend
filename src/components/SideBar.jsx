@@ -3,17 +3,17 @@ import './SideBar.scss';
 
 const SideBar = ({ setToggleMenu }) => {
   const [unmount, setUnmount] = useState(false);
-  const closeModal = () => {
+  const closeMenu = () => {
     setUnmount(true);
     setTimeout(() => {
       setToggleMenu(false);
-    }, 300);
+    }, 200);
   };
   return (
     <div className="sidebar">
       <div
         className={`sidebar-body${unmount ? ' sidebar-body-unmount' : ''}`}
-        onClick={closeModal}
+        onClick={closeMenu}
       >
         <div
           className={`sidebar-body-wrap ${
@@ -28,7 +28,7 @@ const SideBar = ({ setToggleMenu }) => {
                   alt="close"
                   src="images/close.png"
                   className="close-icon"
-                  onClick={closeModal}
+                  onClick={closeMenu}
                 />
               </div>
               <div className="logo">
