@@ -7,15 +7,15 @@ export const CAROUSEL_ITEM_LISTS = [
   },
   {
     id: 2,
-    src: './images/Home/home-category2.png',
+    src: './images/Home/home-category6.png',
     alt: 'carousel-img2',
-    text: '조명',
+    text: '매트',
   },
   {
     id: 3,
-    src: './images/Home/home-category3.png',
+    src: './images/Home/home-category5.png',
     alt: 'carousel-img3',
-    text: '의자',
+    text: '침구',
   },
   {
     id: 4,
@@ -25,15 +25,15 @@ export const CAROUSEL_ITEM_LISTS = [
   },
   {
     id: 5,
-    src: './images/Home/home-category5.png',
+    src: './images/Home/home-category3.png',
     alt: 'carousel-img5',
-    text: '침구',
+    text: '의자',
   },
   {
     id: 6,
-    src: './images/Home/home-category6.png',
+    src: './images/Home/home-category2.png',
     alt: 'carousel-img6',
-    text: '매트',
+    text: '조명',
   },
   {
     id: 7,
