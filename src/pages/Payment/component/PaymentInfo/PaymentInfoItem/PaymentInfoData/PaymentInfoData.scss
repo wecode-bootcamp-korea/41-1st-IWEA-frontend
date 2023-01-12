@@ -1,0 +1,42 @@
+.payment-info-wrap {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  .payment-info-image {
+    margin: 15px;
+
+    img {
+      width: 200px;
+      height: 200px;
+      margin-right: 15px;
+    }
+  }
+
+  .payment-info-name {
+    padding: 0 10px 0 0;
+    font-size: 22px;
+
+    span:first-child {
+      padding-right: 5px;
+    }
+  }
+
+  .payment-info-buy {
+    padding-top: 10px;
+
+    span:first-child {
+      padding-right: 10px;
+      color: #212322;
+      font-size: 18px;
+    }
+
+    span:nth-child(2) {
+      padding-left: 10px;
+      border-left: 1px solid #ccc;
+    }
+  }
+
+  // .payment-info-totalprice {
+  //   background-color: palegoldenrod;
+  // }
+}
