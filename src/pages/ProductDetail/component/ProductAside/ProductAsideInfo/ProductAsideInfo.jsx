@@ -11,7 +11,7 @@ const productAsideInfo = ({ product }) => {
       </div>
       <p className="product-aside-price">
         <span>￦</span>
-        {price}
+        {parseInt(price).toLocaleString()}
       </p>
     </div>
   );

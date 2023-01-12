@@ -12,7 +12,14 @@ const ProductDetail = () => {
   const productId = params.id;
 
   useEffect(() => {
-    fetch(`http://10.58.52.56:3000/products/productId/${productId}`, {
+    return window.localStorage.setItem(
+      'TOKEN',
+      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjE3LCJpYXQiOjE2NzM0ODUxNTJ9.1yegbGB5TR5osJQPtZAPKSJNZ0oFE5sBXaFkRgMizs4'
+    );
+  }, []);
+
+  useEffect(() => {
+    fetch(`http://10.58.52.184:3000/products/productId/${productId}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
@@ -23,13 +30,12 @@ const ProductDetail = () => {
         return res.json();
       })
       .then(data => {
-        console.log(data);
         setProduct(data.data);
       });
   }, [productId]);
 
   useEffect(() => {
-    fetch('http://10.58.52.56:3000/products', {
+    fetch('http://10.58.52.184:3000/products', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
@@ -40,7 +46,6 @@ const ProductDetail = () => {
         return res.json();
       })
       .then(data => {
-        console.log(data);
         setSlideItemList(data.data);
       });
   }, []);
