@@ -9,7 +9,7 @@ const SideModalInfo = ({ modalName, modalPoints }) => {
       </p>
       <p className="my-points">
         <span>내 포인트</span>
-        <span>{modalPoints}</span>
+        <span>{parseInt(modalPoints).toLocaleString()}</span>
       </p>
     </div>
   );

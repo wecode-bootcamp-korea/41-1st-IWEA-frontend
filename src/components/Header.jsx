@@ -2,12 +2,18 @@ import React, { useState, useEffect } from 'react';
 import './Header.scss';
 import SideBar from './SideBar';
 import { Link } from 'react-router-dom';
+import SideModal from './SideModal/SideModal';
 
 const Header = () => {
-  const [toggleMenu, setToggleMenu] = useState(false);
+  const [leftOpen, setLeftOpen] = useState(false);
+  const [rightOpen, setRightOpen] = useState(false);
 
-  const openMenu = () => {
-    setToggleMenu(true);
+  const openLeft = () => {
+    setLeftOpen(true);
+  };
+
+  const openRight = () => {
+    setRightOpen(true);
   };
 
   const [cartList, setCartList] = useState([]);
@@ -31,7 +37,7 @@ const Header = () => {
               alt="menu"
               src="images/menu.png"
               className="menu-icon"
-              onClick={openMenu}
+              onClick={openLeft}
             />
             <span>메뉴</span>
           </div>
@@ -50,7 +56,7 @@ const Header = () => {
             src="images/user.png"
             alt="user"
             className="user-img"
-            onClick={openMenu}
+            onClick={openRight}
           />
           <Link to="/login">
             <img src="images/enter.png" alt="login" className="login-img" />
@@ -97,7 +103,8 @@ const Header = () => {
           </ul>
         </nav>
       </div>
-      {toggleMenu && <SideBar setToggleMenu={setToggleMenu} />}
+      {leftOpen && <SideBar setToggleMenu={setLeftOpen} />}
+      {rightOpen && <SideModal setSideBarMenu={setRightOpen} />}
     </header>
   );
 };
