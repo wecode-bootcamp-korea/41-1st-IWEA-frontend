@@ -4,7 +4,7 @@
   z-index: 99;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 20px 40px 20px;
+  padding: 10px 50px 50px 50px;
   border-bottom: 1px solid #ccc;
 
   .payment-info-data {
@@ -13,50 +13,45 @@
     .payment-info-date {
       position: absolute;
       top: -15px;
-      width: 20%;
-      padding: 5px 0;
+      // width: 25%;
+      padding: 10px;
       border: 1px solid #ccc;
       border-radius: 30px;
       background-color: #fff;
       font-size: 16px;
       text-align: center;
     }
+  }
+}
 
-    h1 {
-      padding-top: 25px;
-      font-size: 22px;
-    }
+.payment-info-etc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
 
-    .payment-info-buy {
-      padding: 10px 0 20px 0;
+  .payment-info-price {
+    font-size: 20px;
 
-      span:first-child {
-        padding-right: 10px;
-        color: #212322;
-        font-size: 18px;
-      }
-
-      span:last-child {
-        padding-left: 10px;
-        border-left: 1px solid #ccc;
-        color: #5e5e5e;
-      }
-    }
-
-    .payment-info-desc {
-      margin-right: 100px;
-      padding-top: 20px;
-      border-top: 1px solid #ededed;
-      color: #646465;
-      font-size: 14px;
-      line-height: 20px;
+    p {
+      width: 150px;
+      margin-bottom: 10px;
     }
   }
-
-  .payment-info-state {
+  .payment-info-status {
+    display: flex;
+    flex-direction: column;
+    // justify-content: ;
+    width: 100px;
+    padding: 5px;
+    p {
+      margin-bottom: 10px;
+      color: rgb(65, 64, 64);
+      text-align: center;
+    }
     button {
-      width: 90px;
-      padding: 5px;
       border: 1px solid #ccc;
       background-color: #f5f6f7;
       font-size: 16px;

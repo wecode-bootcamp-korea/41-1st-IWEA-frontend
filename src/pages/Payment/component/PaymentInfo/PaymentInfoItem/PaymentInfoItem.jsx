@@ -1,24 +1,48 @@
 import React from 'react';
+import PaymentInfoData from './PaymentInfoData/PaymentInfoData';
 import './PaymentInfoItem.scss';
 
-const PaymentInfoItem = () => {
+const PaymentInfoItem = ({
+  id,
+  productDate,
+  productStatus,
+  products,
+  productTotalPrice,
+  onCancle,
+}) => {
+  const handleClick = id => {
+    onCancle(id, productTotalPrice);
+  };
+
   return (
     <div className="payment-info-item">
       <div className="payment-info-data">
-        <p className="payment-info-date">2023-01-06</p>
-        <h1>구매 내역 이름</h1>
-        <p className="payment-info-buy">
-          <span>₩100,000원</span>
-          <span>IWEA 온라인</span>
+        <p className="payment-info-date">
+          <span>{productDate}</span>
         </p>
-        <p className="payment-info-desc">
-          구매가 완료되었습니다. 이용해주셔서 감사합니다.
-          <br />
-          추가 문의사항은 IWEA 고객센터에 문의해주세요.
-        </p>
+        {products.map(data => {
+          return (
+            <PaymentInfoData
+              key={data.productId}
+              productImg={data.thumbnail}
+              productCount={data.cnt}
+              productName={data.name}
+              productPrice={data.eachPrice}
+            />
+          );
+        })}
       </div>
-      <div className="payment-info-state">
-        <button>결제 취소</button>
+      <div className="payment-info-etc">
+        <div className="payment-info-price">
+          <p>
+            {parseInt(productTotalPrice).toLocaleString()}
+            <span>원</span>
+          </p>
+        </div>
+        <div className="payment-info-status">
+          <p>{productStatus}</p>
+          <button onClick={() => handleClick(id)}>결제 취소</button>
+        </div>
       </div>
     </div>
   );
