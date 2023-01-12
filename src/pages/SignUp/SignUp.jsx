@@ -161,7 +161,7 @@ const SignUp = () => {
                 />
                 {phoneNumber.length === 0 || isPhoneNumberValid ? (
                   <div className="input-demand-phone signup-right-font">
-                    010-1234-5678 or 01012345678
+                    ex) 01012345678
                   </div>
                 ) : (
                   <div className="input-demand signup-right-font">
