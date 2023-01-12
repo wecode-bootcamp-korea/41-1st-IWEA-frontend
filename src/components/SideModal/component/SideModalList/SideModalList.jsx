@@ -3,14 +3,9 @@ import './SideModalList.scss';
 const SideModalList = () => {
   return (
     <div className="sidemodal-list">
-      <p>
-        <span>Hej </span>
-        {/* <span>{modal.cartsList[0].koreanName}</span> */}
-      </p>
-      <p className="my-points">
-        <span>내 포인트</span>
-        {/* <span>{modal.userPoints}</span> */}
-      </p>
+      <p>구매 내역</p>
+      <p>플래너</p>
+      <p>배송 조회</p>
     </div>
   );
 };
