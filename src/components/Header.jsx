@@ -64,7 +64,7 @@ const Header = () => {
           <Link to="/cart">
             <img src="images/cart.png" alt="cart" className="cart-img" />
           </Link>
-          <button className="cart-count">{cartList.length}</button>
+          <button className="cart-count">{cartList?.length || 0}</button>
         </div>
       </div>
       <div className="nav-wrap">

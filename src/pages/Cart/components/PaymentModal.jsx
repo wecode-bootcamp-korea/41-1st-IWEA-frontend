@@ -1,29 +1,7 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import './PaymentModal.scss';
-import { useNavigate } from 'react-router-dom';
 
-function PaymentModal({ closePaymentModal, data, totalPrice }) {
-  const { cartId, productId, quantity } = data;
-  const navigate = useNavigate();
-  const orderPayment = () => {
-    fetch('http://10.58.52.184:3000/orders', {
-      method: 'post',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: localStorage.getItem('TOKEN'),
-      },
-      body: JSON.stringify({
-        cartId: cartId,
-        products: [{ productId: productId, quantity: quantity }],
-        totalPrice: totalPrice,
-      }),
-    }).then(result => {
-      if (result.status === 201) {
-        navigate('/payment');
-      }
-    });
-  };
-
+function PaymentModal({ closePaymentModal, paymentSubmit }) {
   return (
     <div className="cart-modal-bg" onClick={closePaymentModal}>
       <div className="cart-modal" onClick={e => e.stopPropagation()}>
@@ -34,7 +12,7 @@ function PaymentModal({ closePaymentModal, data, totalPrice }) {
           확인을 누르시면 결제내역 페이지로 이동합니다.
         </span>
         <div className="cart-modal-button-wrapper">
-          <button className="confirm-button" onClick={orderPayment}>
+          <button className="confirm-button" onClick={paymentSubmit}>
             확인
           </button>
           <button className="cancel-button" onClick={closePaymentModal}>
