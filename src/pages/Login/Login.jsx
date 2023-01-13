@@ -22,7 +22,7 @@ const Login = () => {
 
   const handleLogin = e => {
     e.preventDefault();
-    fetch(`${API}/signin`, {
+    fetch(`http://10.58.52.157:3000/signin`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
@@ -34,12 +34,15 @@ const Login = () => {
     })
       .then(response => response.json())
       .then(data => {
-        localStorage.setItem('TOKEN', data.accessToken);
-        alert('로그인에 성공했습니다');
-        navigate('/');
+        if (data.message === 'PASSWORD_DOES_NOT_MATCH') {
+          alert('이메일 또는 비밀번호를 다시 확인해주세요.');
+        } else {
+          localStorage.setItem('TOKEN', data.accessToken);
+          alert('로그인에 성공했습니다');
+          navigate('/');
+        }
       });
   };
-
   const handleInput = event => {
     const { id, value } = event.target;
     setInputValues({ ...inputValues, [id]: value });
