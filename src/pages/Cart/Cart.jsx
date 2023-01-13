@@ -97,25 +97,23 @@ const Cart = () => {
       method: 'post',
       headers: {
         'Content-Type': 'application/json',
-        Authorization: localStorage.getItem('TOKEN'),
+        authorization: localStorage.getItem('TOKEN'),
       },
       body: JSON.stringify({
         cartId: cartId,
         products: products,
-        totalPrice: cartData.totalPrice,
+        totalPrice: totalPrice,
       }),
-    }).then(result => {
-      if (result.status === 201) {
-        navigate('/payment');
-      }
-    });
-  };
-
-  console.log(
-    cartData.map(info => {
-      return info.cartId;
     })
-  );
+      .then(response => response.json())
+      .then(result => {
+        if (result.message === 'NOT_ENOUGH_POINTS!') {
+          alert('포인트가 부족합니다!');
+        } else {
+          navigate('/payment');
+        }
+      });
+  };
   return (
     <div className="Cart">
       {isOpenPaymentModal && (
