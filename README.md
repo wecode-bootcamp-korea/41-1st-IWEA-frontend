@@ -122,14 +122,15 @@
 
 - Home Layout (Flexbox, Grid 사용)
 - Prouct Page / Login Page / SignUp Page로 이동할 수 있게 useNavigate사용
-  ​
+
+![홈페이지시연](https://user-images.githubusercontent.com/110670796/212580030-503b78c7-75b9-4cfd-8bbc-f4dbeed8bd5f.gif)
 
 ### Nav
 
-​
-
 - 장바구니 관련 내용 넣기
-  ​
+
+![헤더시연](https://user-images.githubusercontent.com/110670796/212580027-eba76f3b-e15f-4c60-bc73-cc57144ff11e.gif)
+​
 
 ### Footer
 
@@ -139,10 +140,13 @@
 
 ### Login, SignUp
 
-​
-
 - 유효성 검사, 유효성 여부에 의한 레이아웃 변화
-  ​
+
+![](https://user-images.githubusercontent.com/110670796/212580033-15872f13-747a-43c5-af69-6c22958c8359.gif)
+
+![](https://user-images.githubusercontent.com/110670796/212579914-19ab371d-d980-4c54-a35b-76d6223db8fd.gif)
+
+![](https://user-images.githubusercontent.com/110670796/212579928-f13636db-a66c-445a-8ed4-af8e75638473.gif)
 
 ### Products
 
@@ -157,18 +161,22 @@
 - 페이지네이션 버튼을 눌렀을 때 12장씩 더 불러오기
   ​
 - 장바구니 버튼 눌렀을 때 Carts DB에 전송하기
-  ​
+
+![](https://user-images.githubusercontent.com/110670796/212580020-565675c4-6159-407c-aee9-7b603fd2946b.gif)
+​
+![](https://user-images.githubusercontent.com/110670796/212579979-3feafc46-db9e-4995-ad59-4d07bc9726bf.gif)
+
+![](https://user-images.githubusercontent.com/110670796/212580010-287eedfc-44c4-4944-8555-6ae6b8ddc8ee.gif)
 
 ### ProductDetail
-
-​
 
 - 특정 상품 데이터 불러오기
   ​
 - 캐러셀형태로 상품 추천 섹션 불러오기
   ​
 - 장바구니로 데이터 전송하기
-  ​
+
+![](https://user-images.githubusercontent.com/110670796/212579911-0a3b6303-e9d7-4644-b982-c2385be1250d.gif) ​
 
 ### Cart
 
@@ -180,13 +188,19 @@
   ​
 - 결제하기 버튼 누르면 모달창으로 포인트차감
   ​
+  ![](https://user-images.githubusercontent.com/110670796/212580614-32da0f17-2f57-4218-8697-7ecedb2c300a.gif)
+
+![](https://user-images.githubusercontent.com/110670796/212580638-730b8c84-710b-4834-8ae7-a2d929f4764e.gif)
 
 ### Payment
 
-​
-
 - 구매한 내역 데이터로 불러서 렌더링하기
-  ​
+
+![](https://user-images.githubusercontent.com/110670796/212580779-c408bb58-64d5-4f42-aa9d-ea26e1a920a3.gif)
+
+![](https://user-images.githubusercontent.com/110670796/212579901-819176ef-3f4e-432e-9d08-451589b3c65d.gif)
+
+![](https://user-images.githubusercontent.com/110670796/212580017-14e754fa-1f72-406f-950b-0766f8e32a1a.gif)
 
 ## Back-End
 
